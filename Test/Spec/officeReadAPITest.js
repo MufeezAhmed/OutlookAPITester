@@ -124,7 +124,14 @@ describe("Read : office api Test",
 
             setTimeout(function () {
                 sendReport();
-            },15000)
+            }, 5000)
+
+           
+
+            setTimeout(function () {
+                $(".jasmine-spec-list-menu").trigger("click");
+                sendReport();
+            }, 8000)
 
             
 
