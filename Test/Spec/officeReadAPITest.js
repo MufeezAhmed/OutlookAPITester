@@ -3,19 +3,23 @@
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 15000;
 
 function sendReport() {
-    var testResults = $("#testResults").html();
+    if ($("#testResults").length){
+        var testResults = $("#testResults").html();
 
-    $("#testResults").remove();
+        $("#testResults").remove();
     //$(".jasmine_html-reporter").remove();
 
-    $(".jasmine_html-reporter").after(testResults);
+        $(".jasmine_html-reporter").after(testResults);
+
+        
+
+       // var textResults = testResults;
+    } 
 
     var completeHtml = "<html>" + $("html").html() + "</html>";
-
-    var textResults = testResults;
-    textResults = textResults.replace(/&/g, '&amp;');
-    textResults = textResults.replace(/</g, '&lt;');
-    textResults = textResults.replace(/>/g, '&gt;');
+    //textResults = textResults.replace(/&/g, '&amp;');
+    //textResults = textResults.replace(/</g, '&lt;');
+    //textResults = textResults.replace(/>/g, '&gt;');
 
 
     var textcompleteHtml = completeHtml;
@@ -131,7 +135,7 @@ describe("Read : office api Test",
             setTimeout(function () {
                 $(".jasmine-spec-list-menu").trigger("click");
                 sendReport();
-            }, 8000)
+            }, 15000)
 
             
 
