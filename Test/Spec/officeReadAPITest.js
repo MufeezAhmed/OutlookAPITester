@@ -2,63 +2,24 @@
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 15000;
 
-function sendReport() {
-    if ($("#testResults").length){
-        var testResults = $("#testResults").html();
+function sendTestReport() {
+    
+       var testResults = $("#testResults").html();
 
         $("#testResults").remove();
-    //$(".jasmine_html-reporter").remove();
+ 
 
-        $(".jasmine_html-reporter").after(testResults);
+       $(".jasmine_html-reporter").after(testResults);
 
-        
-
-       // var textResults = testResults;
-    } 
-
+       
     var completeHtml = "<html>" + $("html").html() + "</html>";
-    //textResults = textResults.replace(/&/g, '&amp;');
-    //textResults = textResults.replace(/</g, '&lt;');
-    //textResults = textResults.replace(/>/g, '&gt;');
+  
 
 
     var textcompleteHtml = completeHtml;
     textcompleteHtml = textcompleteHtml.replace(/&/g, '&amp;');
     textcompleteHtml = textcompleteHtml.replace(/</g, '&lt;');
     textcompleteHtml = textcompleteHtml.replace(/>/g, '&gt;');
-
-
-    var request = '<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:m="http://schemas.microsoft.com/exchange/services/2006/messages"' +
-        ' xmlns:t="http://schemas.microsoft.com/exchange/services/2006/types" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">' +
-        '  <soap:Header><t:RequestServerVersion Version="Exchange2010" /></soap:Header>' +
-        '  <soap:Body>' +
-        '    <m:CreateItem MessageDisposition="SendAndSaveCopy">' +
-        '      <m:SavedItemFolderId><t:DistinguishedFolderId Id="sentitems" /></m:SavedItemFolderId>' +
-        '      <m:Items>' +
-        '        <t:Message>' +
-        '          <t:Subject>Read Test Results Using EWS Request </t:Subject>' +
-        '          <t:Body BodyType="HTML">' + textcompleteHtml + ' </t:Body>' +
-        '          <t:ToRecipients>' +
-        '            <t:Mailbox><t:EmailAddress>' + Office.context.mailbox.userProfile.emailAddress + '</t:EmailAddress></t:Mailbox>' +
-        '          </t:ToRecipients>' +
-        '        </t:Message>' +
-        '      </m:Items>' +
-        '    </m:CreateItem>' +
-        '  </soap:Body>' +
-        '</soap:Envelope>';
-
-    Office.context.mailbox.makeEwsRequestAsync(request,
-        function (asyncResult) {
-            if (asyncResult.status == "failed") {
-                console.log("Action failed with error: " + asyncResult.error.message);
-                document.getElementById("ewsRequest").innerHTML = "Action failed with error: " + asyncResult.error.message;
-            } else {
-                console.log("Message sent! Check your inbox.");
-                document.getElementById("ewsRequest").innerHTML = "Message sent! Check your inbox.";
-            }
-
-        }
-    );
 
 
 
@@ -129,19 +90,6 @@ describe("Read : office api Test",
             setTimeout(function () {
                 sendReport();
             }, 5000)
-
-           
-
-            setTimeout(function () {
-                $(".jasmine-spec-list-menu").trigger("click");
-                sendReport();
-            }, 15000)
-
-            
-
-
-
-
 
 
         })
