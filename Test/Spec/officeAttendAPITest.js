@@ -79,7 +79,7 @@ function sendTestReport() {
 }
 
 
-describe("Attend : office api Test",
+describe("",
     function () {
         beforeAll(function (done) { setTimeout(function () { done(); }, 2000) });
         afterAll(function () {
