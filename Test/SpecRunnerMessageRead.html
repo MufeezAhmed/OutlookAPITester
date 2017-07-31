@@ -411,269 +411,21 @@
     <div id="testResults" style="display:none;word-wrap:break-word;">
         <div id="content-header">
             <div class="padding">
-                <p class="ms-font-xl ms-fontColor-themeDarkAlt ms-fontWeight-semilight">All properties</p>
+                <p class="ms-font-xl ms-fontColor-themeDarkAlt ms-fontWeight-semilight">Test Results</p>
             </div>
         </div>
 
+       
+       
+
+       
         <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm12">
-
-                <h2 class="ms-font-l">Office.context.mailbox.Message Read properties</h2>
+                <h2 class="ms-font-l">Office.context</h2>
                 <div class="ms-Table">
                     <div class="ms-Table-row">
-                        <span class="ms-Table-cell" style="word-wrap:break-word;">Property:</span>
-                        <span class="ms-Table-cell" style="word-wrap:break-word;">Value</span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">conversationId:</span>
-                        <span id="conversationId" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">internetMessageId:</span>
-                        <span id="internetMessageId" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">cc recipients:</span>
-                        <span id="ccRecipients" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">from:</span>
-                        <span id="from" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">sender:</span>
-                        <span id="sender" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">to:</span>
-                        <span id="to" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                </div>
-                <h2 class="ms-font-l">Office.context.mailbox.Read/Attend properties</h2>
-                <div class="ms-Table-row">
-
-                    <div class="ms-Table">
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell" style="word-wrap:break-word;">Property:</span>
-                            <span class="ms-Table-cell" style="word-wrap:break-word;">Value</span>
-
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get item Id:</span>
-                            <span id="itemId" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">attachments:</span>
-                            <span id="attachments" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get item Class:</span>
-                            <span id="itemClass" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Date Time Created:</span>
-                            <span id="dateTimeCreated" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Date Time Modified:</span>
-                            <span id="dateTimeModified" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">normalizedSubject:</span>
-                            <span id="normalizedSubject" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">display Message Form:</span>
-                            <span id="displayMessageForm" class="ms-Table-cell" style="word-wrap:break-word;">Validate Manually</span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">display appointment Form:</span>
-                            <span id="displayappointmentForm" class="ms-Table-cell" style="word-wrap:break-word;">Validate Manually</span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">display reply Form:</span>
-                            <span id="displayreplyForm" class="ms-Table-cell" style="word-wrap:break-word;">Validate Manually</span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">display reply all Form:</span>
-                            <span id="displayreplyAllForm" class="ms-Table-cell" style="word-wrap:break-word;">Validate Manually</span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">display new appointment  Form:</span>
-                            <span id="displayNewAppointmentForm" class="ms-Table-cell" style="word-wrap:break-word;">Validate Manually</span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-                </div>
-                <h2 class="ms-font-l">Office.context.mailbox.Read/Compose/Organizer/Attendee properties</h2>
-                <div class="ms-Table-row">
-                    <div class="ms-Table">
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell" style="word-wrap:break-word;">Property:</span>
-                            <span class="ms-Table-cell" style="word-wrap:break-word;">Value</span>
-                        </div>
-
-
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Message Body:</span>
-                            <span id="messageBody" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get item type:</span>
-                            <span id="itemType" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">subject:</span>
-                            <span id="subject" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set and Save Custom Property:</span>
-                            <span id="setAndSaveCustomProperty" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get Custom Property:</span>
-                            <span id="getCustomProperty" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Remove and Save Custom Property:</span>
-                            <span id="removeAndSaveCustomProperty" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get Entities:</span>
-                            <span id="getEntities" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Add notification message async:</span>
-                            <span id="addNotificationMessageAsync" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Replace notification message async:</span>
-                            <span id="replaceNotificationMessageAsync" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get All notification message async:</span>
-                            <span id="getAllNotificationMessageAsync" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Remove notification message async:</span>
-                            <span id="removeNotificationMessageAsync" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get entities by type:</span>
-                            <span id="getEntitiesByType" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get filtered entities by name:</span>
-                            <span id="getFilteredEntitiesByName" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get Regex matches:</span>
-                            <span id="getRegexMatches" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get filtered Regex Matches: </span>
-                            <span id="getFilteredRegexMatchesByName" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                    </div>
-
-
-                </div>
-
-
-            </div>
-        </div>
-
-        <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm12">
-                <h2 class="ms-font-l">1.5 API Test</h2>
-                <div class="ms-Table">
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell" style="word-wrap:break-word;">Property/Action</span>
-                        <span class="ms-Table-cell" style="word-wrap:break-word;">Value/Result</span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get REST url</span>
-                        <span id="getRestUrl" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get callback token isrest</span>
-                        <span id="getCallbackTokenIsRest" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Close Container</span>
-                        <span id="closeContainer" class="ms-Table-cell" style="word-wrap:break-word;"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">inline image - display reply form</span>
-                        <span id="inlineImageDisplayReplyForm" class="ms-Table-cell" style="word-wrap:break-word;">Validate Manually</span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">inline image - display reply All form</span>
-                        <span id="inlineImageDisplayReplyAllForm" class="ms-Table-cell" style="word-wrap:break-word;">Validate Manually</span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Verify callback token Manually</span>
-                        <span id="verifyGetCallBackTokenIsRest" class="ms-Table-cell" style="word-wrap:break-word;">Use other Webservice</span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm12">
-                <h2 class="ms-font-l">Office.context(Properties and Actions)</h2>
-                <div class="ms-Table">
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell" style="word-wrap:break-word;">Property/Action</span>
-                        <span class="ms-Table-cell" style="word-wrap:break-word;">Value/Result</span>
+                        <span class="ms-Table-cell" style="word-wrap:break-word;">API Name</span>
+                        <span class="ms-Table-cell" style="word-wrap:break-word;">Result</span>
                     </div>
                     <div class="ms-Table-row">
                         <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Dispaly Language</span>
@@ -706,11 +458,11 @@
 
         <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm12">
-                <h2 class="ms-font-l">Office.context.mailbox.(properties and Actions)</h2>
+                <h2 class="ms-font-l">Office.context.mailbox.</h2>
                 <div class="ms-Table">
                     <div class="ms-Table-row">
-                        <span class="ms-Table-cell" style="word-wrap:break-word;">Property/Action</span>
-                        <span class="ms-Table-cell" style="word-wrap:break-word;">Value/Result</span>
+                        <span class="ms-Table-cell" style="word-wrap:break-word;">API Name</span>
+                        <span class="ms-Table-cell" style="word-wrap:break-word;">Result</span>
                     </div>
                     <div class="ms-Table-row">
                         <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Convert to REST ID:</span>
@@ -760,11 +512,11 @@
 
         <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm12">
-                <h2 class="ms-font-l">Office.context.mailbox.diagnostics.properties</h2>
+                <h2 class="ms-font-l">Office.context.mailbox.diagnostics.</h2>
                 <div class="ms-Table">
                     <div class="ms-Table-row">
-                        <span class="ms-Table-cell" style="word-wrap:break-word;">Property:</span>
-                        <span class="ms-Table-cell" style="word-wrap:break-word;">Value</span>
+                        <span class="ms-Table-cell" style="word-wrap:break-word;">API Name:</span>
+                        <span class="ms-Table-cell" style="word-wrap:break-word;">Result</span>
                     </div>
                     <div class="ms-Table-row">
                         <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get host name:</span>
@@ -787,14 +539,191 @@
             </div>
         </div>
 
+        <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm12">
+
+                <h2 class="ms-font-l">Office.context.mailbox.item</h2>
+                <div class="ms-Table">
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell" style="word-wrap:break-word;">API Name:</span>
+                        <span class="ms-Table-cell" style="word-wrap:break-word;">Result</span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">conversationId:</span>
+                        <span id="conversationId" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">internetMessageId:</span>
+                        <span id="internetMessageId" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">cc recipients:</span>
+                        <span id="ccRecipients" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">from:</span>
+                        <span id="from" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">sender:</span>
+                        <span id="sender" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">to:</span>
+                        <span id="to" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get item Id:</span>
+                        <span id="itemId" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">attachments:</span>
+                        <span id="attachments" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get item Class:</span>
+                        <span id="itemClass" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Date Time Created:</span>
+                        <span id="dateTimeCreated" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Date Time Modified:</span>
+                        <span id="dateTimeModified" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">normalizedSubject:</span>
+                        <span id="normalizedSubject" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">display Message Form:</span>
+                        <span id="displayMessageForm" class="ms-Table-cell" style="word-wrap:break-word;">Validate Manually</span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">display appointment Form:</span>
+                        <span id="displayappointmentForm" class="ms-Table-cell" style="word-wrap:break-word;">Validate Manually</span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">display reply Form:</span>
+                        <span id="displayreplyForm" class="ms-Table-cell" style="word-wrap:break-word;">Validate Manually</span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">display reply all Form:</span>
+                        <span id="displayreplyAllForm" class="ms-Table-cell" style="word-wrap:break-word;">Validate Manually</span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">display new appointment  Form:</span>
+                        <span id="displayNewAppointmentForm" class="ms-Table-cell" style="word-wrap:break-word;">Validate Manually</span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Message Body:</span>
+                        <span id="messageBody" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get item type:</span>
+                        <span id="itemType" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">subject:</span>
+                        <span id="subject" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set and Save Custom Property:</span>
+                        <span id="setAndSaveCustomProperty" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get Custom Property:</span>
+                        <span id="getCustomProperty" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Remove and Save Custom Property:</span>
+                        <span id="removeAndSaveCustomProperty" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get Entities:</span>
+                        <span id="getEntities" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Add notification message async:</span>
+                        <span id="addNotificationMessageAsync" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Replace notification message async:</span>
+                        <span id="replaceNotificationMessageAsync" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get All notification message async:</span>
+                        <span id="getAllNotificationMessageAsync" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Remove notification message async:</span>
+                        <span id="removeNotificationMessageAsync" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get entities by type:</span>
+                        <span id="getEntitiesByType" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get filtered entities by name:</span>
+                        <span id="getFilteredEntitiesByName" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get Regex matches:</span>
+                        <span id="getRegexMatches" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get filtered Regex Matches: </span>
+                        <span id="getFilteredRegexMatchesByName" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
 
         <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm12">
-                <h2 class="ms-font-l">Office.context.mailbox.userProfile.properties</h2>
+                <h2 class="ms-font-l">Office.context.mailbox.userProfile.</h2>
                 <div class="ms-Table">
                     <div class="ms-Table-row">
-                        <span class="ms-Table-cell" style="word-wrap:break-word;">Property</span>
-                        <span class="ms-Table-cell" style="word-wrap:break-word;">Value</span>
+                        <span class="ms-Table-cell" style="word-wrap:break-word;">API Name </span>
+                        <span class="ms-Table-cell" style="word-wrap:break-word;">Result</span>
                     </div>
                     <div class="ms-Table-row">
                         <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get Display name:</span>
@@ -816,6 +745,48 @@
                 </div>
             </div>
         </div>
+        <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm12">
+                <h2 class="ms-font-l">1.5 API Test</h2>
+                <div class="ms-Table">
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell" style="word-wrap:break-word;">API Name</span>
+                        <span class="ms-Table-cell" style="word-wrap:break-word;">Result</span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get REST url</span>
+                        <span id="getRestUrl" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get callback token isrest</span>
+                        <span id="getCallbackTokenIsRest" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Close Container</span>
+                        <span id="closeContainer" class="ms-Table-cell" style="word-wrap:break-word;"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">inline image - display reply form</span>
+                        <span id="inlineImageDisplayReplyForm" class="ms-Table-cell" style="word-wrap:break-word;">Validate Manually</span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">inline image - display reply All form</span>
+                        <span id="inlineImageDisplayReplyAllForm" class="ms-Table-cell" style="word-wrap:break-word;">Validate Manually</span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Verify callback token Manually</span>
+                        <span id="verifyGetCallBackTokenIsRest" class="ms-Table-cell" style="word-wrap:break-word;">Use other Webservice</span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
    

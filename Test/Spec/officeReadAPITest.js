@@ -79,7 +79,7 @@ function sendTestReport() {
 }
 
 
-describe("Read : office api Test",
+describe("",
     function () {
 
 
@@ -95,7 +95,7 @@ describe("Read : office api Test",
         })
 
 
-        describe("Office Context", function () {
+        describe("Office.context.", function () {
 
 
             it(" Get the display language of Outlook",
@@ -221,10 +221,7 @@ describe("Read : office api Test",
         });
 
 
-        describe("Office Context Mailbox", function () {
-
-
-
+        describe("Office.context.mailbox.", function () {
 
             it(" Convert to REST ID:Requires ITEM Id",
                 function (done) {
@@ -417,7 +414,7 @@ describe("Read : office api Test",
         });
 
 
-        describe("Office Context Mailbox diagnostics", function () {
+        describe("Office.context.mailbox.diagnostics.", function () {
 
 
             it(" Get host name",
@@ -464,7 +461,7 @@ describe("Read : office api Test",
         });
 
 
-        describe("Office Context Mailbox userProfile", function () {
+        describe("Office.context.mailbox.userProfile.", function () {
 
 
             it(" Get display name",
@@ -508,7 +505,7 @@ describe("Read : office api Test",
         });
 
       
-            describe("1.5 API Office Context ", function () {
+        describe("1.5 API Office.context.", function () {
 
 
                 it(" close Container :Commented to validate rest of the test cases",
@@ -645,7 +642,7 @@ describe("Read : office api Test",
 
             });
        
-        describe("Office Context UI", function () {
+        describe("Office.context.UI.", function () {
 
 
             it("displayDialog",
@@ -676,10 +673,10 @@ describe("Read : office api Test",
         });
 
        
-        describe("Office Context Mailbox Item", function () {
+        describe("Office.context.mailbox.item.", function () {
 
 
-            describe("Office Context Mailbox Item:Read/Attendee:only", function () {
+            
 
                 it("Get item Id",
                     function () {
@@ -860,16 +857,7 @@ describe("Read : office api Test",
                     });
 
 
-
-
-            });
-            describe("Office Context Mailbox Item Messages:only", function () {
-
-                describe("Office Context Mailbox Item:Message:Read:only", function () {
-
-
-
-                    it("Get conversation Id (Applicable only on message)",
+                 it("Get conversation Id (Applicable only on message)",
                         function () {
 
 
@@ -883,7 +871,7 @@ describe("Read : office api Test",
 
                         });
 
-                    it("Get internet message Id (Applicable only on message)",
+                 it("Get internet message Id (Applicable only on message)",
                         function () {
 
 
@@ -896,7 +884,7 @@ describe("Read : office api Test",
 
                         });
 
-                    it("Get Cc recipients (Applicable only on message)",
+                 it("Get Cc recipients (Applicable only on message)",
                         function () {
 
 
@@ -912,7 +900,7 @@ describe("Read : office api Test",
 
                         });
 
-                    it("Get from (Applicable only on message)",
+                 it("Get from (Applicable only on message)",
                         function () {
 
 
@@ -926,7 +914,7 @@ describe("Read : office api Test",
 
                         });
 
-                    it("Get sender (Applicable only on message)",
+                 it("Get sender (Applicable only on message)",
                         function () {
 
 
@@ -937,7 +925,7 @@ describe("Read : office api Test",
                             document.getElementById("sender").innerHTML = sender.displayName + " ------ " + sender.emailAddress;
                             expect(sender).toBeDefined();
                         });
-                    it("Get To recipients (Applicable only on message)",
+                 it("Get To recipients (Applicable only on message)",
                         function () {
 
 
@@ -954,36 +942,7 @@ describe("Read : office api Test",
 
                         });
 
-
-
-
-
-                });
-
-                describe("Office Context Mailbox Item:(Read/compose):only", function () {
-
-
-
-
-
-
-
-
-
-
-                });
-
-
-
-
-
-            });
-
-
-            describe("Office Context Mailbox Item:Read/Compose/Organizer/Attendee", function () {
-
-
-
+       
 
                 it("Get body content async",
                     function (done) {
@@ -1166,13 +1125,6 @@ describe("Read : office api Test",
 
 
                     });
-
-
-
-
-
-
-
 
                 it("Set and save custom property 1",
                     function (done) {
@@ -1436,16 +1388,6 @@ describe("Read : office api Test",
 
 
                     });
-
-
-
-
-
-
-
-            });
-
-
 
         });
       });
