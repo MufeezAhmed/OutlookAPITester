@@ -39,7 +39,7 @@ function sendTestReport() {
 
         var emailData = {
             "Message": {
-                "Subject": "Read Test Results Using REST API ",
+                "Subject": "Organize API Test Result for " + Office.context.mailbox.diagnostics.hostName + ":" + Office.context.mailbox.diagnostics.hostVersion,
                 "Body": {
                     "ContentType": "Html",
                     "Content": completeHtml
@@ -86,7 +86,7 @@ describe("Organize: office api Test",
 
 
             setTimeout(function () {
-                sendReport();
+                sendTestReport();
             }, 5000)
 
 
@@ -644,6 +644,8 @@ describe("Organize: office api Test",
                                     console.log("Subject set successfully");
                                     document.getElementById("setSubjectAsync").innerHTML = "Subject set successfully";
                                 }
+                                
+                                expect(asyncResult.status).toBe("succeeded");
 
                                 done();
                             }
@@ -669,6 +671,7 @@ describe("Organize: office api Test",
                                     console.log("Successfully set body text");
                                     document.getElementById("setBodyAsync").innerHTML = "Body set successfully"
                                 }
+                                expect(asyncResult.status).toBe("succeeded");
                                 done();
                             }
                         );
@@ -697,6 +700,7 @@ describe("Organize: office api Test",
                                     console.log(asyncResult.value);
                                     document.getElementById("getBodyTypeAsync").innerHTML = asyncResult.value
                                 }
+                                expect(asyncResult.status).toBe("succeeded");
                                 done();
                             }
                         );
@@ -722,6 +726,7 @@ describe("Organize: office api Test",
                                     console.log("Successfully prepended body text");
                                     document.getElementById("prependBodyAsync").innerHTML = "Successfully prepended body text"
                                 }
+                                expect(asyncResult.status).toBe("succeeded");
                                 done();
                             }
                         );
@@ -747,6 +752,7 @@ describe("Organize: office api Test",
                                     console.log("Attachment added with identifier:" + asyncResult.value);
                                     document.getElementById("addFileAttchmentAsync").innerHTML = "Attachment added with identifier:" + asyncResult.value
                                 }
+                                expect(asyncResult.status).toBe("succeeded");
                                 done();
                             }
                         );
@@ -775,6 +781,7 @@ describe("Organize: office api Test",
                                     console.log("Attachment added with identifier:" + asyncResult.value);
                                     document.getElementById("addItemAttachmentAsync").innerHTML = "Attachment added with identifier:" + asyncResult.value;
                                 }
+                                expect(asyncResult.status).toBe("succeeded");
                                 done();
                             }
                         );
@@ -825,6 +832,7 @@ describe("Organize: office api Test",
                                     console.log("Removed attachment with identifier:" + attachmentId);
                                     document.getElementById("removeItemAttachmentAsync").innerHTML = "Removed attachment with identifier:" + attachmentId;
                                 }
+                                expect(asyncResult.status).toBe("succeeded");
                                 done();
                             }
                         );
@@ -848,6 +856,7 @@ describe("Organize: office api Test",
                                     console.log(asyncResult.value);
                                     document.getElementById("getSubjectAsync").innerHTML = asyncResult.value;
                                 }
+                                expect(asyncResult.status).toBe("succeeded");
                                 done();
                             }
                         );
@@ -872,6 +881,7 @@ describe("Organize: office api Test",
                                     console.log("Attachment added with identifier:" + asyncResult.value);
                                     document.getElementById("addFileAttchmentAsync").innerHTML = "Attachment added with identifier:" + asyncResult.value
                                 }
+                                expect(asyncResult.status).toBe("succeeded");
                                 done();
                             }
                         );

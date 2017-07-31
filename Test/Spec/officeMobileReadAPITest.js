@@ -39,7 +39,7 @@ function sendTestReport() {
 
         var emailData = {
             "Message": {
-                "Subject": "Read Test Results Using REST API ",
+                "Subject": "Mobile Read API Test Result for " + Office.context.mailbox.diagnostics.hostName + ":" + Office.context.mailbox.diagnostics.hostVersion,
                 "Body": {
                     "ContentType": "Html",
                     "Content": completeHtml
@@ -86,7 +86,7 @@ describe("Mobile Read : office api Test",
 
 
             setTimeout(function () {
-                sendReport();
+                sendTestReport();
             }, 5000)
 
 
