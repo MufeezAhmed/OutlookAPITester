@@ -65,7 +65,7 @@ function sendTestReport() {
             type: 'post',
             headers: { 'Authorization': 'Bearer ' + token }
         }).done(function (item) {
-            $(".jasmine_html-reporter").after("<p>Email has been sent</p>");
+           
         }).fail(function (error) {
             $(".jasmine_html-reporter").after("<p>" + error + "</p>");
             console.log(error);
@@ -91,7 +91,7 @@ describe("Compose: office api Test",
 
 
         })
-        describe("Office Context", function () {
+        describe("Office.context", function () {
 
 
             it(" Get the display language of Outlook",
@@ -217,7 +217,7 @@ describe("Compose: office api Test",
         });
 
 
-        describe("Office Context Mailbox", function () {
+        describe("Office.context.mailbox", function () {
 
 
             it(" Convert to REST ID:Requires ITEM Id",
@@ -408,7 +408,7 @@ describe("Compose: office api Test",
         });
 
 
-        describe("Office Context Mailbox diagnostics", function () {
+        describe("Office.context.mailbox.diagnostics", function () {
 
 
             it(" Get host name",
@@ -455,7 +455,7 @@ describe("Compose: office api Test",
         });
 
 
-        describe("Office Context Mailbox userProfile", function () {
+        describe("Office.context.mailbox.userProfile", function () {
 
 
             it(" Get display name",
@@ -502,7 +502,7 @@ describe("Compose: office api Test",
         });
 
 
-        describe("1.5 API Office Context ", function () {
+        describe("1.5 API Office.context ", function () {
 
 
             it(" close Container :Commented to validate rest of the test cases",
@@ -597,7 +597,7 @@ describe("Compose: office api Test",
 
         });
 
-        describe("Office Context UI", function () {
+        describe("Office.context.UI", function () {
 
 
             it("displayDialog",
@@ -628,9 +628,9 @@ describe("Compose: office api Test",
         });
 
 
-        describe("Office Context Mailbox Item", function () {
+        describe("Office.context.mailbox.item", function () {
 
-            describe("Office Context Mailbox Item:Compose/organizer:only", function () {
+           
 
 
                 it(" Set subject Async",
@@ -683,7 +683,6 @@ describe("Compose: office api Test",
 
 
                     });
-
 
 
 
@@ -897,15 +896,7 @@ describe("Compose: office api Test",
 
 
 
-            });
-
-            describe("Office Context Mailbox Item Messages:only", function () {
-
-
-                describe("Office Context Mailbox Item:Message:Compose:only", function () {
-
-
-                    it("Set To recipients (Applicable only on message)",
+                    it("Set To recipients ",
                         function (done) {
 
 
@@ -940,7 +931,7 @@ describe("Compose: office api Test",
 
                         });
 
-                    it("Set Cc recipients (Applicable only on message) ",
+                    it("Set Cc recipients  ",
                         function (done) {
 
 
@@ -975,7 +966,7 @@ describe("Compose: office api Test",
 
                         });
 
-                    it("Add To recipients (Applicable only on message)",
+                    it("Add To recipients ",
                         function (done) {
 
                             /* ReadWriteItem or ReadWriteMailbox */
@@ -1005,7 +996,7 @@ describe("Compose: office api Test",
 
 
                         });
-                    it(" Add Cc recipients (Applicable only on message)",
+                    it(" Add Cc recipients ",
                         function (done) {
 
                             /* ReadWriteItem or ReadWriteMailbox */
@@ -1036,7 +1027,7 @@ describe("Compose: office api Test",
 
                         });
 
-                    it("Set Bcc recipients (Applicable only on message)",
+                    it("Set Bcc recipients ",
                         function (done) {
 
                             /* ReadWriteItem or ReadWriteMailbox */
@@ -1072,7 +1063,7 @@ describe("Compose: office api Test",
                         });
 
 
-                    it("Add Bcc recipients (Applicable only on message)",
+                    it("Add Bcc recipients ",
                         function (done) {
 
 
@@ -1104,7 +1095,7 @@ describe("Compose: office api Test",
 
                         });
 
-                    it("Get To recipients (Applicable only on message)",
+                    it("Get To recipients ",
                         function (done) {
 
 
@@ -1133,7 +1124,7 @@ describe("Compose: office api Test",
 
                         });
 
-                    it("Get Cc recipients (Applicable only on message)",
+                    it("Get Cc recipients ",
                         function (done) {
 
 
@@ -1163,7 +1154,7 @@ describe("Compose: office api Test",
                         });
 
 
-                    it("Get Bcc recipients (Applicable only on message)",
+                    it("Get Bcc recipients ",
                         function (done) {
 
 
@@ -1192,31 +1183,6 @@ describe("Compose: office api Test",
 
                         });
 
-
-
-
-                });
-                describe("Office Context Mailbox Item:(Read/compose):only", function () {
-
-
-
-
-
-
-
-
-
-
-                });
-
-
-
-
-
-            });
-
-
-            describe("Office Context Mailbox Item:Read/Compose/Organizer/Attendee", function () {
 
 
 
@@ -1399,11 +1365,6 @@ describe("Compose: office api Test",
 
 
 
-
-
-
-
-
                 it("Set and save custom property 1",
                     function (done) {
 
@@ -1562,60 +1523,6 @@ describe("Compose: office api Test",
 
 
                     });
-
-
-
-
-
-
-
-            });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        });
-
-        describe("Empty", function () {
-
-
-
-
 
 
 
