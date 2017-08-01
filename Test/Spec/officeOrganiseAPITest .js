@@ -772,7 +772,7 @@ describe("",
                         /* ReadWriteItem or ReadWriteMailbox */
                         /* Add item attachment */
                         // Item ID of a mail item
-                        var itemId = "AAMkADhlODgyMjQ3LTY0OTEtNDVhNy1hMjE4LTRiNWViODdjNzM1OQBGAAAAAADTm/rlU8XIRYZy3kXeC31hBwATCz0JAbtBSrpwxQVbcRSjAAADfWGhAAATCz0JAbtBSrpwxQVbcRSjAAAGtCG2AAA=";
+                        var itemId = "AAMkAGZiZjc1Y2RkLTczNjktNGU1YS1hYTkzLTYzZTU3OTE5OWQ3NABGAAAAAAC3Bc26XexrR4XknrAwz6j9BwBDfaKHIE1iQJlAjLUe7EC6AACETLAsAABDfaKHIE1iQJlAjLUe7EC6AACETMpYAAA=";
                         Office.context.mailbox.item.addItemAttachmentAsync(itemId, "myitemattachment",
                             function callback(asyncResult) {
                                 if (asyncResult.status == "failed") {
