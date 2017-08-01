@@ -91,7 +91,7 @@ describe("",
 
 
         })
-        describe("Office Context", function () {
+        describe("Office.context.", function () {
 
 
             it(" Get the display language of Outlook",
@@ -217,7 +217,7 @@ describe("",
         });
 
 
-        describe("Office Context Mailbox", function () {
+        describe("Office.context.mailbox", function () {
 
 
           
@@ -413,7 +413,7 @@ describe("",
         });
 
 
-        describe("Office Context Mailbox diagnostics", function () {
+        describe("Office.context.mailbox.diagnostics", function () {
 
 
             it(" Get host name",
@@ -460,7 +460,7 @@ describe("",
         });
 
 
-        describe("Office Context Mailbox userProfile", function () {
+        describe("Office.context.mailbox.userProfile", function () {
 
 
             it(" Get display name",
@@ -504,7 +504,7 @@ describe("",
         });
 
 
-        describe("1.5 API Office Context ", function () {
+        describe("1.5 API Office.context ", function () {
 
 
             it(" close Container :Commented to validate rest of the test cases",
@@ -643,7 +643,7 @@ describe("",
 
         });
 
-        describe("Office Context UI", function () {
+        describe("Office.context.UI", function () {
 
 
             it("displayDialog",
@@ -674,7 +674,7 @@ describe("",
         });
 
 
-        describe("Office Context Mailbox Item", function () {
+        describe("Office.context.mailbox.Item", function () {
 
          
         
