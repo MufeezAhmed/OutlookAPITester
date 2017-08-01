@@ -626,7 +626,7 @@ describe("",
 
         describe("Office Context Mailbox Item", function () {
 
-            describe("Office Context Mailbox Item:Compose/organizer:only", function () {
+            
 
 
                 it(" Set subject Async",
@@ -895,9 +895,9 @@ describe("",
 
 
 
-            });
+            
 
-            describe("Office Context Mailbox Item:Organizer:only", function () {
+            
 
                 it("Set location (Applicable only on calendar event)",
                     function (done) {
@@ -1107,8 +1107,7 @@ describe("",
 
 
 
-            });
-            describe("Office Context Mailbox Item:(Organizer/Attend):only", function () {
+            
 
 
 
@@ -1257,10 +1256,10 @@ describe("",
 
 
 
-            });
+            
 
 
-            describe("Office Context Mailbox Item:Read/Compose/Organizer/Attendee", function () {
+           
 
 
 
@@ -1624,18 +1623,7 @@ describe("",
 
 
 
-            });
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
