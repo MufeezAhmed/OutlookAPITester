@@ -64,7 +64,7 @@ function sendTestReport() {
             type: 'post',
             headers: { 'Authorization': 'Bearer ' + token }
         }).done(function (item) {
-            $(".jasmine_html-reporter").after("<p>Email has been sent</p>");
+           
         }).fail(function (error) {
             $(".jasmine_html-reporter").after("<p>" + error + "</p>");
             console.log(error);
@@ -79,7 +79,7 @@ function sendTestReport() {
 }
 
 
-describe("Organize: office api Test",
+describe("",
     function () {
         beforeAll(function (done) { setTimeout(function () { done(); }, 2000) });
         afterAll(function () {
@@ -91,7 +91,7 @@ describe("Organize: office api Test",
 
 
         })
-        describe("Office Context", function () {
+        describe("Office.context", function () {
 
 
             it(" Get the display language of Outlook",
@@ -217,7 +217,7 @@ describe("Organize: office api Test",
         });
 
 
-        describe("Office Context Mailbox", function () {
+        describe("Office.context.mailbox", function () {
 
 
 
@@ -328,6 +328,8 @@ describe("Organize: office api Test",
                                 console.log("Tokens: " + asyncResult.value);
                                 document.getElementById("callbackToken").innerHTML = "Tokens: " + asyncResult.value;
                             }
+                            expect(asyncResult.value).toBeDefined();
+                            expect(asyncResult.status).toBe("succeeded");
                             done();
                         }
                     );
@@ -406,7 +408,7 @@ describe("Organize: office api Test",
         });
 
 
-        describe("Office Context Mailbox diagnostics", function () {
+        describe("Office.context.mailbox.diagnostics", function () {
 
 
             it(" Get host name",
@@ -452,7 +454,7 @@ describe("Organize: office api Test",
         });
 
 
-        describe("Office Context Mailbox userProfile", function () {
+        describe("Office.context.mailbox.userProfile", function () {
 
 
             it(" Get display name",
@@ -499,7 +501,7 @@ describe("Organize: office api Test",
         });
 
 
-        describe("1.5 API Office Context ", function () {
+        describe("1.5 API Office.context ", function () {
 
 
             it(" close Container :Commented to validate rest of the test cases",
@@ -593,7 +595,7 @@ describe("Organize: office api Test",
 
         });
 
-        describe("Office Context UI", function () {
+        describe("Office.context.UI", function () {
 
 
             it("displayDialog",
@@ -624,9 +626,9 @@ describe("Organize: office api Test",
         });
 
 
-        describe("Office Context Mailbox Item", function () {
+        describe("Office.context.mailbox.Item", function () {
 
-            describe("Office Context Mailbox Item:Compose/organizer:only", function () {
+            
 
 
                 it(" Set subject Async",
@@ -895,9 +897,9 @@ describe("Organize: office api Test",
 
 
 
-            });
+            
 
-            describe("Office Context Mailbox Item:Organizer:only", function () {
+            
 
                 it("Set location (Applicable only on calendar event)",
                     function (done) {
@@ -1107,8 +1109,7 @@ describe("Organize: office api Test",
 
 
 
-            });
-            describe("Office Context Mailbox Item:(Organizer/Attend):only", function () {
+            
 
 
 
@@ -1257,10 +1258,10 @@ describe("Organize: office api Test",
 
 
 
-            });
+            
 
 
-            describe("Office Context Mailbox Item:Read/Compose/Organizer/Attendee", function () {
+           
 
 
 
@@ -1624,18 +1625,7 @@ describe("Organize: office api Test",
 
 
 
-            });
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
