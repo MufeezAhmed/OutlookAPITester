@@ -677,7 +677,7 @@ describe("",
         describe("Office Context Mailbox Item", function () {
 
          
-            describe("Office Context Mailbox Item:Read/Attendee:only", function () {
+        
 
                 it("Get item Id",
                     function () {
@@ -861,11 +861,8 @@ describe("",
 
 
 
-            });
-          
-            describe("Office Context Mailbox Item Calendra:only", function () {
-
-                describe("Office Context Mailbox Item:Attendee:only", function () {
+            
+       
 
 
                     it("Get end time(Applicable only on calendar event)",
@@ -977,16 +974,16 @@ describe("",
                         });
 
 
-                });
+                
              
                
 
 
 
 
-            });
+            
 
-            describe("Office Context Mailbox Item:Read/Compose/Organizer/Attendee", function () {
+            
 
 
 
@@ -1449,7 +1446,7 @@ describe("",
 
 
 
-            });
+            
 
 
 
@@ -1483,16 +1480,7 @@ describe("",
 
         });
 
-        describe("Empty", function () {
-
-
-
-
-
-
-
-
-        });
+        
 
 
 
