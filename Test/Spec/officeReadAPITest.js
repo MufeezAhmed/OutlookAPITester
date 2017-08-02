@@ -941,7 +941,7 @@ describe("",
                             var sender = Office.context.mailbox.item.sender;
                             console.log(sender.displayName + " (" + sender.emailAddress + ");");
                             document.getElementById("sender").innerHTML = sender.displayName + " ------ " + sender.emailAddress;
-                            expect(sender).toBeDefined("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) ---- v-mufahm@microsoft.com  ");
+                            expect(sender).toBe("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) ---- v-mufahm@microsoft.com  ");
                             expect(sender).toBeDefined();
                         });
                  it("Get To recipients (Applicable only on message)",
