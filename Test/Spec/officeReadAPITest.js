@@ -223,7 +223,7 @@ describe("",
 
         describe("Office.context.mailbox.", function () {
 
-            it(" Convert to REST ID:Requires ITEM Id",
+            it(" Convert to REST ID:Requires item Id",
                 function (done) {
 
                     /* Restricted or ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -438,6 +438,7 @@ describe("",
                     console.log(Office.context.mailbox.diagnostics.hostVersion);
                     document.getElementById("hostVersion").innerHTML = Office.context.mailbox.diagnostics.hostVersion;
                     expect(Office.context.mailbox.diagnostics.hostVersion).toBeDefined();
+                    
                 });
 
 
@@ -473,6 +474,8 @@ describe("",
                     console.log(Office.context.mailbox.userProfile.displayName);
                     document.getElementById("displayName").innerHTML = dispalyNameOfUser;
                     expect(dispalyNameOfUser).toBeDefined();
+                    expect(dispalyNameOfUser).toBe("Allan Deyoung");
+
                 });
 
             it(" Get email address",
@@ -485,6 +488,7 @@ describe("",
                     console.log(Office.context.mailbox.userProfile.emailAddress);
                     document.getElementById("emailAddress").innerHTML = emailAddressOfUser;
                     expect(emailAddressOfUser).toBeDefined();
+                     expect(emailAddressOfUser).toBe("mactest3@mod321281.onmicrosoft.com");
                 });
 
 
@@ -496,6 +500,8 @@ describe("",
                     console.log(Office.context.mailbox.userProfile.timeZone);
                     document.getElementById("timeZone").innerHTML = timeZone;
                     expect(timeZone).toBeDefined();
+                    expect(timeZone).toBe("India Standard Time");
+
 
                 });
 
@@ -531,6 +537,8 @@ describe("",
                         console.log(Office.context.mailbox.restUrl);
                         document.getElementById("getRestUrl").innerHTML = Office.context.mailbox.restUrl;
                         expect(Office.context.mailbox.restUrl).toBeDefined();
+                        expect(Office.context.mailbox.restUrl).toBe("https://outlook.office.com/api");
+
                     });
 
 
@@ -686,6 +694,7 @@ describe("",
                         console.log(Office.context.mailbox.item.itemId);
                         document.getElementById("itemId").innerHTML = Office.context.mailbox.item.itemId;
                         expect(Office.context.mailbox.item.itemId).toBeDefined();
+                        expect(Office.context.mailbox.item.itemId).toBe("AAMkAGZiZjc1Y2RkLTczNjktNGU1YS1hYTkzLTYzZTU3OTE5OWQ3NABGAAAAAAC3Bc26XexrR4XknrAwz6j9BwBDfaKHIE1iQJlAjLUe7EC6AACETLArAABDfaKHIE1iQJlAjLUe7EC6AACETMglAAA=");
 
 
 
@@ -698,6 +707,7 @@ describe("",
                         console.log(Office.context.mailbox.item.itemClass);
                         document.getElementById("itemClass").innerHTML = Office.context.mailbox.item.itemClass;
                         expect(Office.context.mailbox.item.itemClass).toBeDefined();
+                        expect(Office.context.mailbox.item.itemClass).toBe("IPM.Note");
 
 
 
@@ -722,6 +732,7 @@ describe("",
                         document.getElementById("attachments").innerHTML = outputString;
                         console.log(outputString);
                         expect(outputString).toBeDefined();
+                        expect(outputString).toBe("0. Name: squirrel.png ID: AAMkAGZiZjc1Y2RkLTczNjktNGU1YS1hYTkzLTYzZTU3OTE5OWQ3NABGAAAAAAC3Bc26XexrR4XknrAwz6j9BwBDfaKHIE1iQJlAjLUe7EC6AACETLArAABDfaKHIE1iQJlAjLUe7EC6AACETMglAAABEgAQAAd/jGv3JBNMpJxorEaMAQg= contentType: image/png size: 42135 attachmentType: file isInline: false 1. Name: squirrel.png ID: AAMkAGZiZjc1Y2RkLTczNjktNGU1YS1hYTkzLTYzZTU3OTE5OWQ3NABGAAAAAAC3Bc26XexrR4XknrAwz6j9BwBDfaKHIE1iQJlAjLUe7EC6AACETLArAABDfaKHIE1iQJlAjLUe7EC6AACETMglAAABEgAQABIgecGwmKFDgK9WmRfiGbs= contentType: image/png size: 42135 attachmentType: file isInline: false");
                     });
 
                 it("Get date time created",
@@ -733,6 +744,7 @@ describe("",
                         console.log(Office.context.mailbox.item.dateTimeCreated);
                         document.getElementById("dateTimeCreated").innerHTML = Office.context.mailbox.item.dateTimeCreated;
                         expect(Office.context.mailbox.item.dateTimeCreated).toBeDefined();
+                        expect(Office.context.mailbox.item.dateTimeCreated).toBe("Tue Jul 25 2017 21:51:46 GMT+0530 (IST)");
 
 
                     });
@@ -746,6 +758,8 @@ describe("",
                         console.log(Office.context.mailbox.item.dateTimeModified);
                         document.getElementById("dateTimeModified").innerHTML = Office.context.mailbox.item.dateTimeModified;
                         expect(Office.context.mailbox.item.dateTimeModified).toBeDefined();
+                        expect(Office.context.mailbox.item.dateTimeModified).toBe("Fri Jul 28 2017 16:52:03 GMT+0530 (IST)");
+
 
 
 
@@ -760,6 +774,7 @@ describe("",
                         console.log(Office.context.mailbox.item.normalizedSubject);
                         document.getElementById("normalizedSubject").innerHTML = Office.context.mailbox.item.normalizedSubject;
                         expect(Office.context.mailbox.item.normalizedSubject).toBeDefined();
+                        expect(Office.context.mailbox.item.normalizedSubject).toBe("Test Email for Outlook Entensibilty Test");
 
 
                     });
@@ -865,7 +880,8 @@ describe("",
                             /* Get conversation Id (Applicable only on message) */
                             console.log(Office.context.mailbox.item.conversationId);
                             document.getElementById("conversationId").innerHTML = Office.context.mailbox.item.conversationId;
-                            expect(Office.context.mailbox.item.conversationId).not.toBeNull();
+                            expect(Office.context.mailbox.item.conversationId).toBeDefined();
+                             expect(Office.context.mailbox.item.conversationId).toBeDefined("AAQkAGZiZjc1Y2RkLTczNjktNGU1YS1hYTkzLTYzZTU3OTE5OWQ3NAAQAIBzvxP2lndLl8RpbgD18kY=");
 
 
 
@@ -896,6 +912,7 @@ describe("",
                             });
                             console.log(recipients);
                             document.getElementById("ccRecipients").innerHTML = recipients;
+                            expect(recipients).toBe("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) (v-mufahm@microsoft.com);Kallu Sushma (ksushma@microsoft.com);Deepak Agrawal (deagrawa@microsoft.com);");
                             expect(recipients).toBeDefined();
 
                         });
