@@ -521,7 +521,7 @@ describe("",
                         /* close Container */
                         // Office.context.ui.closeContainer()//;
                         document.getElementById("closeContainer").innerHTML = "Use Read Test Addin ";
-                        expect(true).toBe(true);
+                      
                         // document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Use Read Test Addin ";
                         //document.getElementById("inlineImageDisplayReplyAllForm").innerHTML = "Use Read Test Addin ";
                     });
@@ -562,7 +562,7 @@ describe("",
                             });
                         done();
                         document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Validate Manually";
-                        expect(true).toBe(true);
+                       
                     });
 
                 it("inline image - display reply All form :Read and Attendee",
@@ -584,7 +584,7 @@ describe("",
                             });
                         done();
                         document.getElementById("inlineImageDisplayReplyAllForm").innerHTML = "Validate Manually";
-                        expect(true).toBe(true);
+                        
                     });
 
 
@@ -805,7 +805,7 @@ describe("",
 
                         );
 
-                        expect(true).toBe(true);
+                        
 
 
                     });
@@ -816,7 +816,7 @@ describe("",
                         /* ReadItem or ReadWriteItem or ReadWriteMailbox */
                         /* Display a reply all form */
                         Office.context.mailbox.item.displayReplyAllForm("hi");
-                        expect(true).toBe(true);
+                        
 
 
 
@@ -832,7 +832,7 @@ describe("",
                         // Item ID of current appointment
                         var appointmentId = "AAMkADhlODgyMjQ3LTY0OTEtNDVhNy1hMjE4LTRiNWViODdjNzM1OQBGAAAAAADTm / rlU8XIRYZy3kXeC31hBwCcdC5bK5CoQKeu8mLX6OfwAAAAAAENAACcdC5bK5CoQKeu8mLX6OfwAAAAAB9EAAA=";
                         Office.context.mailbox.displayAppointmentForm(appointmentId);
-                        expect(true).toBe(true);
+                      
                     });
 
                 it("Display message form :Applicable in Read only Mode ",
@@ -843,7 +843,7 @@ describe("",
                         // Item ID of current message
                         var messageId = "AAMkADhlODgyMjQ3LTY0OTEtNDVhNy1hMjE4LTRiNWViODdjNzM1OQBGAAAAAADTm / rlU8XIRYZy3kXeC31hBwATCz0JAbtBSrpwxQVbcRSjAAADfWGhAAATCz0JAbtBSrpwxQVbcRSjAAAGtCG2AAA=";
                         Office.context.mailbox.displayMessageForm(messageId);
-                        expect(true).toBe(true);
+                    
                     });
 
                 it("Display new appointment form:Applicable in Read Only mode  ",
@@ -867,7 +867,7 @@ describe("",
                                 body: "Hello World!"
                             });
 
-                        expect(true).toBe(true);
+                        
 
                     });
 
@@ -927,6 +927,7 @@ describe("",
                             console.log(from.displayName + " (" + from.emailAddress + ");");
                             document.getElementById("from").innerHTML = from.displayName + " ---- " + from.emailAddress;
                             expect(from).toBeDefined();
+                            expect(from).toBe("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) ---- v-mufahm@microsoft.com  ");
 
 
                         });
@@ -940,6 +941,7 @@ describe("",
                             var sender = Office.context.mailbox.item.sender;
                             console.log(sender.displayName + " (" + sender.emailAddress + ");");
                             document.getElementById("sender").innerHTML = sender.displayName + " ------ " + sender.emailAddress;
+                            expect(sender).toBeDefined("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) ---- v-mufahm@microsoft.com  ");
                             expect(sender).toBeDefined();
                         });
                  it("Get To recipients (Applicable only on message)",
@@ -954,6 +956,7 @@ describe("",
                                 document.getElementById("to").innerHTML = recipients;
                             });
                             expect(recipients).toBeDefined();
+                            expect(recipients).toBe("Allan Deyoung (mactest3@MOD321281.onmicrosoft.com);");
 
 
 
@@ -976,6 +979,7 @@ describe("",
                                 }
 
                                 expect(asyncResult.status).toBe("succeeded");
+                                expect(asyncResult.value).toBe("click here! Tester@xyz.com Click here!")
                                 done();
                             }
                         );
@@ -1000,6 +1004,7 @@ describe("",
                         console.log(Office.context.mailbox.item.itemType);
                         document.getElementById("itemType").innerHTML = Office.context.mailbox.item.itemType;
                         expect(Office.context.mailbox.item.itemType).toBeDefined();
+                        expect(Office.context.mailbox.item.itemType).toBe("message");
 
                     });
 
@@ -1215,7 +1220,7 @@ describe("",
                                             else {
                                                 console.log("Saved custom property");
                                                 document.getElementById("setAndSaveCustomProperty").innerHTML = "Saved custom property";
-                                                //expect(true).toBe(true);
+                                            
 
                                             }
 
@@ -1289,7 +1294,7 @@ describe("",
                                             else {
                                                 console.log("Saved custom property");
                                                 document.getElementById("removeAndSaveCustomProperty").innerHTML = "Saved custom property";
-                                                expect(true).toBe(true);
+                                               
 
                                             }
 
