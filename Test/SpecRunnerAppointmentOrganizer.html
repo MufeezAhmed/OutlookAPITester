@@ -399,7 +399,9 @@
 </head>
 
 <body>
-    <div id="testResults" style="display:none;word-wrap:break-word;">
+<div id="testResults" style="display:none;word-wrap:break-word;">
+
+
         <div id="content-header">
             <div class="padding">
                 <p class="ms-font-xl ms-fontColor-themeDarkAlt ms-fontWeight-semilight">Test Results</p>
@@ -408,230 +410,7 @@
 
         <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm12">
-                <h2 class="ms-font-l">Office.context.mailbox.item.</h2>
-                <div class="ms-Table">
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell">API Name:</span>
-                        <span class="ms-Table-cell">Results</span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set required attendees:</span>
-                        <span id="setRequiredAttendees" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Add required attendees:</span>
-                        <span id="addRequiredAttendees" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get required attendees:</span>
-                        <span id="getRequiredAttendees" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set optional attendees:</span>
-                        <span id="setOptionalAttendees" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Add optional attendees:</span>
-                        <span id="addOptionalAttendees" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get optional attendees:</span>
-                        <span id="getOptionalAttendees" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set location:</span>
-                        <span id="setLocation" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get location:</span>
-                        <span id="getLocation" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set end time:</span>
-                        <span id="setEndTime" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get end time:</span>
-                        <span id="getEndTime" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set start time:</span>
-                        <span id="setStartTime" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get start time:</span>
-                        <span id="getStartTime" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-
-
-                </div>
-                <h2 class="ms-font-l">Office.context.mailbox.item</h2>
-                <div class="ms-Table">
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell">API Name</span>
-                        <span class="ms-Table-cell">Results</span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set Subject:</span>
-                        <span id="setSubjectAsync" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get Subject:</span>
-                        <span id="getSubjectAsync" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set Body:</span>
-                        <span id="setBodyAsync" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get body type Async:</span>
-                        <span id="getBodyTypeAsync" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Prepend Body:</span>
-                        <span id="prependBodyAsync" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold"> Add File Attachment:</span>
-                        <span id="addFileAttchmentAsync" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Add Item Attachment:</span>
-                        <span id="addItemAttachmentAsync" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Remove attachment:</span>
-                        <span id="removeItemAttachmentAsync" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">save :</span>
-                        <span id="saveAsync" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                </div>
-                <h2 class="ms-font-l">Office.context.mailbox.item</h2>
-                <div class="ms-Table-row">
-                    <div class="ms-Table">
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell">API Name:</span>
-                            <span class="ms-Table-cell">Results</span>
-                        </div>
-
-
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Message Body:</span>
-                            <span id="messageBody" class="ms-Table-cell"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get item type:</span>
-                            <span id="itemType" class="ms-Table-cell"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set and Save Custom Property:</span>
-                            <span id="setAndSaveCustomPrpoerty" class="ms-Table-cell"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get Custom Property:</span>
-                            <span id="getCustomProperty" class="ms-Table-cell"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Remove and Save Custom property:</span>
-                            <span id="removeAndSaveCustomProperty" class="ms-Table-cell"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Add notification message async:</span>
-                            <span id="addNotificationMessageAsync" class="ms-Table-cell"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Replace notification message async:</span>
-                            <span id="replaceNotificationMessageAsync" class="ms-Table-cell"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get All notification message async:</span>
-                            <span id="getAllNotificationMessageAsync" class="ms-Table-cell"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-                        <div class="ms-Table-row">
-                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Remove notification message async:</span>
-                            <span id="removeNotificationMessageAsync" class="ms-Table-cell"></span>
-                            <span style="float:left;"><br /></span>
-                        </div>
-
-
-
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-
-        <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm12">
-                <h2 class="ms-font-l">1.5 API Test</h2>
-                <div class="ms-Table">
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell">API Name</span>
-                        <span class="ms-Table-cell">Results</span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get REST url:</span>
-                        <span id="getRestUrl" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get callback token isrest:</span>
-                        <span id="getCallbackTokenIsRest" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Close Container:</span>
-                        <span id="closeContainer" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-                    <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Verify callback token Manually:</span>
-                        <span id="verifyGetCallBackTokenIsRest" class="ms-Table-cell"></span>
-                        <span style="float:left;"><br /></span>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="ms-Grid-row">
-            <div class="ms-Grid-col ms-u-sm12">
-                <h2 class="ms-font-l">Office.context(Properties and Actions)</h2>
+                <h2 class="ms-font-l">Office.context.</h2>
                 <div class="ms-Table">
                     <div class="ms-Table-row">
                         <span class="ms-Table-cell">API Name:</span>
@@ -749,35 +528,250 @@
             </div>
         </div>
 
+        <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm12">
+                <h2 class="ms-font-l">Office.context.mailbox.item.</h2>
+                <div class="ms-Table">
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell">API Name:</span>
+                        <span class="ms-Table-cell">Results</span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set required attendees:</span>
+                        <span id="setRequiredAttendees" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Add required attendees:</span>
+                        <span id="addRequiredAttendees" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get required attendees:</span>
+                        <span id="getRequiredAttendees" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set optional attendees:</span>
+                        <span id="setOptionalAttendees" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Add optional attendees:</span>
+                        <span id="addOptionalAttendees" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get optional attendees:</span>
+                        <span id="getOptionalAttendees" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set location:</span>
+                        <span id="setLocation" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get location:</span>
+                        <span id="getLocation" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set end time:</span>
+                        <span id="setEndTime" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get end time:</span>
+                        <span id="getEndTime" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set start time:</span>
+                        <span id="setStartTime" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get start time:</span>
+                        <span id="getStartTime" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+
+
+               
+               
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set Subject:</span>
+                        <span id="setSubjectAsync" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get Subject:</span>
+                        <span id="getSubjectAsync" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set Body:</span>
+                        <span id="setBodyAsync" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get body type Async:</span>
+                        <span id="getBodyTypeAsync" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Prepend Body:</span>
+                        <span id="prependBodyAsync" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold"> Add File Attachment:</span>
+                        <span id="addFileAttchmentAsync" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Add Item Attachment:</span>
+                        <span id="addItemAttachmentAsync" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Remove attachment:</span>
+                        <span id="removeItemAttachmentAsync" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">save :</span>
+                        <span id="saveAsync" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
+                
+               
+
+
+                        <div class="ms-Table-row">
+                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Message Body:</span>
+                            <span id="messageBody" class="ms-Table-cell"></span>
+                            <span style="float:left;"><br /></span>
+                        </div>
+                        <div class="ms-Table-row">
+                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get item type:</span>
+                            <span id="itemType" class="ms-Table-cell"></span>
+                            <span style="float:left;"><br /></span>
+                        </div>
+
+                        <div class="ms-Table-row">
+                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Set and Save Custom Property:</span>
+                            <span id="setAndSaveCustomProperty" class="ms-Table-cell"></span>
+                            <span style="float:left;"><br /></span>
+                        </div>
+                        <div class="ms-Table-row">
+                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get Custom Property:</span>
+                            <span id="getCustomProperty" class="ms-Table-cell"></span>
+                            <span style="float:left;"><br /></span>
+                        </div>
+                        <div class="ms-Table-row">
+                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Remove and Save Custom property:</span>
+                            <span id="removeAndSaveCustomProperty" class="ms-Table-cell"></span>
+                            <span style="float:left;"><br /></span>
+                        </div>
+
+                        <div class="ms-Table-row">
+                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Add notification message async:</span>
+                            <span id="addNotificationMessageAsync" class="ms-Table-cell"></span>
+                            <span style="float:left;"><br /></span>
+                        </div>
+                        <div class="ms-Table-row">
+                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Replace notification message async:</span>
+                            <span id="replaceNotificationMessageAsync" class="ms-Table-cell"></span>
+                            <span style="float:left;"><br /></span>
+                        </div>
+                        <div class="ms-Table-row">
+                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get All notification message async:</span>
+                            <span id="getAllNotificationMessageAsync" class="ms-Table-cell"></span>
+                            <span style="float:left;"><br /></span>
+                        </div>
+                        <div class="ms-Table-row">
+                            <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Remove notification message async:</span>
+                            <span id="removeNotificationMessageAsync" class="ms-Table-cell"></span>
+                            <span style="float:left;"><br /></span>
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+      
+
+        <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm12">
+            <h2 class="ms-font-l">Office.context.mailbox.userProfile.</h2>
+            <div class="ms-Table">
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell">API Name</span>
+                    <span class="ms-Table-cell">Results</span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get Display name:</span>
+                    <span id="displayName" class="ms-Table-cell"></span>
+                    <span style="float:left;"><br /></span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get Email address:</span>
+                    <span id="emailAddress" class="ms-Table-cell"></span>
+                    <span style="float:left;"><br /></span>
+                </div>
+                <div class="ms-Table-row">
+                    <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get time zone:</span>
+                    <span id="timeZone" class="ms-Table-cell"></span>
+                    <span style="float:left;"><br /></span>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
 
         <div class="ms-Grid-row">
             <div class="ms-Grid-col ms-u-sm12">
-                <h2 class="ms-font-l">Office.context.mailbox.userProfile.</h2>
+                <h2 class="ms-font-l">1.5 API Test</h2>
                 <div class="ms-Table">
                     <div class="ms-Table-row">
                         <span class="ms-Table-cell">API Name</span>
                         <span class="ms-Table-cell">Results</span>
                     </div>
                     <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get Display name:</span>
-                        <span id="displayName" class="ms-Table-cell"></span>
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get REST url:</span>
+                        <span id="getRestUrl" class="ms-Table-cell"></span>
                         <span style="float:left;"><br /></span>
                     </div>
                     <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get Email address:</span>
-                        <span id="emailAddress" class="ms-Table-cell"></span>
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get callback token isrest:</span>
+                        <span id="getCallbackTokenIsRest" class="ms-Table-cell"></span>
                         <span style="float:left;"><br /></span>
                     </div>
                     <div class="ms-Table-row">
-                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Get time zone:</span>
-                        <span id="timeZone" class="ms-Table-cell"></span>
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Close Container:</span>
+                        <span id="closeContainer" class="ms-Table-cell"></span>
                         <span style="float:left;"><br /></span>
                     </div>
-
+                    <div class="ms-Table-row">
+                        <span class="ms-Table-cell ms-fontWeight-semibold" style="font-weight:bold">Verify callback token Manually:</span>
+                        <span id="verifyGetCallBackTokenIsRest" class="ms-Table-cell"></span>
+                        <span style="float:left;"><br /></span>
+                    </div>
 
                 </div>
             </div>
         </div>
+
+       
+
+        
 </div>
 
 

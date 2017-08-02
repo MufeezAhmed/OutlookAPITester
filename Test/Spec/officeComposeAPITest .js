@@ -631,7 +631,7 @@ describe("",
         describe("Office.context.mailbox.item", function () {
 
            
-
+            var attachmentIdOfAddedItem;
 
                 it(" Set subject Async",
                     function (done) {
@@ -771,7 +771,7 @@ describe("",
                         /* ReadWriteItem or ReadWriteMailbox */
                         /* Add item attachment */
                         // Item ID of a mail item
-                        var itemId = "AAMkADhlODgyMjQ3LTY0OTEtNDVhNy1hMjE4LTRiNWViODdjNzM1OQBGAAAAAADTm/rlU8XIRYZy3kXeC31hBwATCz0JAbtBSrpwxQVbcRSjAAADfWGhAAATCz0JAbtBSrpwxQVbcRSjAAAGtCG2AAA=";
+                        var itemId = "AAMkAGZiZjc1Y2RkLTczNjktNGU1YS1hYTkzLTYzZTU3OTE5OWQ3NABGAAAAAAC3Bc26XexrR4XknrAwz6j9BwBDfaKHIE1iQJlAjLUe7EC6AACETLAsAABDfaKHIE1iQJlAjLUe7EC6AACETMpYAAA=";
                         Office.context.mailbox.item.addItemAttachmentAsync(itemId, "myitemattachment",
                             function callback(asyncResult) {
                                 if (asyncResult.status == "failed") {
@@ -787,7 +787,22 @@ describe("",
                             }
                         );
 
+                        Office.context.mailbox.item.addItemAttachmentAsync(itemId, "myitemattachment",
+                            function callback(asyncResult) {
+                                if (asyncResult.status == "failed") {
+                                    console.log("Action failed with error: " + asyncResult.error.message);
+                                    document.getElementById("addItemAttachmentAsync").innerHTML = "Subject set successfully"
 
+                                } else {
+                                    console.log("Attachment added with identifier:" + asyncResult.value);
+
+                                    attachmentIdOfAddedItem = asyncResult.value;
+                                    document.getElementById("addItemAttachmentAsync").innerHTML = "Attachment added with identifier:" + asyncResult.value;
+                                }
+                                expect(asyncResult.status).toBe("succeeded");
+                                done();
+                            }
+                        );
 
 
                     });
@@ -823,7 +838,7 @@ describe("",
                         /* ReadWriteItem or ReadWriteMailbox */
                         /* Remove attachment */
                         // identifier of an attachment
-                        var attachmentId = "0";
+                        var attachmentId = attachmentIdOfAddedItem.toString();
                         Office.context.mailbox.item.removeAttachmentAsync(attachmentId,
                             function callback(asyncResult) {
                                 if (asyncResult.status == "failed") {

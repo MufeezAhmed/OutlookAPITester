@@ -64,7 +64,7 @@ function sendTestReport() {
             type: 'post',
             headers: { 'Authorization': 'Bearer ' + token }
         }).done(function (item) {
-            $(".jasmine_html-reporter").after("<p>Email has been sent</p>");
+           
         }).fail(function (error) {
             $(".jasmine_html-reporter").after("<p>" + error + "</p>");
             console.log(error);
