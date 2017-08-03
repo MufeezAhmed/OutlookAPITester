@@ -927,7 +927,7 @@ describe("",
                             console.log(from.displayName + " (" + from.emailAddress + ");");
                             document.getElementById("from").innerHTML = from.displayName + " ---- " + from.emailAddress;
                             expect(from).toBeDefined();
-                            expect(from).toBe("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) ---- v-mufahm@microsoft.com  ");
+                            expect(from.displayName + " (" + from.emailAddress + ");").toBe("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) ---- v-mufahm@microsoft.com  ");
 
 
                         });
@@ -942,7 +942,7 @@ describe("",
                             console.log(sender.displayName + " (" + sender.emailAddress + ");");
                             document.getElementById("sender").innerHTML = sender.displayName + " ------ " + sender.emailAddress;
                             expect(sender).toBe("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) ---- v-mufahm@microsoft.com  ");
-                            expect(sender).toBeDefined();
+                            expect(sender.displayName + " (" + sender.emailAddress + ");").toBeDefined();
                         });
                  it("Get To recipients (Applicable only on message)",
                         function () {
@@ -979,7 +979,7 @@ describe("",
                                 }
 
                                 expect(asyncResult.status).toBe("succeeded");
-                                expect(asyncResult.value).toBe("click here! Tester@xyz.com Click here!")
+                                expect(asyncResult.value).toBe(" click here! Tester@xyz.com Click here! ")
                                 done();
                             }
                         );
