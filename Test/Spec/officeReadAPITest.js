@@ -927,7 +927,7 @@ describe("",
                             console.log(from.displayName + " (" + from.emailAddress + ");");
                             document.getElementById("from").innerHTML = from.displayName + " ---- " + from.emailAddress;
                             expect(from).toBeDefined();
-                            expect(from.displayName + " (" + from.emailAddress + ");").toBe("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) ---- v-mufahm@microsoft.com  ");
+                            expect(from.displayName + " (" + from.emailAddress + ");").toBe("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) ---- v-mufahm@microsoft.com);");
 
 
                         });
@@ -941,8 +941,8 @@ describe("",
                             var sender = Office.context.mailbox.item.sender;
                             console.log(sender.displayName + " (" + sender.emailAddress + ");");
                             document.getElementById("sender").innerHTML = sender.displayName + " ------ " + sender.emailAddress;
-                            expect(sender).toBe("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) ---- v-mufahm@microsoft.com  ");
-                            expect(sender.displayName + " (" + sender.emailAddress + ");").toBeDefined();
+                            expect(sender).toBeDefined();
+                            expect(sender.displayName + " (" + sender.emailAddress + ");").toBeDefined("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) ---- v-mufahm@microsoft.com);");
                         });
                  it("Get To recipients (Applicable only on message)",
                         function () {
