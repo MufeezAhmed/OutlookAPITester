@@ -732,7 +732,7 @@ describe("",
                         document.getElementById("attachments").innerHTML = outputString;
                         console.log(outputString);
                         expect(outputString).toBeDefined();
-                        expect(outputString).toBe("0. Name: squirrel.png ID: AAMkAGZiZjc1Y2RkLTczNjktNGU1YS1hYTkzLTYzZTU3OTE5OWQ3NABGAAAAAAC3Bc26XexrR4XknrAwz6j9BwBDfaKHIE1iQJlAjLUe7EC6AACETLArAABDfaKHIE1iQJlAjLUe7EC6AACETMglAAABEgAQAAd/jGv3JBNMpJxorEaMAQg= contentType: image/png size: 42135 attachmentType: file isInline: false 1. Name: squirrel.png ID: AAMkAGZiZjc1Y2RkLTczNjktNGU1YS1hYTkzLTYzZTU3OTE5OWQ3NABGAAAAAAC3Bc26XexrR4XknrAwz6j9BwBDfaKHIE1iQJlAjLUe7EC6AACETLArAABDfaKHIE1iQJlAjLUe7EC6AACETMglAAABEgAQABIgecGwmKFDgK9WmRfiGbs= contentType: image/png size: 42135 attachmentType: file isInline: false");
+                        expect(outputString).toBe("<BR>0. Name: squirrel.png<BR>ID: AAMkAGZiZjc1Y2RkLTczNjktNGU1YS1hYTkzLTYzZTU3OTE5OWQ3NABGAAAAAAC3Bc26XexrR4XknrAwz6j9BwBDfaKHIE1iQJlAjLUe7EC6AACETLArAABDfaKHIE1iQJlAjLUe7EC6AACETMglAAABEgAQAAd/jGv3JBNMpJxorEaMAQg=<BR>contentType: image/png<BR>size: 42135<BR>attachmentType: file<BR>isInline: false<BR>1. Name: squirrel.png<BR>ID: AAMkAGZiZjc1Y2RkLTczNjktNGU1YS1hYTkzLTYzZTU3OTE5OWQ3NABGAAAAAAC3Bc26XexrR4XknrAwz6j9BwBDfaKHIE1iQJlAjLUe7EC6AACETLArAABDfaKHIE1iQJlAjLUe7EC6AACETMglAAABEgAQABIgecGwmKFDgK9WmRfiGbs=<BR>contentType: image/png<BR>size: 42135<BR>attachmentType: file<BR>isInline: false");
                     });
 
                 it("Get date time created",
