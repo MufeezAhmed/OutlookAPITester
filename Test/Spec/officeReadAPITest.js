@@ -979,7 +979,7 @@ describe("",
                                 }
 
                                 expect(asyncResult.status).toBe("succeeded");
-                                expect(asyncResult.value.toString()).toBe("click here! Tester@xyz.com Click here!")
+                                expect(asyncResult.value).toBe("click here! Tester@xyz.com Click here!")
                                 done();
                             }
                         );
@@ -1106,6 +1106,7 @@ describe("",
 
                                             console.log(outputString);
                                             document.getElementById("getAllNotificationMessageAsync").innerHTML = outputString;
+                                            
                                         }
 
                                     );
@@ -1113,6 +1114,7 @@ describe("",
                                 }
 
                                 expect(asyncResult.status).toBe("succeeded");
+                                expect(asyncResult.value).toBe( [ Object({ key: 'foo', type: 'informationalMessage', message: 'this operation is complete', icon: 'icon_24' }) ])
                                 done();
                             }
                         );
