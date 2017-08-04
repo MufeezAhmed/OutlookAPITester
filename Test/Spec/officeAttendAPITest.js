@@ -91,6 +91,7 @@ describe("",
 
 
         })
+    
         describe("Office.context.", function () {
 
 
@@ -217,12 +218,9 @@ describe("",
         });
 
 
-        describe("Office.context.mailbox", function () {
+        describe("Office.context.mailbox.", function () {
 
-
-          
-
-            it(" Convert to REST ID:Requires ITEM Id",
+            it(" Convert to REST ID:Requires item Id",
                 function (done) {
 
                     /* Restricted or ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -282,7 +280,7 @@ describe("",
                         ")";
 
                     expect(localTime).toBeDefined();
-
+                   
 
                 });
 
@@ -413,7 +411,7 @@ describe("",
         });
 
 
-        describe("Office.context.mailbox.diagnostics", function () {
+        describe("Office.context.mailbox.diagnostics.", function () {
 
 
             it(" Get host name",
@@ -426,7 +424,7 @@ describe("",
                     document.getElementById("hostName").innerHTML = hostName;
                     expect(hostName).toBe("Outlook");
 
-                }); 
+                });
 
             it(" Get host version",
                 function () {
@@ -437,6 +435,7 @@ describe("",
                     console.log(Office.context.mailbox.diagnostics.hostVersion);
                     document.getElementById("hostVersion").innerHTML = Office.context.mailbox.diagnostics.hostVersion;
                     expect(Office.context.mailbox.diagnostics.hostVersion).toBeDefined();
+                    
                 });
 
 
@@ -460,7 +459,7 @@ describe("",
         });
 
 
-        describe("Office.context.mailbox.userProfile", function () {
+        describe("Office.context.mailbox.userProfile.", function () {
 
 
             it(" Get display name",
@@ -472,6 +471,8 @@ describe("",
                     console.log(Office.context.mailbox.userProfile.displayName);
                     document.getElementById("displayName").innerHTML = dispalyNameOfUser;
                     expect(dispalyNameOfUser).toBeDefined();
+                    expect(dispalyNameOfUser).toBe("Allan Deyoung");
+
                 });
 
             it(" Get email address",
@@ -484,6 +485,7 @@ describe("",
                     console.log(Office.context.mailbox.userProfile.emailAddress);
                     document.getElementById("emailAddress").innerHTML = emailAddressOfUser;
                     expect(emailAddressOfUser).toBeDefined();
+                     expect(emailAddressOfUser).toBe("mactest3@mod321281.onmicrosoft.com");
                 });
 
 
@@ -495,6 +497,8 @@ describe("",
                     console.log(Office.context.mailbox.userProfile.timeZone);
                     document.getElementById("timeZone").innerHTML = timeZone;
                     expect(timeZone).toBeDefined();
+                    expect(timeZone).toBe("India Standard Time");
+
 
                 });
 
@@ -503,150 +507,150 @@ describe("",
 
         });
 
-
-        describe("1.5 API Office.context ", function () {
-
-
-            it(" close Container :Commented to validate rest of the test cases",
-                function () {
-
-                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                    /* close Container */
-                    // Office.context.ui.closeContainer()//;
-                    document.getElementById("closeContainer").innerHTML = "Use Read Test Addin ";
-                    expect(true).toBe(true);
-                    // document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Use Read Test Addin ";
-                    //document.getElementById("inlineImageDisplayReplyAllForm").innerHTML = "Use Read Test Addin ";
-                });
-
-            it(" get rest URL",
-                function () {
+      
+        describe("1.5 API Office.context.", function () {
 
 
-                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                    /* get rest URL */
+                xit(" close Container :Commented to validate rest of the test cases",
+                    function () {
+
+                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                        /* close Container */
+                        // Office.context.ui.closeContainer()//;
+                        document.getElementById("closeContainer").innerHTML = "Use Read Test Addin ";
+                      
+                        // document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Use Read Test Addin ";
+                        //document.getElementById("inlineImageDisplayReplyAllForm").innerHTML = "Use Read Test Addin ";
+                    });
+
+                it(" get rest URL",
+                    function () {
 
 
-                    console.log(Office.context.mailbox.restUrl);
-                    document.getElementById("getRestUrl").innerHTML = Office.context.mailbox.restUrl;
-                    expect(Office.context.mailbox.restUrl).toBeDefined();
-                });
+                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                        /* get rest URL */
 
 
-            it("inline image - display reply form :Read and Attendee ",
-                function (done) {
-                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                    /* inline image - display reply form */
-                    Office.context.mailbox.item.displayReplyForm(
-                        {
-                            'htmlBody': '<img src = "cid:squirrel.png">',
-                            'attachments':
-                            [
-                                {
-                                    'type': Office.MailboxEnums.AttachmentType.File,
-                                    'name': 'squirrel.png',
-                                    'url': 'http://i.imgur.com/sRgTlGR.jpg',
-                                    'isInline': 'true'
-                                }
-                            ]
+                        console.log(Office.context.mailbox.restUrl);
+                        document.getElementById("getRestUrl").innerHTML = Office.context.mailbox.restUrl;
+                        expect(Office.context.mailbox.restUrl).toBeDefined();
+                        expect(Office.context.mailbox.restUrl).toBe("https://outlook.office.com/api");
 
-                        });
-                    document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Validate Manually";
-                    expect(true).toBe(true);
-                    done();
-                  
-                });
-
-            it("inline image - display reply All form :Read and Attendee",
-                function (done) {
-                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                    /* inline image - display reply All form */
-                    Office.context.mailbox.item.displayReplyAllForm(
-                        {
-                            'htmlBody': '<img src = "cid:squirrel.png">',
-                            'attachments':
-                            [
-                                {
-                                    'type': Office.MailboxEnums.AttachmentType.File,
-                                    'name': 'squirrel.png',
-                                    'url': 'http://i.imgur.com/sRgTlGR.jpg',
-                                    'isInline': 'true'
-                                }
-                            ]
-                        });
-                    document.getElementById("inlineImageDisplayReplyAllForm").innerHTML = "Validate Manually";
-                    expect(true).toBe(true);
-                    done();
-                  
-                });
+                    });
 
 
-            it("get callback token isrest",
-                function (done) {
-                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                    /* get callback token isrest*/
-                    var options = {
-                        isRest: true,
-                        asyncContext: { message: 'Hello World!' }
-                    };
+                xit("inline image - display reply form :Read and Attendee ",
+                    function (done) {
+                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                        /* inline image - display reply form */
+                        Office.context.mailbox.item.displayReplyForm(
+                            {
+                                'htmlBody': '<img src = "cid:squirrel.png">',
+                                'attachments':
+                                [
+                                    {
+                                        'type': Office.MailboxEnums.AttachmentType.File,
+                                        'name': 'squirrel.png',
+                                        'url': 'http://i.imgur.com/sRgTlGR.jpg',
+                                        'isInline': 'true'
+                                    }
+                                ]
 
-                    Office.context.mailbox.getCallbackTokenAsync(options, cb);
-
-
-                    function cb(asyncResult) {
-                        var token = asyncResult.value;
-                        console.log(token);
-                        expect(token).toBeDefined();
-                        document.getElementById("getCallbackTokenIsRest").innerHTML = token;
-                        expect(asyncResult.status).toBe("succeeded");
+                            });
                         done();
-                    }
+                        document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Validate Manually";
+                       
+                    });
+
+                xit("inline image - display reply All form :Read and Attendee",
+                    function (done) {
+                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                        /* inline image - display reply All form */
+                        Office.context.mailbox.item.displayReplyAllForm(
+                            {
+                                'htmlBody': '<img src = "cid:squirrel.png">',
+                                'attachments':
+                                [
+                                    {
+                                        'type': Office.MailboxEnums.AttachmentType.File,
+                                        'name': 'squirrel.png',
+                                        'url': 'http://i.imgur.com/sRgTlGR.jpg',
+                                        'isInline': 'true'
+                                    }
+                                ]
+                            });
+                        done();
+                        document.getElementById("inlineImageDisplayReplyAllForm").innerHTML = "Validate Manually";
+                        
+                    });
 
 
-
-
-                });
-
-            it("Verify get callback token isrest",
-                function (done) {
-                    var itemid = encodeURIComponent(Office.context.mailbox.item.itemId);
-                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                    /* Verify  get callback token isrest*/
-                    var options = {
-                        isRest: true,
-                        asyncContext: { message: 'Hello World!' }
-                    };
-
-                    Office.context.mailbox.getCallbackTokenAsync(options, cb);
-
-
-                    function cb(asyncResult) {
-                        var cred = encodeURIComponent(asyncResult.value);
-                        var data = "itemid=" + itemid + "&cred=" + cred;
-
-                        var myurl = "https://testservicejavarestapi.azurewebsites.net/rest/UserService/getsubject";
-                        var xhr = new XMLHttpRequest();
-                        xhr.open('POST', myurl, true);
-                        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                        xhr.onload = function () {
-                            console.log(this.responseText);
+                it("get callback token isrest",
+                    function (done) {
+                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                        /* get callback token isrest*/
+                        var options = {
+                            isRest: true,
+                            asyncContext: { message: 'Hello World!' }
                         };
-                        xhr.send(data);
-                        expect(asyncResult.status).toBe("succeeded");
-                        done();
-                    }
 
-                });
+                        Office.context.mailbox.getCallbackTokenAsync(options, cb);
 
 
+                        function cb(asyncResult) {
+                            var token = asyncResult.value;
+                            console.log(token);
+                            expect(token).toBeDefined();
+                            document.getElementById("getCallbackTokenIsRest").innerHTML = token;
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
 
 
-        });
-
-        describe("Office.context.UI", function () {
 
 
-            it("displayDialog",
+                    });
+
+                it("Verify get callback token isrest",
+                    function (done) {
+                        var itemid = encodeURIComponent(Office.context.mailbox.item.itemId);
+                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                        /* Verify  get callback token isrest*/
+                        var options = {
+                            isRest: true,
+                            asyncContext: { message: 'Hello World!' }
+                        };
+
+                        Office.context.mailbox.getCallbackTokenAsync(options, cb);
+
+
+                        function cb(asyncResult) {
+                            var cred = encodeURIComponent(asyncResult.value);
+                            var data = "itemid=" + itemid + "&cred=" + cred;
+
+                            var myurl = "https://testservicejavarestapi.azurewebsites.net/rest/UserService/getsubject";
+                            var xhr = new XMLHttpRequest();
+                            xhr.open('POST', myurl, true);
+                            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                            xhr.onload = function () {
+                                console.log(this.responseText);
+                            };
+                            xhr.send(data);
+                            done();
+                            expect(asyncResult.status).toBe("succeeded");
+                        }
+
+                    });
+
+
+
+
+            });
+       
+        xdescribe("Office.context.UI.", function () {
+
+
+            xit("displayDialog",
                 function (done) {
 
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */

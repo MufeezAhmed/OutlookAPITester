@@ -91,11 +91,12 @@ describe("",
 
 
         })
-        describe("Office.context", function () {
+       
+        describe("Office.context.", function () {
 
 
             it(" Get the display language of Outlook",
-                function (done) {
+                function () {
 
                     /* Restricted or ReadItem or ReadWriteItem or ReadWriteMailbox */
                     /* Get the display language of Outlook */
@@ -105,12 +106,12 @@ describe("",
                     document.getElementById("displayLanguage").innerHTML = Office.context.displayLanguage;
 
                     expect(displayLanguage).toBe("en-US");
-                    done();
+
 
                 });
 
             it("Get the theme of Outlook",
-                function (done) {
+                function () {
 
 
                     /* Restricted or ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -133,7 +134,7 @@ describe("",
                     expect(bodyForegroundColor).toBeDefined();
                     expect(controlBackgroundColor).toBeDefined();
                     expect(controlForegroundColor).toBeDefined();
-                    done();
+
                 });
 
 
@@ -173,14 +174,14 @@ describe("",
                 });
 
             it(" Get roaming settings",
-                function (done) {
+                function () {
                     /* Restricted or ReadItem or ReadWriteItem or ReadWriteMailbox */
                     /* Get roaming settings */
                     var settingsValue = Office.context.roamingSettings.get("myKey");
                     console.log("myKey value is " + settingsValue);
                     document.getElementById("getRoamingsetting").innerHTML = settingsValue;
                     expect(settingsValue).toBe("Hello World!");
-                    done();
+
 
                 });
 
@@ -217,11 +218,9 @@ describe("",
         });
 
 
-        describe("Office.context.mailbox", function () {
+        describe("Office.context.mailbox.", function () {
 
-
-
-            it(" Convert to REST ID:Requires ITEM Id",
+            it(" Convert to REST ID:Requires item Id",
                 function (done) {
 
                     /* Restricted or ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -257,7 +256,7 @@ describe("",
 
 
             it(" Convert to local client time",
-                function (done) {
+                function () {
 
 
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -281,7 +280,7 @@ describe("",
                         ")";
 
                     expect(localTime).toBeDefined();
-                    done();
+                   
 
                 });
 
@@ -289,7 +288,7 @@ describe("",
 
 
             it("Convert to UTC client time ",
-                function (done) {
+                function () {
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
                     /* Convert to UTC client time */
                     var localTime = Office.context.mailbox.convertToLocalClientTime(new Date());
@@ -298,12 +297,12 @@ describe("",
 
                     document.getElementById("utcClientTime").innerHTML = "UTC:" + utcClientTime;
                     expect(utcClientTime).toBeDefined();
-                    done();
+
                 });
 
 
             it("Get EWS URL",
-                function (done) {
+                function () {
 
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
                     /* Get EWS URL */
@@ -311,23 +310,27 @@ describe("",
                     console.log(Office.context.mailbox.ewsUrl);
                     document.getElementById("ewsURL").innerHTML = ewsurl;
                     expect(ewsurl).toBe("https://outlook.office365.com/EWS/Exchange.asmx");
-                    done();
                 });
 
 
             it("Get callback token async",
                 function (done) {
+
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
                     /* Get callback token async */
+
+
                     Office.context.mailbox.getCallbackTokenAsync(
                         function (asyncResult) {
+
                             if (asyncResult.status == "failed") {
                                 console.log("Action failed with error: " + asyncResult.error.message);
-                                document.getElementById("callbackToken").innerHTML = "Action failed with error: " + asyncResult.error.message;
+
                             } else {
                                 console.log("Tokens: " + asyncResult.value);
-                                document.getElementById("callbackToken").innerHTML = "Tokens: " + asyncResult.value;
+
                             }
+                            document.getElementById("callbackToken").innerHTML = asyncResult.value;
                             expect(asyncResult.value).toBeDefined();
                             expect(asyncResult.status).toBe("succeeded");
                             done();
@@ -408,11 +411,11 @@ describe("",
         });
 
 
-        describe("Office.context.mailbox.diagnostics", function () {
+        describe("Office.context.mailbox.diagnostics.", function () {
 
 
             it(" Get host name",
-                function (done) {
+                function () {
 
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
                     /* Get host name */
@@ -420,11 +423,11 @@ describe("",
                     console.log(Office.context.mailbox.diagnostics.hostName);
                     document.getElementById("hostName").innerHTML = hostName;
                     expect(hostName).toBe("Outlook");
-                    done();
+
                 });
 
             it(" Get host version",
-                function (done) {
+                function () {
 
 
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -432,8 +435,9 @@ describe("",
                     console.log(Office.context.mailbox.diagnostics.hostVersion);
                     document.getElementById("hostVersion").innerHTML = Office.context.mailbox.diagnostics.hostVersion;
                     expect(Office.context.mailbox.diagnostics.hostVersion).toBeDefined();
-                    done();
+                    
                 });
+
 
             it(" Get OWA view (only supported in OWA)",
                 function (done) {
@@ -451,14 +455,15 @@ describe("",
 
 
 
+
         });
 
 
-        describe("Office.context.mailbox.userProfile", function () {
+        describe("Office.context.mailbox.userProfile.", function () {
 
 
             it(" Get display name",
-                function (done) {
+                function () {
 
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
                     /* Get display name */
@@ -466,11 +471,12 @@ describe("",
                     console.log(Office.context.mailbox.userProfile.displayName);
                     document.getElementById("displayName").innerHTML = dispalyNameOfUser;
                     expect(dispalyNameOfUser).toBeDefined();
-                    done();
+                    expect(dispalyNameOfUser).toBe("Allan Deyoung");
+
                 });
 
             it(" Get email address",
-                function (done) {
+                function () {
 
 
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -479,19 +485,20 @@ describe("",
                     console.log(Office.context.mailbox.userProfile.emailAddress);
                     document.getElementById("emailAddress").innerHTML = emailAddressOfUser;
                     expect(emailAddressOfUser).toBeDefined();
-                    done();
+                     expect(emailAddressOfUser).toBe("mactest3@mod321281.onmicrosoft.com");
                 });
 
 
             it("Get time zone ",
-                function (done) {
+                function () {
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
                     /* Get time zone */
                     var timeZone = Office.context.mailbox.userProfile.timeZone;
                     console.log(Office.context.mailbox.userProfile.timeZone);
                     document.getElementById("timeZone").innerHTML = timeZone;
                     expect(timeZone).toBeDefined();
-                    done();
+                    expect(timeZone).toBe("India Standard Time");
+
 
                 });
 
@@ -500,105 +507,150 @@ describe("",
 
         });
 
-
-        describe("1.5 API Office.context ", function () {
-
-
-            it(" close Container :Commented to validate rest of the test cases",
-                function () {
-
-                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                    /* close Container */
-                    // Office.context.ui.closeContainer()//;
-                    document.getElementById("closeContainer").innerHTML = "Use Read Test Addin ";
-                    expect(true).toBe(true);
-                    // document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Use Read Test Addin ";
-                    //document.getElementById("inlineImageDisplayReplyAllForm").innerHTML = "Use Read Test Addin ";
-                });
-
-            it(" get rest URL",
-                function (done) {
+      
+        describe("1.5 API Office.context.", function () {
 
 
-                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                    /* get rest URL */
+                xit(" close Container :Commented to validate rest of the test cases",
+                    function () {
+
+                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                        /* close Container */
+                        // Office.context.ui.closeContainer()//;
+                        document.getElementById("closeContainer").innerHTML = "Use Read Test Addin ";
+                      
+                        // document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Use Read Test Addin ";
+                        //document.getElementById("inlineImageDisplayReplyAllForm").innerHTML = "Use Read Test Addin ";
+                    });
+
+                it(" get rest URL",
+                    function () {
 
 
-                    console.log(Office.context.mailbox.restUrl);
-                    document.getElementById("getRestUrl").innerHTML = Office.context.mailbox.restUrl;
-                    expect(Office.context.mailbox.restUrl).toBeDefined();
-                    done();
-                });
+                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                        /* get rest URL */
 
 
-           
+                        console.log(Office.context.mailbox.restUrl);
+                        document.getElementById("getRestUrl").innerHTML = Office.context.mailbox.restUrl;
+                        expect(Office.context.mailbox.restUrl).toBeDefined();
+                        expect(Office.context.mailbox.restUrl).toBe("https://outlook.office.com/api");
 
-            it("get callback token isrest",
-                function (done) {
-                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                    /* get callback token isrest*/
-                    var options = {
-                        isRest: true,
-                        asyncContext: { message: 'Hello World!' }
-                    };
-
-                    Office.context.mailbox.getCallbackTokenAsync(options, cb);
+                    });
 
 
-                    function cb(asyncResult) {
-                        var token = asyncResult.value;
-                        console.log(token);
-                        expect(token).toBeDefined();
-                        document.getElementById("getCallbackTokenIsRest").innerHTML = token;
-                        expect(asyncResult.status).toBe("succeeded");
+                xit("inline image - display reply form :Read and Attendee ",
+                    function (done) {
+                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                        /* inline image - display reply form */
+                        Office.context.mailbox.item.displayReplyForm(
+                            {
+                                'htmlBody': '<img src = "cid:squirrel.png">',
+                                'attachments':
+                                [
+                                    {
+                                        'type': Office.MailboxEnums.AttachmentType.File,
+                                        'name': 'squirrel.png',
+                                        'url': 'http://i.imgur.com/sRgTlGR.jpg',
+                                        'isInline': 'true'
+                                    }
+                                ]
+
+                            });
                         done();
-                    }
+                        document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Validate Manually";
+                       
+                    });
+
+                xit("inline image - display reply All form :Read and Attendee",
+                    function (done) {
+                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                        /* inline image - display reply All form */
+                        Office.context.mailbox.item.displayReplyAllForm(
+                            {
+                                'htmlBody': '<img src = "cid:squirrel.png">',
+                                'attachments':
+                                [
+                                    {
+                                        'type': Office.MailboxEnums.AttachmentType.File,
+                                        'name': 'squirrel.png',
+                                        'url': 'http://i.imgur.com/sRgTlGR.jpg',
+                                        'isInline': 'true'
+                                    }
+                                ]
+                            });
+                        done();
+                        document.getElementById("inlineImageDisplayReplyAllForm").innerHTML = "Validate Manually";
+                        
+                    });
 
 
-
-
-                });
-
-            it("Verify get callback token isrest",
-                function (done) {
-                    var itemid = encodeURIComponent("AAMkADhlODgyMjQ3LTY0OTEtNDVhNy1hMjE4LTRiNWViODdjNzM1OQBGAAAAAADTm / rlU8XIRYZy3kXeC31hBwATCz0JAbtBSrpwxQVbcRSjAAADfWGhAAATCz0JAbtBSrpwxQVbcRSjAAAGtCG2AAA=");
-                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                    /* Verify  get callback token isrest*/
-                    var options = {
-                        isRest: true,
-                        asyncContext: { message: 'Hello World!' }
-                    };
-
-                    Office.context.mailbox.getCallbackTokenAsync(options, cb);
-
-
-                    function cb(asyncResult) {
-                        var cred = encodeURIComponent(asyncResult.value);
-                        var data = "itemid=" + itemid + "&cred=" + cred;
-
-                        var myurl = "https://testservicejavarestapi.azurewebsites.net/rest/UserService/getsubject";
-                        var xhr = new XMLHttpRequest();
-                        xhr.open('POST', myurl, true);
-                        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                        xhr.onload = function () {
-                            console.log(this.responseText);
+                it("get callback token isrest",
+                    function (done) {
+                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                        /* get callback token isrest*/
+                        var options = {
+                            isRest: true,
+                            asyncContext: { message: 'Hello World!' }
                         };
-                        xhr.send(data);
-                        done();
-                        expect(asyncResult.status).toBe("succeeded");
-                    }
 
-                });
+                        Office.context.mailbox.getCallbackTokenAsync(options, cb);
 
 
+                        function cb(asyncResult) {
+                            var token = asyncResult.value;
+                            console.log(token);
+                            expect(token).toBeDefined();
+                            document.getElementById("getCallbackTokenIsRest").innerHTML = token;
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
 
 
-        });
-
-        describe("Office.context.UI", function () {
 
 
-            it("displayDialog",
+                    });
+
+                it("Verify get callback token isrest",
+                    function (done) {
+                        var itemid = encodeURIComponent(Office.context.mailbox.item.itemId);
+                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                        /* Verify  get callback token isrest*/
+                        var options = {
+                            isRest: true,
+                            asyncContext: { message: 'Hello World!' }
+                        };
+
+                        Office.context.mailbox.getCallbackTokenAsync(options, cb);
+
+
+                        function cb(asyncResult) {
+                            var cred = encodeURIComponent(asyncResult.value);
+                            var data = "itemid=" + itemid + "&cred=" + cred;
+
+                            var myurl = "https://testservicejavarestapi.azurewebsites.net/rest/UserService/getsubject";
+                            var xhr = new XMLHttpRequest();
+                            xhr.open('POST', myurl, true);
+                            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                            xhr.onload = function () {
+                                console.log(this.responseText);
+                            };
+                            xhr.send(data);
+                            done();
+                            expect(asyncResult.status).toBe("succeeded");
+                        }
+
+                    });
+
+
+
+
+            });
+       
+        xdescribe("Office.context.UI.", function () {
+
+
+            xit("displayDialog",
                 function (done) {
 
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
