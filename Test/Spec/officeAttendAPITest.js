@@ -769,7 +769,7 @@ describe("",
 
                     });
 
-                it("Display a reply form :Applicable in Read only Mode ",
+                xit("Display a reply form :Applicable in Read only Mode ",
                     function () {
 
 
@@ -800,7 +800,7 @@ describe("",
 
             });
 
-            it("Display a reply all form:Applicable in Read only mode ",
+            xit("Display a reply all form:Applicable in Read only mode ",
                 function () {
 
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -814,7 +814,7 @@ describe("",
                 });
 
 
-            it("Display appointment form:Applicable in Read Only mode",
+            xit("Display appointment form:Applicable in Read Only mode",
                 function () {
 
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -825,7 +825,7 @@ describe("",
                     expect(true).toBe(true);
                 });
 
-            it("Display message form :Applicable in Read only Mode ",
+            xit("Display message form :Applicable in Read only Mode ",
                 function () {
 
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -836,7 +836,7 @@ describe("",
                     expect(true).toBe(true);
                 });
 
-            it("Display new appointment form:Applicable in Read Only mode  ",
+            xit("Display new appointment form:Applicable in Read Only mode  ",
                 function () {
 
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
