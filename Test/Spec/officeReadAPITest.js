@@ -283,7 +283,7 @@ describe("",
                         ")";
 
                     expect(localTime).toBeDefined();
-
+                   
 
                 });
 
@@ -514,7 +514,7 @@ describe("",
         describe("1.5 API Office.context.", function () {
 
 
-                it(" close Container :Commented to validate rest of the test cases",
+                xit(" close Container :Commented to validate rest of the test cases",
                     function () {
 
                         /* ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -542,7 +542,7 @@ describe("",
                     });
 
 
-                it("inline image - display reply form :Read and Attendee ",
+                xit("inline image - display reply form :Read and Attendee ",
                     function (done) {
                         /* ReadItem or ReadWriteItem or ReadWriteMailbox */
                         /* inline image - display reply form */
@@ -565,7 +565,7 @@ describe("",
                        
                     });
 
-                it("inline image - display reply All form :Read and Attendee",
+                xit("inline image - display reply All form :Read and Attendee",
                     function (done) {
                         /* ReadItem or ReadWriteItem or ReadWriteMailbox */
                         /* inline image - display reply All form */
@@ -650,10 +650,10 @@ describe("",
 
             });
        
-        describe("Office.context.UI.", function () {
+        xdescribe("Office.context.UI.", function () {
 
 
-            it("displayDialog",
+            xit("displayDialog",
                 function (done) {
 
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -744,7 +744,7 @@ describe("",
                         console.log(Office.context.mailbox.item.dateTimeCreated);
                         document.getElementById("dateTimeCreated").innerHTML = Office.context.mailbox.item.dateTimeCreated;
                         expect(Office.context.mailbox.item.dateTimeCreated).toBeDefined();
-                        expect(Office.context.mailbox.item.dateTimeCreated).toBe("Tue Jul 25 2017 21:51:46 GMT+0530 (IST)");
+                        expect(Office.context.mailbox.item.dateTimeCreated.toString()).toBe("Tue Jul 25 2017 21:51:46 GMT+0530 (IST)");
 
 
                     });
@@ -758,7 +758,7 @@ describe("",
                         console.log(Office.context.mailbox.item.dateTimeModified);
                         document.getElementById("dateTimeModified").innerHTML = Office.context.mailbox.item.dateTimeModified;
                         expect(Office.context.mailbox.item.dateTimeModified).toBeDefined();
-                        expect(Office.context.mailbox.item.dateTimeModified).toBe("Fri Jul 28 2017 16:52:03 GMT+0530 (IST)");
+                        expect(Office.context.mailbox.item.dateTimeModified).toBe(new Date());
 
 
 
@@ -780,7 +780,7 @@ describe("",
                     });
 
 
-                it("Display a reply form :Applicable in Read only Mode ",
+                xit("Display a reply form :Applicable in Read only Mode ",
                     function () {
 
 
@@ -810,7 +810,7 @@ describe("",
 
                     });
 
-                it("Display a reply all form:Applicable in Read only mode ",
+                xit("Display a reply all form:Applicable in Read only mode ",
                     function () {
 
                         /* ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -824,7 +824,7 @@ describe("",
                     });
 
 
-                it("Display appointment form:Applicable in Read Only mode",
+                xit("Display appointment form:Applicable in Read Only mode",
                     function () {
 
                         /* ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -835,7 +835,7 @@ describe("",
                       
                     });
 
-                it("Display message form :Applicable in Read only Mode ",
+                xit("Display message form :Applicable in Read only Mode ",
                     function () {
 
                         /* ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -846,7 +846,7 @@ describe("",
                     
                     });
 
-                it("Display new appointment form:Applicable in Read Only mode  ",
+                xit("Display new appointment form:Applicable in Read Only mode  ",
                     function () {
 
                         /* ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -925,9 +925,9 @@ describe("",
                             /* Get from (Applicable only on message) */
                             var from = Office.context.mailbox.item.from;
                             console.log(from.displayName + " (" + from.emailAddress + ");");
-                            document.getElementById("from").innerHTML = from.displayName + " ---- " + from.emailAddress;
+                            document.getElementById("from").innerHTML = (from.displayName + " (" + from.emailAddress + ");");
                             expect(from).toBeDefined();
-                            expect(from.displayName + " (" + from.emailAddress + ");").toBe("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) ---- v-mufahm@microsoft.com);");
+                            expect(from.displayName + " (" + from.emailAddress + ");").toBe("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) (v-mufahm@microsoft.com);");
 
 
                         });
@@ -940,9 +940,9 @@ describe("",
                             /* Get sender (Applicable only on message) */
                             var sender = Office.context.mailbox.item.sender;
                             console.log(sender.displayName + " (" + sender.emailAddress + ");");
-                            document.getElementById("sender").innerHTML = sender.displayName + " ------ " + sender.emailAddress;
+                            document.getElementById("sender").innerHTML = (sender.displayName + " (" + sender.emailAddress + ");");
                             expect(sender).toBeDefined();
-                            expect(sender.displayName + " (" + sender.emailAddress + ");").toBeDefined("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) ---- v-mufahm@microsoft.com);");
+                            expect(sender.displayName + " (" + sender.emailAddress + ");").toBeDefined("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) (v-mufahm@microsoft.com);");
                         });
                  it("Get To recipients (Applicable only on message)",
                         function () {
@@ -979,7 +979,7 @@ describe("",
                                 }
 
                                 expect(asyncResult.status).toBe("succeeded");
-                                expect(asyncResult.value).toBe(" click here! Tester@xyz.com Click here! ")
+                                expect(asyncResult.value.toString()).toBe("click here! Tester@xyz.com Click here!")
                                 done();
                             }
                         );
@@ -1323,6 +1323,7 @@ describe("",
                         });
                         document.getElementById("getEntities").innerHTML = emailAddresses;
                         expect(emailAddresses).toBeDefined();
+                        expect(emailAddresses).toBe("Tester@xyz.com");
                         console.log(emailAddresses);
 
 
