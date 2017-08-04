@@ -92,7 +92,8 @@ describe("Mobile Read : office api Test",
 
         })
 
-        describe("Office Context", function () {
+     
+        describe("Office.context.", function () {
 
 
             it(" Get the display language of Outlook",
@@ -109,7 +110,6 @@ describe("Mobile Read : office api Test",
 
 
                 });
-
 
             it("Get the theme of Outlook",
                 function () {
@@ -219,10 +219,9 @@ describe("Mobile Read : office api Test",
         });
 
 
-        describe("Office Context Mailbox", function () {
+        describe("Office.context.mailbox.", function () {
 
-
-            it(" Convert to REST ID:Requires ITEM Id",
+            it(" Convert to REST ID:Requires item Id",
                 function (done) {
 
                     /* Restricted or ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -282,7 +281,7 @@ describe("Mobile Read : office api Test",
                         ")";
 
                     expect(localTime).toBeDefined();
-
+                   
 
                 });
 
@@ -413,7 +412,7 @@ describe("Mobile Read : office api Test",
         });
 
 
-        describe("Office Context Mailbox diagnostics", function () {
+        describe("Office.context.mailbox.diagnostics.", function () {
 
 
             it(" Get host name",
@@ -437,6 +436,7 @@ describe("Mobile Read : office api Test",
                     console.log(Office.context.mailbox.diagnostics.hostVersion);
                     document.getElementById("hostVersion").innerHTML = Office.context.mailbox.diagnostics.hostVersion;
                     expect(Office.context.mailbox.diagnostics.hostVersion).toBeDefined();
+                    
                 });
 
 
@@ -460,7 +460,7 @@ describe("Mobile Read : office api Test",
         });
 
 
-        describe("Office Context Mailbox userProfile", function () {
+        describe("Office.context.mailbox.userProfile.", function () {
 
 
             it(" Get display name",
@@ -472,6 +472,8 @@ describe("Mobile Read : office api Test",
                     console.log(Office.context.mailbox.userProfile.displayName);
                     document.getElementById("displayName").innerHTML = dispalyNameOfUser;
                     expect(dispalyNameOfUser).toBeDefined();
+                    expect(dispalyNameOfUser).toBe("Allan Deyoung");
+
                 });
 
             it(" Get email address",
@@ -484,6 +486,7 @@ describe("Mobile Read : office api Test",
                     console.log(Office.context.mailbox.userProfile.emailAddress);
                     document.getElementById("emailAddress").innerHTML = emailAddressOfUser;
                     expect(emailAddressOfUser).toBeDefined();
+                     expect(emailAddressOfUser).toBe("mactest3@mod321281.onmicrosoft.com");
                 });
 
 
@@ -495,6 +498,8 @@ describe("Mobile Read : office api Test",
                     console.log(Office.context.mailbox.userProfile.timeZone);
                     document.getElementById("timeZone").innerHTML = timeZone;
                     expect(timeZone).toBeDefined();
+                    expect(timeZone).toBe("India Standard Time");
+
 
                 });
 
@@ -504,17 +509,17 @@ describe("Mobile Read : office api Test",
         });
 
       
-            describe("1.5 API Office Context ", function () {
+        describe("1.5 API Office.context.", function () {
 
 
-                it(" close Container :Commented to validate rest of the test cases",
+                xit(" close Container :Commented to validate rest of the test cases",
                     function () {
 
                         /* ReadItem or ReadWriteItem or ReadWriteMailbox */
                         /* close Container */
                         // Office.context.ui.closeContainer()//;
                         document.getElementById("closeContainer").innerHTML = "Use Read Test Addin ";
-                        expect(true).toBe(true);
+                      
                         // document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Use Read Test Addin ";
                         //document.getElementById("inlineImageDisplayReplyAllForm").innerHTML = "Use Read Test Addin ";
                     });
@@ -530,10 +535,12 @@ describe("Mobile Read : office api Test",
                         console.log(Office.context.mailbox.restUrl);
                         document.getElementById("getRestUrl").innerHTML = Office.context.mailbox.restUrl;
                         expect(Office.context.mailbox.restUrl).toBeDefined();
+                        expect(Office.context.mailbox.restUrl).toBe("https://outlook.office.com/api");
+
                     });
 
 
-                it("inline image - display reply form :Read and Attendee ",
+                xit("inline image - display reply form :Read and Attendee ",
                     function (done) {
                         /* ReadItem or ReadWriteItem or ReadWriteMailbox */
                         /* inline image - display reply form */
@@ -553,10 +560,10 @@ describe("Mobile Read : office api Test",
                             });
                         done();
                         document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Validate Manually";
-                        expect(true).toBe(true);
+                       
                     });
 
-                it("inline image - display reply All form :Read and Attendee",
+                xit("inline image - display reply All form :Read and Attendee",
                     function (done) {
                         /* ReadItem or ReadWriteItem or ReadWriteMailbox */
                         /* inline image - display reply All form */
@@ -575,7 +582,7 @@ describe("Mobile Read : office api Test",
                             });
                         done();
                         document.getElementById("inlineImageDisplayReplyAllForm").innerHTML = "Validate Manually";
-                        expect(true).toBe(true);
+                        
                     });
 
 
@@ -641,10 +648,10 @@ describe("Mobile Read : office api Test",
 
             });
        
-        describe("Office Context UI", function () {
+        xdescribe("Office.context.UI.", function () {
 
 
-            it("displayDialog",
+            xit("displayDialog",
                 function (done) {
 
                     /* ReadItem or ReadWriteItem or ReadWriteMailbox */

@@ -223,7 +223,7 @@ describe("",
 
         describe("Office.context.mailbox.", function () {
 
-            it(" Convert to REST ID:Requires ITEM Id",
+            it(" Convert to REST ID:Requires item Id",
                 function (done) {
 
                     /* Restricted or ReadItem or ReadWriteItem or ReadWriteMailbox */
@@ -258,51 +258,7 @@ describe("",
                 });
 
 
-            it(" Convert to local client time",
-                function () {
-
-
-                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                    /* Convert to local client time */
-                    var localTime = Office.context.mailbox.convertToLocalClientTime(new Date());
-                    console.log("LocalTime:" + localTime.date + "/" + (localTime.month + 1) + "/" + localTime.year
-                        + " " + localTime.hours + ":" + localTime.minutes + " (+" + localTime.timezoneOffset + ")");
-
-                    document.getElementById("localClientTime").innerHTML = "LocalTime:" +
-                        localTime.date +
-                        "/" +
-                        (localTime.month + 1) +
-                        "/" +
-                        localTime.year +
-                        " " +
-                        localTime.hours +
-                        ":" +
-                        localTime.minutes +
-                        " (+" +
-                        localTime.timezoneOffset +
-                        ")";
-
-                    expect(localTime).toBeDefined();
-
-
-                });
-
-
-
-
-            it("Convert to UTC client time ",
-                function () {
-                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                    /* Convert to UTC client time */
-                    var localTime = Office.context.mailbox.convertToLocalClientTime(new Date());
-                    var utcClientTime = Office.context.mailbox.convertToUtcClientTime(localTime);
-                    console.log("UTC:" + utcClientTime);
-
-                    document.getElementById("utcClientTime").innerHTML = "UTC:" + utcClientTime;
-                    expect(utcClientTime).toBeDefined();
-
-                });
-
+          
 
             it("Get EWS URL",
                 function () {
@@ -316,57 +272,7 @@ describe("",
                 });
 
 
-            it("Get callback token async",
-                function (done) {
-
-                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                    /* Get callback token async */
-
-
-                    Office.context.mailbox.getCallbackTokenAsync(
-                        function (asyncResult) {
-
-                            if (asyncResult.status == "failed") {
-                                console.log("Action failed with error: " + asyncResult.error.message);
-
-                            } else {
-                                console.log("Tokens: " + asyncResult.value);
-
-                            }
-                            document.getElementById("callbackToken").innerHTML = asyncResult.value;
-                            expect(asyncResult.value).toBeDefined();
-                            expect(asyncResult.status).toBe("succeeded");
-                            done();
-                        }
-                    );
-
-
-
-                });
-
-            it("Get user identity token async",
-                function (done) {
-                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                    /* Get user identity token async */
-
-                    Office.context.mailbox.getUserIdentityTokenAsync(
-                        function (asyncResult) {
-                            if (asyncResult.status == "failed") {
-                                console.log("Action failed with error: " + asyncResult.error.message);
-                            } else {
-                                console.log("Tokens: " + asyncResult.value);
-
-                            }
-                            document.getElementById("userIdentityToken").innerHTML = asyncResult.value;
-                            expect(asyncResult.value).toBeDefined();
-                            expect(asyncResult.status).toBe("succeeded");
-                            done();
-
-                        }
-                    );
-
-                });
-
+      
 
             it("Make EWS Request",
                 function (done) {
@@ -429,16 +335,7 @@ describe("",
 
                 });
 
-            it(" Get host version",
-                function () {
-
-
-                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                    /* Get host version */
-                    console.log(Office.context.mailbox.diagnostics.hostVersion);
-                    document.getElementById("hostVersion").innerHTML = Office.context.mailbox.diagnostics.hostVersion;
-                    expect(Office.context.mailbox.diagnostics.hostVersion).toBeDefined();
-                });
+         
 
 
             it(" Get OWA view (only supported in OWA)",
@@ -473,6 +370,8 @@ describe("",
                     console.log(Office.context.mailbox.userProfile.displayName);
                     document.getElementById("displayName").innerHTML = dispalyNameOfUser;
                     expect(dispalyNameOfUser).toBeDefined();
+                    expect(dispalyNameOfUser).toBe("Allan Deyoung");
+
                 });
 
             it(" Get email address",
@@ -485,6 +384,7 @@ describe("",
                     console.log(Office.context.mailbox.userProfile.emailAddress);
                     document.getElementById("emailAddress").innerHTML = emailAddressOfUser;
                     expect(emailAddressOfUser).toBeDefined();
+                     expect(emailAddressOfUser).toBe("mactest3@mod321281.onmicrosoft.com");
                 });
 
 
@@ -496,6 +396,8 @@ describe("",
                     console.log(Office.context.mailbox.userProfile.timeZone);
                     document.getElementById("timeZone").innerHTML = timeZone;
                     expect(timeZone).toBeDefined();
+                    expect(timeZone).toBe("India Standard Time");
+
 
                 });
 
@@ -507,18 +409,7 @@ describe("",
       
         describe("1.5 API Office.context.", function () {
 
-
-                it(" close Container :Commented to validate rest of the test cases",
-                    function () {
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* close Container */
-                        // Office.context.ui.closeContainer()//;
-                        document.getElementById("closeContainer").innerHTML = "Use Read Test Addin ";
-                        expect(true).toBe(true);
-                        // document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Use Read Test Addin ";
-                        //document.getElementById("inlineImageDisplayReplyAllForm").innerHTML = "Use Read Test Addin ";
-                    });
+            
 
                 it(" get rest URL",
                     function () {
@@ -531,53 +422,14 @@ describe("",
                         console.log(Office.context.mailbox.restUrl);
                         document.getElementById("getRestUrl").innerHTML = Office.context.mailbox.restUrl;
                         expect(Office.context.mailbox.restUrl).toBeDefined();
+                        expect(Office.context.mailbox.restUrl).toBe("https://outlook.office.com/api");
+
                     });
 
 
-                it("inline image - display reply form :Read and Attendee ",
-                    function (done) {
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* inline image - display reply form */
-                        Office.context.mailbox.item.displayReplyForm(
-                            {
-                                'htmlBody': '<img src = "cid:squirrel.png">',
-                                'attachments':
-                                [
-                                    {
-                                        'type': Office.MailboxEnums.AttachmentType.File,
-                                        'name': 'squirrel.png',
-                                        'url': 'http://i.imgur.com/sRgTlGR.jpg',
-                                        'isInline': 'true'
-                                    }
-                                ]
+               
 
-                            });
-                        done();
-                        document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Validate Manually";
-                        expect(true).toBe(true);
-                    });
-
-                it("inline image - display reply All form :Read and Attendee",
-                    function (done) {
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* inline image - display reply All form */
-                        Office.context.mailbox.item.displayReplyAllForm(
-                            {
-                                'htmlBody': '<img src = "cid:squirrel.png">',
-                                'attachments':
-                                [
-                                    {
-                                        'type': Office.MailboxEnums.AttachmentType.File,
-                                        'name': 'squirrel.png',
-                                        'url': 'http://i.imgur.com/sRgTlGR.jpg',
-                                        'isInline': 'true'
-                                    }
-                                ]
-                            });
-                        done();
-                        document.getElementById("inlineImageDisplayReplyAllForm").innerHTML = "Validate Manually";
-                        expect(true).toBe(true);
-                    });
+                
 
 
                 it("get callback token isrest",
@@ -606,71 +458,14 @@ describe("",
 
                     });
 
-                it("Verify get callback token isrest",
-                    function (done) {
-                        var itemid = encodeURIComponent(Office.context.mailbox.item.itemId);
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Verify  get callback token isrest*/
-                        var options = {
-                            isRest: true,
-                            asyncContext: { message: 'Hello World!' }
-                        };
-
-                        Office.context.mailbox.getCallbackTokenAsync(options, cb);
-
-
-                        function cb(asyncResult) {
-                            var cred = encodeURIComponent(asyncResult.value);
-                            var data = "itemid=" + itemid + "&cred=" + cred;
-
-                            var myurl = "https://testservicejavarestapi.azurewebsites.net/rest/UserService/getsubject";
-                            var xhr = new XMLHttpRequest();
-                            xhr.open('POST', myurl, true);
-                            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                            xhr.onload = function () {
-                                console.log(this.responseText);
-                            };
-                            xhr.send(data);
-                            done();
-                            expect(asyncResult.status).toBe("succeeded");
-                        }
-
-                    });
+               
 
 
 
 
             });
        
-        describe("Office.context.UI.", function () {
-
-
-            it("displayDialog",
-                function (done) {
-
-                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                    /* displayDialog */
-                    var dialogOptions = { height: 80, width: 50, displayInIframe: false, requireHTTPS: false };
-
-                    Office.context.ui.displayDialogAsync("https://trelloaddin.azurewebsites.net/trello/LoginPageIOS.html", dialogOptions, displayDialogCallback);
-
-
-
-                    function displayDialogCallback(asyncResult) {
-
-                        console.log(asyncResult.status);
-
-                        expect(asyncResult.status).toBe("succeeded");
-                        done();
-                    }
-
-
-                });
-
-
-
-
-        });
+        
 
        
         describe("Office.context.mailbox.item.", function () {
@@ -686,6 +481,7 @@ describe("",
                         console.log(Office.context.mailbox.item.itemId);
                         document.getElementById("itemId").innerHTML = Office.context.mailbox.item.itemId;
                         expect(Office.context.mailbox.item.itemId).toBeDefined();
+                        expect(Office.context.mailbox.item.itemId).toBe("AAMkAGZiZjc1Y2RkLTczNjktNGU1YS1hYTkzLTYzZTU3OTE5OWQ3NABGAAAAAAC3Bc26XexrR4XknrAwz6j9BwBDfaKHIE1iQJlAjLUe7EC6AACETLArAABDfaKHIE1iQJlAjLUe7EC6AACETMglAAA=");
 
 
 
@@ -698,6 +494,7 @@ describe("",
                         console.log(Office.context.mailbox.item.itemClass);
                         document.getElementById("itemClass").innerHTML = Office.context.mailbox.item.itemClass;
                         expect(Office.context.mailbox.item.itemClass).toBeDefined();
+                        expect(Office.context.mailbox.item.itemClass).toBe("IPM.Note");
 
 
 
@@ -722,6 +519,7 @@ describe("",
                         document.getElementById("attachments").innerHTML = outputString;
                         console.log(outputString);
                         expect(outputString).toBeDefined();
+                        expect(outputString).toBe("<BR>0. Name: squirrel.png<BR>ID: AAMkAGZiZjc1Y2RkLTczNjktNGU1YS1hYTkzLTYzZTU3OTE5OWQ3NABGAAAAAAC3Bc26XexrR4XknrAwz6j9BwBDfaKHIE1iQJlAjLUe7EC6AACETLArAABDfaKHIE1iQJlAjLUe7EC6AACETMglAAABEgAQAAd/jGv3JBNMpJxorEaMAQg=<BR>contentType: image/png<BR>size: 42135<BR>attachmentType: file<BR>isInline: false<BR>1. Name: squirrel.png<BR>ID: AAMkAGZiZjc1Y2RkLTczNjktNGU1YS1hYTkzLTYzZTU3OTE5OWQ3NABGAAAAAAC3Bc26XexrR4XknrAwz6j9BwBDfaKHIE1iQJlAjLUe7EC6AACETLArAABDfaKHIE1iQJlAjLUe7EC6AACETMglAAABEgAQABIgecGwmKFDgK9WmRfiGbs=<BR>contentType: image/png<BR>size: 42135<BR>attachmentType: file<BR>isInline: false");
                     });
 
                 it("Get date time created",
@@ -733,23 +531,13 @@ describe("",
                         console.log(Office.context.mailbox.item.dateTimeCreated);
                         document.getElementById("dateTimeCreated").innerHTML = Office.context.mailbox.item.dateTimeCreated;
                         expect(Office.context.mailbox.item.dateTimeCreated).toBeDefined();
+                        expect(Office.context.mailbox.item.dateTimeCreated.toString()).toBe("Tue Jul 25 2017 21:51:46 GMT+0530 (IST)");
 
 
                     });
 
 
-                it("Get date time modified",
-                    function () {
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Get date time modified */
-                        console.log(Office.context.mailbox.item.dateTimeModified);
-                        document.getElementById("dateTimeModified").innerHTML = Office.context.mailbox.item.dateTimeModified;
-                        expect(Office.context.mailbox.item.dateTimeModified).toBeDefined();
-
-
-
-                    });
+              
 
                 it(" Get normalized subject",
                     function () {
@@ -760,101 +548,12 @@ describe("",
                         console.log(Office.context.mailbox.item.normalizedSubject);
                         document.getElementById("normalizedSubject").innerHTML = Office.context.mailbox.item.normalizedSubject;
                         expect(Office.context.mailbox.item.normalizedSubject).toBeDefined();
+                        expect(Office.context.mailbox.item.normalizedSubject).toBe("Test Email for Outlook Entensibilty Test");
 
 
                     });
 
-
-                it("Display a reply form :Applicable in Read only Mode ",
-                    function () {
-
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Display a reply form */
-                        Office.context.mailbox.item.displayReplyForm(
-                            {
-                                'htmlBody': 'hi',
-                                'attachments': [
-                                    {
-                                        'type': Office.MailboxEnums.AttachmentType.File,
-                                        'name': 'squirrel.png',
-                                        'url': 'http://i.imgur.com/sRgTlGR.jpg'
-                                    },
-                                    {
-                                        'type': Office.MailboxEnums.AttachmentType.Item,
-                                        'name': 'mymail',
-                                        'itemId': Office.context.mailbox.item.itemId
-                                    }
-                                ]
-                            }
-
-                        );
-
-                        expect(true).toBe(true);
-
-
-                    });
-
-                it("Display a reply all form:Applicable in Read only mode ",
-                    function () {
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Display a reply all form */
-                        Office.context.mailbox.item.displayReplyAllForm("hi");
-                        expect(true).toBe(true);
-
-
-
-
-                    });
-
-
-                it("Display appointment form:Applicable in Read Only mode",
-                    function () {
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Display appointment form */
-                        // Item ID of current appointment
-                        var appointmentId = "AAMkADhlODgyMjQ3LTY0OTEtNDVhNy1hMjE4LTRiNWViODdjNzM1OQBGAAAAAADTm / rlU8XIRYZy3kXeC31hBwCcdC5bK5CoQKeu8mLX6OfwAAAAAAENAACcdC5bK5CoQKeu8mLX6OfwAAAAAB9EAAA=";
-                        Office.context.mailbox.displayAppointmentForm(appointmentId);
-                        expect(true).toBe(true);
-                    });
-
-                it("Display message form :Applicable in Read only Mode ",
-                    function () {
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Display message form */
-                        // Item ID of current message
-                        var messageId = "AAMkADhlODgyMjQ3LTY0OTEtNDVhNy1hMjE4LTRiNWViODdjNzM1OQBGAAAAAADTm / rlU8XIRYZy3kXeC31hBwATCz0JAbtBSrpwxQVbcRSjAAADfWGhAAATCz0JAbtBSrpwxQVbcRSjAAAGtCG2AAA=";
-                        Office.context.mailbox.displayMessageForm(messageId);
-                        expect(true).toBe(true);
-                    });
-
-                it("Display new appointment form:Applicable in Read Only mode  ",
-                    function () {
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Display new appointment form */
-                        var start = new Date();
-                        var end = new Date();
-                        end.setHours(start.getHours() + 1);
-
-                        Office.context.mailbox.displayNewAppointmentForm(
-                            {
-                                requiredAttendees: ["bob@contoso.com"],
-                                optionalAttendees: ["sam@contoso.com"],
-                                start: start,
-                                end: end,
-                                location: "Home",
-                                resources: ["projector@contoso.com"],
-                                subject: "meeting",
-                                body: "Hello World!"
-                            });
-
-                        expect(true).toBe(true);
-
-                    });
+            
 
 
                  it("Get conversation Id (Applicable only on message)",
@@ -865,7 +564,8 @@ describe("",
                             /* Get conversation Id (Applicable only on message) */
                             console.log(Office.context.mailbox.item.conversationId);
                             document.getElementById("conversationId").innerHTML = Office.context.mailbox.item.conversationId;
-                            expect(Office.context.mailbox.item.conversationId).not.toBeNull();
+                            expect(Office.context.mailbox.item.conversationId).toBeDefined();
+                             expect(Office.context.mailbox.item.conversationId).toBeDefined("AAQkAGZiZjc1Y2RkLTczNjktNGU1YS1hYTkzLTYzZTU3OTE5OWQ3NAAQAIBzvxP2lndLl8RpbgD18kY=");
 
 
 
@@ -896,6 +596,7 @@ describe("",
                             });
                             console.log(recipients);
                             document.getElementById("ccRecipients").innerHTML = recipients;
+                            expect(recipients).toBe("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) (v-mufahm@microsoft.com);Kallu Sushma (ksushma@microsoft.com);Deepak Agrawal (deagrawa@microsoft.com);");
                             expect(recipients).toBeDefined();
 
                         });
@@ -908,8 +609,9 @@ describe("",
                             /* Get from (Applicable only on message) */
                             var from = Office.context.mailbox.item.from;
                             console.log(from.displayName + " (" + from.emailAddress + ");");
-                            document.getElementById("from").innerHTML = from.displayName + " ---- " + from.emailAddress;
+                            document.getElementById("from").innerHTML = (from.displayName + " (" + from.emailAddress + ");");
                             expect(from).toBeDefined();
+                            expect(from.displayName + " (" + from.emailAddress + ");").toBe("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) (v-mufahm@microsoft.com);");
 
 
                         });
@@ -922,8 +624,9 @@ describe("",
                             /* Get sender (Applicable only on message) */
                             var sender = Office.context.mailbox.item.sender;
                             console.log(sender.displayName + " (" + sender.emailAddress + ");");
-                            document.getElementById("sender").innerHTML = sender.displayName + " ------ " + sender.emailAddress;
+                            document.getElementById("sender").innerHTML = (sender.displayName + " (" + sender.emailAddress + ");");
                             expect(sender).toBeDefined();
+                            expect(sender.displayName + " (" + sender.emailAddress + ");").toBeDefined("Mufeez Ahmed (Zen3 Infosolutions (India) Lim) (v-mufahm@microsoft.com);");
                         });
                  it("Get To recipients (Applicable only on message)",
                         function () {
@@ -937,6 +640,7 @@ describe("",
                                 document.getElementById("to").innerHTML = recipients;
                             });
                             expect(recipients).toBeDefined();
+                            expect(recipients).toBe("Allan Deyoung (mactest3@MOD321281.onmicrosoft.com);");
 
 
 
@@ -959,6 +663,7 @@ describe("",
                                 }
 
                                 expect(asyncResult.status).toBe("succeeded");
+                                expect(asyncResult.value).toBe("click here! Tester@xyz.com Click here!")
                                 done();
                             }
                         );
@@ -983,6 +688,7 @@ describe("",
                         console.log(Office.context.mailbox.item.itemType);
                         document.getElementById("itemType").innerHTML = Office.context.mailbox.item.itemType;
                         expect(Office.context.mailbox.item.itemType).toBeDefined();
+                        expect(Office.context.mailbox.item.itemType).toBe("message");
 
                     });
 
@@ -1084,6 +790,7 @@ describe("",
 
                                             console.log(outputString);
                                             document.getElementById("getAllNotificationMessageAsync").innerHTML = outputString;
+                                            
                                         }
 
                                     );
@@ -1091,6 +798,7 @@ describe("",
                                 }
 
                                 expect(asyncResult.status).toBe("succeeded");
+                                expect(asyncResult.value).toBe( [ Object({ key: 'foo', type: 'informationalMessage', message: 'this operation is complete', icon: 'icon_24' }) ])
                                 done();
                             }
                         );
@@ -1198,7 +906,7 @@ describe("",
                                             else {
                                                 console.log("Saved custom property");
                                                 document.getElementById("setAndSaveCustomProperty").innerHTML = "Saved custom property";
-                                                //expect(true).toBe(true);
+                                            
 
                                             }
 
@@ -1272,7 +980,7 @@ describe("",
                                             else {
                                                 console.log("Saved custom property");
                                                 document.getElementById("removeAndSaveCustomProperty").innerHTML = "Saved custom property";
-                                                expect(true).toBe(true);
+                                               
 
                                             }
 
@@ -1301,93 +1009,14 @@ describe("",
                         });
                         document.getElementById("getEntities").innerHTML = emailAddresses;
                         expect(emailAddresses).toBeDefined();
+                        expect(emailAddresses).toBe("Tester@xyz.com");
                         console.log(emailAddresses);
 
 
 
 
                     });
-                it("Get entities by type ",
-                    function () {
-
-
-
-                        /* Restricted or ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Get entities by type */
-                        var urls = "";
-                        Office.context.mailbox.item.getEntitiesByType(Office.MailboxEnums.EntityType.URL).forEach(function (url, index) {
-                            urls = urls + url + ";<BR>";
-                            document.getElementById("getEntitiesByType").innerHTML = urls;
-                            expect(urls).toBeDefined();
-                            console.log(urls);
-                        });
-
-
-
-
-
-                    });
-                it("Get entities by name",
-                    function () {
-
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Get entities by name */
-                        /* rule in manifest
-                        <Rule xsi:type="ItemHasKnownEntity" EntityType="Url" RegExFilter="youtube" FilterName="youtube" IgnoreCase="true"/>
-                        */
-                        var urls = "";
-                        Office.context.mailbox.item.getFilteredEntitiesByName("youtube").forEach(function (url, index) {
-                            urls = urls + url + ";<BR>";
-                            document.getElementById("getEntitiesByName").innerHTML = urls;
-                            expect(urls).toBeDefined();
-                            console.log(urls);
-                        });
-
-
-
-
-
-
-                    });
-                it("Get Regex matches",
-                    function () {
-
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Get Regex matches */
-                        /* rule in manifest
-                        <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" pPropertyName="BodyAsPlaintext" IgnoreCase="true" />
-                        */
-                        console.log(Office.context.mailbox.item.getRegExMatches());
-                        expect(Office.context.mailbox.item.getRegExMatches()).toBeDefined();
-                        expect(Office.context.mailbox.item.getRegExMatches()).not.toBeNull();
-                        document.getElementById("getRegexMatches").innerHTML = Office.context.mailbox.item.getRegExMatches();
-
-
-
-                    });
-                it("Get filtered Regex matches by name ",
-                    function () {
-
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Get filtered Regex matches by name */
-                        /* rule in manifest
-                        <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" pPropertyName="BodyAsPlaintext" IgnoreCase="true" />
-                        */
-                        var fruits = "";
-                        Office.context.mailbox.item.getRegExMatchesByName("fruits").forEach(function (fruit, index) {
-                            fruits = fruits + fruit + ";<BR>";
-                            document.getElementById("getFilteredRegexMatchesByName").innerHTML = fruits;
-                        });
-                        expect(fruits).toBeDefined();
-                        console.log(fruits);
-
-
-
-
-                    });
+             
 
         });
       });
