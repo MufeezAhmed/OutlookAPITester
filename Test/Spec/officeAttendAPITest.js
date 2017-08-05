@@ -972,7 +972,8 @@ describe("",
                             /* Get resources (Applicable only on calendar event) */
                             var resources = Office.context.mailbox.item.resources;
                             console.log(resources.displayName + " (" + resources.emailAddress + ");");
-                            document.getElementById('getResources').innerHTML = organizer.displayName + " (" + organizer.emailAddress + ");";
+                            
+                            document.getElementById('getResources').innerHTML = (resources.);
                             expect(resources).toBeDefined();
 
                         });
