@@ -340,7 +340,7 @@ describe("",
                                     document.getElementById("getSubjectAsync").innerHTML = asyncResult.value;
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
-                                expect(asyncResult.value).toBe("New subject! "); 
+                                expect(asyncResult.value).toBe("New subject!"); 
                                 done();
                             }
                         );
