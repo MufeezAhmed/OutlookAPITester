@@ -166,6 +166,7 @@ describe("",
                                     document.getElementById("getBodyTypeAsync").innerHTML = asyncResult.value
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
+                                 expect(asyncResult.valuw).toBe("click here! Tester@xyz.com Click here!");
                                 done();
                             }
                         );
@@ -192,6 +193,8 @@ describe("",
                                     document.getElementById("prependBodyAsync").innerHTML = "Successfully prepended body text"
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
+                                  expect(asyncResult.valuw).toBe("click here!click here! Tester@xyz.com Click here!");
+
                                 done();
                             }
                         );
@@ -337,6 +340,7 @@ describe("",
                                     document.getElementById("getSubjectAsync").innerHTML = asyncResult.value;
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
+                                expect(asyncResult.value).toBe("New subject! "); 
                                 done();
                             }
                         );
@@ -592,6 +596,7 @@ describe("",
                                         });
                                         console.log(recipients);
                                         document.getElementById('getToRecipients').innerHTML = (recipients);
+                                        expect(asyncResult.value).toBe("Allie Bellew (allieb@contoso.com);Alex Darrow (alexd@contoso.com);Paul Walker (paulw@contoso.com);")
                                     }
                                     expect(asyncResult.status).toBe("succeeded");
                                     done();
@@ -623,6 +628,7 @@ describe("",
                                         document.getElementById('getCcRecipients').innerHTML = (recipients);
                                     }
                                     expect(asyncResult.status).toBe("succeeded");
+                                    expect(asyncResult.value).toBe("Allie Bellew (allieb@contoso.com);Alex Darrow (alexd@contoso.com);Paul Walker (paulw@contoso.com);")
                                     done();
                                 }
                             );
@@ -654,6 +660,7 @@ describe("",
                                         document.getElementById('getBccRecipients').innerHTML = (recipients);
                                     }
                                     expect(asyncResult.status).toBe("succeeded");
+                                    expect(asyncResult.value).toBe("Allie Bellew (allieb@contoso.com);Alex Darrow (alexd@contoso.com);Paul Walker (paulw@contoso.com);")
                                     done();
                                 }
                             );
