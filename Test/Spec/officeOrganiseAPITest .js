@@ -1206,7 +1206,7 @@ describe("",
                                     document.getElementById('getStartTime').innerHTML = asyncResult.value;
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
-                                expect(asyncResult.value).toBe("Fri Aug 04 2017 14:06:00 GMT+0530 (IST)");
+                                expect(asyncResult.value.toString()).toBe("Fri Aug 04 2017 14:06:00 GMT+0530 (IST)");
                                 done();
                             }
                         );
@@ -1233,7 +1233,7 @@ describe("",
                                     document.getElementById('getEndTime').innerHTML = asyncResult.value;
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
-                                expect(asyncResult.value).toBe("Fri Aug 04 2017 14:42:00 GMT+0530 (IST)")
+                                expect(asyncResult.value.toString()).toBe("Fri Aug 04 2017 14:42:00 GMT+0530 (IST)")
                                 done();
                             }
                         );
