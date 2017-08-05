@@ -637,8 +637,10 @@ describe("",
 
         describe("Office.context.mailbox.Item", function () {
 
-            
-
+            var startDate=new Date();
+            var endDate=new Date();
+ 
+        endDate.setHours(endDate.getHours() + 1);
 
                 it(" Set subject Async",
                     function (done) {
@@ -941,9 +943,8 @@ describe("",
 
                         /* ReadWriteItem or ReadWriteMailbox */
                         /* Set end time (Applicable only on calendar event) */
-                        var date = new Date();
-                        date.setHours(date.getHours() + 1);
-                        Office.context.mailbox.item.end.setAsync(date,
+                       
+                        Office.context.mailbox.item.end.setAsync(endDate,
                             function (asyncResult) {
                                 if (asyncResult.status == "failed") {
                                     console.log("Action failed with error: " + asyncResult.error.message);
@@ -968,7 +969,7 @@ describe("",
 
                         /* ReadWriteItem or ReadWriteMailbox */
                         /* Set start time (Applicable only on calendar event) */
-                        Office.context.mailbox.item.start.setAsync(new Date(),
+                        Office.context.mailbox.item.start.setAsync(startDate,
                             function callback(asyncResult) {
                                 if (asyncResult.status == "failed") {
                                     console.log("Action failed with error: " + asyncResult.error.message);
@@ -1206,7 +1207,7 @@ describe("",
                                     document.getElementById('getStartTime').innerHTML = asyncResult.value;
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
-                                expect(asyncResult.value.toString()).toBe("Fri Aug 04 2017 14:06:00 GMT+0530 (IST)");
+                                expect(asyncResult.value.toString()).toBe(startDate.toString());
                                 done();
                             }
                         );
@@ -1233,7 +1234,7 @@ describe("",
                                     document.getElementById('getEndTime').innerHTML = asyncResult.value;
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
-                                expect(asyncResult.value.toString()).toBe("Fri Aug 04 2017 14:42:00 GMT+0530 (IST)")
+                                expect(asyncResult.value.toString()).toBe(endDate.toString())
                                 done();
                             }
                         );
