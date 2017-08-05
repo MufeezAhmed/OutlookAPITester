@@ -1145,6 +1145,7 @@ describe("",
                                     document.getElementById('getRequiredAttendees').innerHTML = recipients;
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
+                                 expect(recipients).toBe("Allie Bellew (allieb@contoso.com);Alex Darrow (alexd@contoso.com);Paul Walker (paulw@contoso.com);")
                                 done();
                             }
                         );
@@ -1179,6 +1180,7 @@ describe("",
 
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
+                                 expect(recipients).toBe("Allie Bellew (allieb@contoso.com);Alex Darrow (alexd@contoso.com);Paul Walker (paulw@contoso.com);")
                                 done();
                             }
                         );
