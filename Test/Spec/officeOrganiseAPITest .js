@@ -712,6 +712,7 @@ describe("",
                                     document.getElementById("getBodyTypeAsync").innerHTML = asyncResult.value
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
+                                expect(asyncResult.value).toBe("html");
                                 done();
                             }
                         );
@@ -868,6 +869,7 @@ describe("",
                                     document.getElementById("getSubjectAsync").innerHTML = asyncResult.value;
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
+                                 expect(asyncResult.value).toBe("New subject!"); 
                                 done();
                             }
                         );
@@ -1202,6 +1204,7 @@ describe("",
                                     document.getElementById('getStartTime').innerHTML = asyncResult.value;
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
+                                expect(asyncResult.value).toBe("Fri Aug 04 2017 14:06:00 GMT+0530 (IST)");
                                 done();
                             }
                         );
@@ -1228,6 +1231,7 @@ describe("",
                                     document.getElementById('getEndTime').innerHTML = asyncResult.value;
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
+                                expect(asyncResult.value).toBe("Fri Aug 04 2017 14:42:00 GMT+0530 (IST)")
                                 done();
                             }
                         );
@@ -1254,6 +1258,7 @@ describe("",
                                     document.getElementById('getLocation').innerHTML = asyncResult.value;
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
+                                 expect(asyncResult.value).toBe("New Location!"); 
                                 done();
                             }
                         );
@@ -1314,6 +1319,8 @@ describe("",
                         console.log(Office.context.mailbox.item.itemType);
                         document.getElementById("itemType").innerHTML = Office.context.mailbox.item.itemType;
                         expect(Office.context.mailbox.item.itemType).toBeDefined();
+                        expect(Office.context.mailbox.item.itemType).toBe("appointment");
+
 
                     });
 

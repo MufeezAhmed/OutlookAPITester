@@ -712,6 +712,8 @@ describe("",
                         console.log(Office.context.mailbox.item.itemType);
                         document.getElementById("itemType").innerHTML = Office.context.mailbox.item.itemType;
                         expect(Office.context.mailbox.item.itemType).toBeDefined();
+                        expect(Office.context.mailbox.item.itemType).toBe("message");
+
                         done();
                     });
          
