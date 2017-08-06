@@ -724,9 +724,7 @@
           <MobileFormFactor>
             <FunctionFile resid="functionFile"/>
             <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
-              <!--
- ExtensionPoints : MobileMessageReadCommandSurface, MobileMessageComposeCommandSurface, MobileAppointmentAttendeeCommandSurface, MobileAppointmentOrganizerCommandSurface 
--->
+              
               <Group id="commandGroupTestID">
                 <Label resid="groupLabel"/>
                 <Control xsi:type="MobileButton" id="TaskPane1Btn">
