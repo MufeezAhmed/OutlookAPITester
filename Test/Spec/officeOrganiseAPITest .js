@@ -1207,7 +1207,7 @@ describe("",
                                     document.getElementById('getStartTime').innerHTML = asyncResult.value;
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
-                                expect(asyncResult.value.toString()).toBe(startDate.toString());
+                                expect(asyncResult.value).toBe(startDate);
                                 done();
                             }
                         );
@@ -1234,7 +1234,7 @@ describe("",
                                     document.getElementById('getEndTime').innerHTML = asyncResult.value;
                                 }
                                 expect(asyncResult.status).toBe("succeeded");
-                                expect(asyncResult.value.toString()).toBe(endDate.toString())
+                                expect(asyncResult.value).toBe(endDate);
                                 done();
                             }
                         );
