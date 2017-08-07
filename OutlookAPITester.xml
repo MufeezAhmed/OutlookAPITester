@@ -372,6 +372,36 @@
                   </Action>
 
                 </Control>
+                
+                <Control xsi:type="Button" id="appointmentAttendeeOpenPaneButton1">
+
+                  <Label resid="paneReadButtonLabel1" />
+
+                  <Supertip>
+
+                    <Title resid="paneReadSuperTipTitle1" />
+
+                    <Description resid="paneReadSuperTipDescription" />
+
+                  </Supertip>
+
+                  <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+
+                  <Action xsi:type="ShowTaskpane">
+
+                    <SourceLocation resid="apponitmentAttendeeTaskPaneUrl1" />
+
+                  </Action>
+
+                </Control>
 
                 <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
 
@@ -422,6 +452,7 @@
         <bt:Url id="apponitmentOrganizeTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerAppointmentOrganizer.html"/>
 
         <bt:Url id="apponitmentAttendeeTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerAppointmentAttendee.html"/>
+        <bt:Url id="apponitmentAttendeeTaskPaneUrl1" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerMessageReadSemiAutomated.html"/>
 
       </bt:Urls>
 
@@ -666,55 +697,85 @@
 
             <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
 
-              <!-- Use the default tab of the ExtensionPoint or create your own with <CustomTab id="myTab"> -->
+            <!-- Use the default tab of the ExtensionPoint or create your own with <CustomTab id="myTab"> -->
 
-              <OfficeTab id="TabDefault">
+            <OfficeTab id="TabDefault">
 
-                <!-- Up to 6 Groups added per Tab -->
+              <!-- Up to 6 Groups added per Tab -->
 
-                <Group id="appointmentAttendeeGroup">
+              <Group id="appointmentAttendeeGroup">
 
-                  <Label resid="groupLabel" />
+                <Label resid="groupLabel" />
 
-                  <!-- Launch the add-in : task pane button -->
+                <!-- Launch the add-in : task pane button -->
 
-                  <Control xsi:type="Button" id="appointmentAttendeeOpenPaneButton">
+                <Control xsi:type="Button" id="appointmentAttendeeOpenPaneButton">
 
-                    <Label resid="paneReadButtonLabel" />
+                  <Label resid="paneReadButtonLabel" />
 
-                    <Supertip>
+                  <Supertip>
 
-                      <Title resid="paneReadSuperTipTitle" />
+                    <Title resid="paneReadSuperTipTitle" />
 
-                      <Description resid="paneReadSuperTipDescription" />
+                    <Description resid="paneReadSuperTipDescription" />
 
-                    </Supertip>
+                  </Supertip>
 
-                    <Icon>
+                  <Icon>
 
-                      <bt:Image size="16" resid="icon16" />
+                    <bt:Image size="16" resid="icon16" />
 
-                      <bt:Image size="32" resid="icon32" />
+                    <bt:Image size="32" resid="icon32" />
 
-                      <bt:Image size="80" resid="icon80" />
+                    <bt:Image size="80" resid="icon80" />
 
-                    </Icon>
+                  </Icon>
 
-                    <Action xsi:type="ShowTaskpane">
+                  <Action xsi:type="ShowTaskpane">
 
-                      <SourceLocation resid="apponitmentAttendeeTaskPaneUrl" />
+                    <SourceLocation resid="apponitmentAttendeeTaskPaneUrl" />
 
-                    </Action>
+                  </Action>
 
-                  </Control>
+                </Control>
+                
+                <Control xsi:type="Button" id="appointmentAttendeeOpenPaneButton1">
 
-                  <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
+                  <Label resid="paneReadButtonLabel1" />
 
-                </Group>
+                  <Supertip>
 
-              </OfficeTab>
+                    <Title resid="paneReadSuperTipTitle1" />
 
-            </ExtensionPoint>
+                    <Description resid="paneReadSuperTipDescription" />
+
+                  </Supertip>
+
+                  <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+
+                  <Action xsi:type="ShowTaskpane">
+
+                    <SourceLocation resid="apponitmentAttendeeTaskPaneUrl1" />
+
+                  </Action>
+
+                </Control>
+
+                <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
+
+              </Group>
+
+            </OfficeTab>
+
+          </ExtensionPoint>
 
 
 
