@@ -180,6 +180,65 @@
                   </Action>
 
                 </Control>
+                <Control xsi:type="Menu" id="TestMenu2">
+  <Label resid="paneReadButtonLabel" />
+  <Supertip>
+    <Title resid="paneReadButtonLabel" />
+    <Description resid="paneReadSuperTipDescription" />
+  </Supertip>
+    <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+  <Items>
+    <Item id="showGallery2">
+      <Label resid="paneReadButtonLabel"/>
+      <Supertip>
+        <Title resid="paneReadButtonLabel" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+       
+        <SourceLocation resid="messageComposeTaskPaneUrl" />
+      
+      </Action>
+    </Item>
+    <Item id="showGallery3">
+      <Label resid="paneReadButtonLabel"/>
+      <Supertip>
+        <Title resid="paneReadButtonLabel" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+          <SourceLocation resid="messageComposeTaskPaneUrl" />
+      </Action>
+    </Item>
+  </Items>
+</Control>
+                
 
                 
                 
@@ -452,7 +511,7 @@
         <bt:Url id="apponitmentOrganizeTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerAppointmentOrganizer.html"/>
 
         <bt:Url id="apponitmentAttendeeTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerAppointmentAttendee.html"/>
-        <bt:Url id="apponitmentAttendeeTaskPaneUrl1" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerMessageReadSemiAutomated.html"/>
+        <bt:Url id="apponitmentAttendeeTaskPaneUrl1" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerAppointmentAttendeeSemiAutomated.html"/>
 
       </bt:Urls>
 
@@ -473,6 +532,8 @@
       <bt:LongStrings>
 
         <bt:String id="paneReadSuperTipDescription" DefaultValue="Opens to execute automated Tests. This is an example of a button that opens a task pane."/>
+        <bt:String id="paneReadButtonLabel" DefaultValue="Automated API Tests"/>
+        <bt:String id="paneReadButtonLabel1" DefaultValue="Semi Automated API Tests"/>
 
       </bt:LongStrings>
 
@@ -694,7 +755,7 @@
               </OfficeTab>
 
             </ExtensionPoint>
-
+            
             <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
 
             <!-- Use the default tab of the ExtensionPoint or create your own with <CustomTab id="myTab"> -->
@@ -779,6 +840,7 @@
 
 
 
+
             <!-- Go to http://aka.ms/ExtensionPointsCommands to learn how to add more Extension Points: MessageRead, AppointmentOrganizer, AppointmentAttendee -->
 
           </DesktopFormFactor>
@@ -816,55 +878,56 @@
 
       <Resources>
 
-        <bt:Images>
+      <bt:Images>
 
-          <bt:Image id="icon16" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Images/icon16.png"/>
+        <bt:Image id="icon16" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Images/icon16.png"/>
 
-          <bt:Image id="icon32" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Images/icon32.png"/>
+        <bt:Image id="icon32" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Images/icon32.png"/>
 
-          <bt:Image id="icon80" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Images/icon80.png"/>
+        <bt:Image id="icon80" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Images/icon80.png"/>
 
-        </bt:Images>
+      </bt:Images>
 
-        <bt:Urls>
+      <bt:Urls>
 
-          <bt:Url id="functionFile" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Functions/FunctionFile.html"/>
+        <bt:Url id="functionFile" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Functions/FunctionFile.html"/>
 
-          <!--<bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/MessageRead.html"/>-->
-          <bt:Url id="MobilemessageReadTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerMobileMessageRead.html"/>
-          <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerMessageRead.html"/>
-          <bt:Url id="messageReadTaskPaneUrl1" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerMessageReadSemiAutomated.html"/>
+        <!--<bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/MessageRead.html"/>-->
+        <bt:Url id="MobilemessageReadTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerMobileMessageRead.html"/>
+        <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerMessageRead.html"/>
+        <bt:Url id="messageReadTaskPaneUrl1" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerMessageReadSemiAutomated.html"/>
 
 
-          <bt:Url id="messageComposeTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerMessageCompose.html"/>
+        <bt:Url id="messageComposeTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerMessageCompose.html"/>
 
-          <bt:Url id="apponitmentOrganizeTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerAppointmentOrganizer.html"/>
+        <bt:Url id="apponitmentOrganizeTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerAppointmentOrganizer.html"/>
 
-          <bt:Url id="apponitmentAttendeeTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerAppointmentAttendee.html"/>
+        <bt:Url id="apponitmentAttendeeTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerAppointmentAttendee.html"/>
+        <bt:Url id="apponitmentAttendeeTaskPaneUrl1" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerAppointmentAttendeeSemiAutomated.html"/>
 
-        </bt:Urls>
+      </bt:Urls>
 
-        <bt:ShortStrings>
+      <bt:ShortStrings>
 
-          <bt:String id="groupLabel" DefaultValue="My Add-in Group"/>
+        <bt:String id="groupLabel" DefaultValue="My Add-in Group"/>
 
-          <bt:String id="customTabLabel"  DefaultValue="My Add-in Tab"/>
+        <bt:String id="customTabLabel"  DefaultValue="My Add-in Tab"/>
 
-          <bt:String id="paneReadButtonLabel" DefaultValue="Automated API Tests"/>
-          <bt:String id="paneReadButtonLabel1" DefaultValue="Semi Automated API Tests"/>
+        <bt:String id="paneReadButtonLabel" DefaultValue="Automated API Tests"/>
+        <bt:String id="paneReadButtonLabel1" DefaultValue="Semi Automated API Tests"/>
 
-          <bt:String id="paneReadSuperTipTitle" DefaultValue="outlook API Tests for automatic validation"/>
-          <bt:String id="paneReadSuperTipTitle1" DefaultValue="outlook API Tests for manual validation"/>
+        <bt:String id="paneReadSuperTipTitle" DefaultValue="outlook API Tests for automatic validation"/>
+        <bt:String id="paneReadSuperTipTitle1" DefaultValue="outlook API Tests for manual validation"/>
 
-        </bt:ShortStrings>
+      </bt:ShortStrings>
 
-        <bt:LongStrings>
+      <bt:LongStrings>
 
-          <bt:String id="paneReadSuperTipDescription" DefaultValue="Opens to execute automated Tests. This is an example of a button that opens a task pane."/>
+        <bt:String id="paneReadSuperTipDescription" DefaultValue="Opens to execute automated Tests. This is an example of a button that opens a task pane."/>
 
-        </bt:LongStrings>
+      </bt:LongStrings>
 
-      </Resources>
+    </Resources>
       
     </VersionOverrides>
   </VersionOverrides>
