@@ -36,9 +36,9 @@
 
   <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
 
-  <DisplayName DefaultValue="Outlook API Tester" />
+  <DisplayName DefaultValue="Outlook API Test" />
 
-  <Description DefaultValue="Outlook API Tester"/>
+  <Description DefaultValue="Outlook API Test"/>
 
   <IconUrl DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Images/icon64.png"/>
 
@@ -662,15 +662,15 @@
 
       <bt:ShortStrings>
 
-        <bt:String id="groupLabel" DefaultValue="Outlook API Test Add-in Group"/>
+        <bt:String id="groupLabel" DefaultValue="Outlook API Test Group"/>
 
         <bt:String id="customTabLabel"  DefaultValue="Outlook API Test"/>
 
-        <bt:String id="paneReadButtonLabel" DefaultValue="Automated API Tests"/>
-        <bt:String id="paneReadButtonLabel1" DefaultValue="Semi Automated API Tests"/>
+        <bt:String id="paneReadButtonLabel" DefaultValue="Automated API Test"/>
+        <bt:String id="paneReadButtonLabel1" DefaultValue="Semi Automated API Test"/>
 
-        <bt:String id="paneReadSuperTipTitle" DefaultValue="outlook API Tests for automatic validation"/>
-        <bt:String id="paneReadSuperTipTitle1" DefaultValue="outlook API Tests for manual validation"/>
+        <bt:String id="paneReadSuperTipTitle" DefaultValue="outlook API Test for automatic validation"/>
+        <bt:String id="paneReadSuperTipTitle1" DefaultValue="outlook API Test for manual validation"/>
 
         <bt:String id="paneComposeButtonLabel" DefaultValue="Validate Display Dialogs"/>
         <bt:String id="paneComposeButtonLabel1" DefaultValue="Reply for message"/>
@@ -1250,6 +1250,7 @@
 
       </Hosts>
       
+      
  <Resources>
 
       <bt:Images>
@@ -1283,15 +1284,15 @@
 
       <bt:ShortStrings>
 
-        <bt:String id="groupLabel" DefaultValue="Outlook API Test Add-in Group"/>
+        <bt:String id="groupLabel" DefaultValue="Outlook API Test Group"/>
 
         <bt:String id="customTabLabel"  DefaultValue="Outlook API Test"/>
 
-        <bt:String id="paneReadButtonLabel" DefaultValue="Automated API Tests"/>
-        <bt:String id="paneReadButtonLabel1" DefaultValue="Semi Automated API Tests"/>
+        <bt:String id="paneReadButtonLabel" DefaultValue="Automated API Test"/>
+        <bt:String id="paneReadButtonLabel1" DefaultValue="Semi Automated API Test"/>
 
-        <bt:String id="paneReadSuperTipTitle" DefaultValue="outlook API Tests for automatic validation"/>
-        <bt:String id="paneReadSuperTipTitle1" DefaultValue="outlook API Tests for manual validation"/>
+        <bt:String id="paneReadSuperTipTitle" DefaultValue="outlook API Test for automatic validation"/>
+        <bt:String id="paneReadSuperTipTitle1" DefaultValue="outlook API Test for manual validation"/>
 
         <bt:String id="paneComposeButtonLabel" DefaultValue="Validate Display Dialogs"/>
         <bt:String id="paneComposeButtonLabel1" DefaultValue="Reply for message"/>
