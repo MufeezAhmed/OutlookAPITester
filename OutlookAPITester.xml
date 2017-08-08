@@ -180,10 +180,11 @@
                   </Action>
 
                 </Control>
-                <Control xsi:type="Menu" id="TestMenu2">
-  <Label resid="paneReadButtonLabel" />
+
+                <Control xsi:type="Menu" id="ValidateDisplayDialogs">
+  <Label resid="paneComposeButtonLabel" />
   <Supertip>
-    <Title resid="paneReadButtonLabel" />
+    <Title resid="paneComposeButtonLabel" />
     <Description resid="paneReadSuperTipDescription" />
   </Supertip>
     <Icon>
@@ -196,10 +197,10 @@
 
                   </Icon>
   <Items>
-    <Item id="showGallery2">
-      <Label resid="paneReadButtonLabel"/>
+    <Item id="ValidateReplyForMessage">
+      <Label resid="paneComposeButtonLabel1"/>
       <Supertip>
-        <Title resid="paneReadButtonLabel" />
+        <Title resid="paneComposeButtonLabel1" />
         <Description resid="paneReadButtonLabel" />
       </Supertip>
         <Icon>
@@ -217,10 +218,10 @@
       
       </Action>
     </Item>
-    <Item id="showGallery3">
-      <Label resid="paneReadButtonLabel"/>
+    <Item id="ValidateReplyAllforMessages">
+      <Label resid="paneComposeButtonLabel2"/>
       <Supertip>
-        <Title resid="paneReadButtonLabel" />
+        <Title resid="paneComposeButtonLabel2" />
         <Description resid="paneReadButtonLabel" />
       </Supertip>
         <Icon>
@@ -517,15 +518,27 @@
 
       <bt:ShortStrings>
 
-        <bt:String id="groupLabel" DefaultValue="My Add-in Group"/>
+        <bt:String id="groupLabel" DefaultValue="Outlook API Test Add-in Group"/>
 
-        <bt:String id="customTabLabel"  DefaultValue="My Add-in Tab"/>
+        <bt:String id="customTabLabel"  DefaultValue="Outlook API Test"/>
 
         <bt:String id="paneReadButtonLabel" DefaultValue="Automated API Tests"/>
         <bt:String id="paneReadButtonLabel1" DefaultValue="Semi Automated API Tests"/>
 
         <bt:String id="paneReadSuperTipTitle" DefaultValue="outlook API Tests for automatic validation"/>
         <bt:String id="paneReadSuperTipTitle1" DefaultValue="outlook API Tests for manual validation"/>
+
+        <bt:String id="paneComposeButtonLabel" DefaultValue="Validate Display Dialogs"/>
+        <bt:String id="paneComposeButtonLabel1" DefaultValue="Reply for message"/>
+        <bt:String id="paneComposeButtonLabel2" DefaultValue="Reply Allfor message"/>
+        <bt:String id="paneComposeButtonLabel3" DefaultValue="Reply with Inline image for message"/>
+        <bt:String id="paneComposeButtonLabel4" DefaultValue="Reply All with Inline image for message"/>
+     
+        <bt:String id="paneComposeButtonLabel5" DefaultValue="Reply for meeting"/>
+        <bt:String id="paneComposeButtonLabel6" DefaultValue="Reply All for meeting"/>
+        <bt:String id="paneComposeButtonLabel7" DefaultValue="Reply with Inline image for meeting"/>
+        <bt:String id="paneComposeButtonLabel8" DefaultValue="Reply All with Inline image for meeting"/>
+        <bt:String id="paneOrganizeButtonLabel" DefaultValue="Validate new appointment form"/>
 
       </bt:ShortStrings>
 
@@ -535,6 +548,17 @@
         <bt:String id="paneReadButtonLabel" DefaultValue="Automated API Tests"/>
         <bt:String id="paneReadButtonLabel1" DefaultValue="Semi Automated API Tests"/>
 
+        <bt:String id="paneComposeButtonLabel" DefaultValue="Validate Display Dialogs"/>
+        <bt:String id="paneComposeButtonLabel1" DefaultValue="Reply for message"/>
+        <bt:String id="paneComposeButtonLabel2" DefaultValue="Reply Allfor message"/>
+        <bt:String id="paneComposeButtonLabel3" DefaultValue="Reply with Inline image for message"/>
+        <bt:String id="paneComposeButtonLabel4" DefaultValue="Reply All with Inline image for message"/>
+     
+        <bt:String id="paneComposeButtonLabel5" DefaultValue="Reply for meeting"/>
+        <bt:String id="paneComposeButtonLabel6" DefaultValue="Reply All for meeting"/>
+        <bt:String id="paneComposeButtonLabel7" DefaultValue="Reply with Inline image for meeting"/>
+        <bt:String id="paneComposeButtonLabel8" DefaultValue="Reply All with Inline image for meeting"/>
+        <bt:String id="paneOrganizeButtonLabel" DefaultValue="Validate new appointment form"/>
       </bt:LongStrings>
 
     </Resources>
@@ -566,57 +590,119 @@
 
             <!-- Message Read -->
 
-            <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+     <ExtensionPoint xsi:type="MessageComposeCommandSurface">
 
-              <!-- Use the default tab of the ExtensionPoint or create your own with <CustomTab id="myTab"> -->
+            <!-- Use the default tab of the ExtensionPoint or create your own with <CustomTab id="myTab"> -->
 
-              <OfficeTab id="TabDefault">
+            <OfficeTab id="TabDefault">
 
-                <!-- Up to 6 Groups added per Tab -->
+              <!-- Up to 6 Groups added per Tab -->
 
-                <Group id="msgComposeGroup">
+              <Group id="msgComposeGroup">
 
-                  <Label resid="groupLabel" />
+                <Label resid="groupLabel" />
 
-                  <!-- Launch the add-in : task pane button -->
+                <!-- Launch the add-in : task pane button -->
 
-                  <Control xsi:type="Button" id="msgComposeOpenPaneButton">
+                <Control xsi:type="Button" id="msgComposeOpenPaneButton">
 
-                    <Label resid="paneReadButtonLabel" />
+                  <Label resid="paneReadButtonLabel" />
 
-                    <Supertip>
+                  <Supertip>
 
-                      <Title resid="paneReadSuperTipTitle" />
+                    <Title resid="paneReadSuperTipTitle" />
 
-                      <Description resid="paneReadSuperTipDescription" />
+                    <Description resid="paneReadSuperTipDescription" />
 
-                    </Supertip>
+                  </Supertip>
 
-                    <Icon>
+                  <Icon>
 
-                      <bt:Image size="16" resid="icon16" />
+                    <bt:Image size="16" resid="icon16" />
 
-                      <bt:Image size="32" resid="icon32" />
+                    <bt:Image size="32" resid="icon32" />
 
-                      <bt:Image size="80" resid="icon80" />
+                    <bt:Image size="80" resid="icon80" />
 
-                    </Icon>
+                  </Icon>
 
-                    <Action xsi:type="ShowTaskpane">
+                  <Action xsi:type="ShowTaskpane">
 
-                      <SourceLocation resid="messageComposeTaskPaneUrl" />
+                    <SourceLocation resid="messageComposeTaskPaneUrl" />
 
-                    </Action>
+                  </Action>
 
-                  </Control>
+                </Control>
 
-                  <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
+                <Control xsi:type="Menu" id="ValidateDisplayDialogs">
+  <Label resid="paneComposeButtonLabel" />
+  <Supertip>
+    <Title resid="paneComposeButtonLabel" />
+    <Description resid="paneReadSuperTipDescription" />
+  </Supertip>
+    <Icon>
 
-                </Group>
+                    <bt:Image size="16" resid="icon16" />
 
-              </OfficeTab>
+                    <bt:Image size="32" resid="icon32" />
 
-            </ExtensionPoint>
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+  <Items>
+    <Item id="ValidateReplyForMessage">
+      <Label resid="paneComposeButtonLabel1"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel1" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+       
+        <SourceLocation resid="messageComposeTaskPaneUrl" />
+      
+      </Action>
+    </Item>
+    <Item id="ValidateReplyAllforMessages">
+      <Label resid="paneComposeButtonLabel2"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel2" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+          <SourceLocation resid="messageComposeTaskPaneUrl" />
+      </Action>
+    </Item>
+  </Items>
+</Control>
+                
+
+                
+                
+                <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
+
+              </Group>
+
+            </OfficeTab>
+
+ </ExtensionPoint>
 
 
 
@@ -875,8 +961,8 @@
         </Host>
 
       </Hosts>
-
-      <Resources>
+      
+ <Resources>
 
       <bt:Images>
 
@@ -909,9 +995,9 @@
 
       <bt:ShortStrings>
 
-        <bt:String id="groupLabel" DefaultValue="My Add-in Group"/>
+        <bt:String id="groupLabel" DefaultValue="Outlook API Test Add-in Group"/>
 
-        <bt:String id="customTabLabel"  DefaultValue="My Add-in Tab"/>
+        <bt:String id="customTabLabel"  DefaultValue="Outlook API Test"/>
 
         <bt:String id="paneReadButtonLabel" DefaultValue="Automated API Tests"/>
         <bt:String id="paneReadButtonLabel1" DefaultValue="Semi Automated API Tests"/>
@@ -919,12 +1005,37 @@
         <bt:String id="paneReadSuperTipTitle" DefaultValue="outlook API Tests for automatic validation"/>
         <bt:String id="paneReadSuperTipTitle1" DefaultValue="outlook API Tests for manual validation"/>
 
+        <bt:String id="paneComposeButtonLabel" DefaultValue="Validate Display Dialogs"/>
+        <bt:String id="paneComposeButtonLabel1" DefaultValue="Reply for message"/>
+        <bt:String id="paneComposeButtonLabel2" DefaultValue="Reply Allfor message"/>
+        <bt:String id="paneComposeButtonLabel3" DefaultValue="Reply with Inline image for message"/>
+        <bt:String id="paneComposeButtonLabel4" DefaultValue="Reply All with Inline image for message"/>
+     
+        <bt:String id="paneComposeButtonLabel5" DefaultValue="Reply for meeting"/>
+        <bt:String id="paneComposeButtonLabel6" DefaultValue="Reply All for meeting"/>
+        <bt:String id="paneComposeButtonLabel7" DefaultValue="Reply with Inline image for meeting"/>
+        <bt:String id="paneComposeButtonLabel8" DefaultValue="Reply All with Inline image for meeting"/>
+        <bt:String id="paneOrganizeButtonLabel" DefaultValue="Validate new appointment form"/>
+
       </bt:ShortStrings>
 
       <bt:LongStrings>
 
         <bt:String id="paneReadSuperTipDescription" DefaultValue="Opens to execute automated Tests. This is an example of a button that opens a task pane."/>
+        <bt:String id="paneReadButtonLabel" DefaultValue="Automated API Tests"/>
+        <bt:String id="paneReadButtonLabel1" DefaultValue="Semi Automated API Tests"/>
 
+        <bt:String id="paneComposeButtonLabel" DefaultValue="Validate Display Dialogs"/>
+        <bt:String id="paneComposeButtonLabel1" DefaultValue="Reply for message"/>
+        <bt:String id="paneComposeButtonLabel2" DefaultValue="Reply Allfor message"/>
+        <bt:String id="paneComposeButtonLabel3" DefaultValue="Reply with Inline image for message"/>
+        <bt:String id="paneComposeButtonLabel4" DefaultValue="Reply All with Inline image for message"/>
+     
+        <bt:String id="paneComposeButtonLabel5" DefaultValue="Reply for meeting"/>
+        <bt:String id="paneComposeButtonLabel6" DefaultValue="Reply All for meeting"/>
+        <bt:String id="paneComposeButtonLabel7" DefaultValue="Reply with Inline image for meeting"/>
+        <bt:String id="paneComposeButtonLabel8" DefaultValue="Reply All with Inline image for meeting"/>
+        <bt:String id="paneOrganizeButtonLabel" DefaultValue="Validate new appointment form"/>
       </bt:LongStrings>
 
     </Resources>
