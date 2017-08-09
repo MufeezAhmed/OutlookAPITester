@@ -30,7 +30,7 @@
 
   <Version>1.0.0.0</Version>
 
-  <ProviderName>[Mufeez]</ProviderName>
+  <ProviderName>Mufeez</ProviderName>
 
   <DefaultLocale>en-US</DefaultLocale>
 
@@ -38,7 +38,7 @@
 
   <DisplayName DefaultValue="Outlook API Test" />
 
-  <Description DefaultValue="Outlook API Test"/>
+  <Description DefaultValue="Outlook API Test:Validates the response of  All APIs"/>
 
   <IconUrl DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Images/icon64.png"/>
 
