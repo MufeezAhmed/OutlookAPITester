@@ -182,12 +182,12 @@
                 </Control>
 
                 <Control xsi:type="Menu" id="ValidateDisplayDialogs">
-  <Label resid="paneComposeButtonLabel" />
-  <Supertip>
-    <Title resid="paneComposeButtonLabel" />
-    <Description resid="paneReadSuperTipDescription" />
-  </Supertip>
-    <Icon>
+                  <Label resid="paneComposeButtonLabel" />
+                  <Supertip>
+                    <Title resid="paneComposeButtonLabel" />
+                    <Description resid="paneReadSuperTipDescription" />
+                  </Supertip>
+                  <Icon>
 
                     <bt:Image size="16" resid="icon16" />
 
@@ -196,168 +196,168 @@
                     <bt:Image size="80" resid="icon80" />
 
                   </Icon>
-  <Items>
-    <Item id="ValidateReplyForMessage">
-      <Label resid="paneComposeButtonLabel1"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel1" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-        <Icon>
+                  <Items>
+                    <Item id="ValidateReplyForMessage">
+                      <Label resid="paneComposeButtonLabel1"/>
+                      <Supertip>
+                        <Title resid="paneComposeButtonLabel1" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-                    <bt:Image size="16" resid="icon16" />
+                        <bt:Image size="16" resid="icon16" />
 
-                    <bt:Image size="32" resid="icon32" />
+                        <bt:Image size="32" resid="icon32" />
 
-                    <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="80" resid="icon80" />
 
-                  </Icon>
-      <Action xsi:type="ShowTaskpane">
-       
-        <SourceLocation resid="ReplyForMessageTaskPaneUrl" />
-      
-      </Action>
-    </Item>
-    <Item id="ValidateReplyAllforMessages">
-      <Label resid="paneComposeButtonLabel2"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel2" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-        <Icon>
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
 
-                    <bt:Image size="16" resid="icon16" />
+                        <SourceLocation resid="ReplyForMessageTaskPaneUrl" />
 
-                    <bt:Image size="32" resid="icon32" />
+                      </Action>
+                    </Item>
+                    <Item id="ValidateReplyAllforMessages">
+                      <Label resid="paneComposeButtonLabel2"/>
+                      <Supertip>
+                        <Title resid="paneComposeButtonLabel2" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-                    <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="16" resid="icon16" />
 
-                  </Icon>
-      <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="ReplyAllForMessageTaskPaneUrl" />
-      </Action>
-    </Item>
-    <Item id="ValidateReplyforMessagesWithInline">
-      <Label resid="paneComposeButtonLabel3"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel3" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-        <Icon>
+                        <bt:Image size="32" resid="icon32" />
 
-                    <bt:Image size="16" resid="icon16" />
+                        <bt:Image size="80" resid="icon80" />
 
-                    <bt:Image size="32" resid="icon32" />
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="ReplyAllForMessageTaskPaneUrl" />
+                      </Action>
+                    </Item>
+                    <Item id="ValidateReplyforMessagesWithInline">
+                      <Label resid="paneComposeButtonLabel3"/>
+                      <Supertip>
+                        <Title resid="paneComposeButtonLabel3" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-                    <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="16" resid="icon16" />
 
-                  </Icon>
-      <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="ReplyForMessageILTaskPaneUrl" />
-      </Action>
-    </Item>
-    <Item id="ValidateReplyAllforMessagesWithInline">
-      <Label resid="paneComposeButtonLabel4"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel4" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-        <Icon>
+                        <bt:Image size="32" resid="icon32" />
 
-                    <bt:Image size="16" resid="icon16" />
+                        <bt:Image size="80" resid="icon80" />
 
-                    <bt:Image size="32" resid="icon32" />
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="ReplyForMessageILTaskPaneUrl" />
+                      </Action>
+                    </Item>
+                    <Item id="ValidateReplyAllforMessagesWithInline">
+                      <Label resid="paneComposeButtonLabel4"/>
+                      <Supertip>
+                        <Title resid="paneComposeButtonLabel4" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-                    <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="16" resid="icon16" />
 
-                  </Icon>
-      <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="ReplyAllForMessageILTaskPaneUrl" />
-      </Action>
-    </Item>
-    <Item id="ValidateReplyForCalendar">
-      <Label resid="paneComposeButtonLabel5"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel5" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-        <Icon>
+                        <bt:Image size="32" resid="icon32" />
 
-                    <bt:Image size="16" resid="icon16" />
+                        <bt:Image size="80" resid="icon80" />
 
-                    <bt:Image size="32" resid="icon32" />
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="ReplyAllForMessageILTaskPaneUrl" />
+                      </Action>
+                    </Item>
+                    <Item id="ValidateReplyForCalendar">
+                      <Label resid="paneComposeButtonLabel5"/>
+                      <Supertip>
+                        <Title resid="paneComposeButtonLabel5" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-                    <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="16" resid="icon16" />
 
-                  </Icon>
-      <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="ReplyForCalendarTaskPaneUrl" />
-      </Action>
-    </Item>
-    <Item id="ValidateReplyAllForCalendar">
-      <Label resid="paneComposeButtonLabel6"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel6" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-        <Icon>
+                        <bt:Image size="32" resid="icon32" />
 
-                    <bt:Image size="16" resid="icon16" />
+                        <bt:Image size="80" resid="icon80" />
 
-                    <bt:Image size="32" resid="icon32" />
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="ReplyForCalendarTaskPaneUrl" />
+                      </Action>
+                    </Item>
+                    <Item id="ValidateReplyAllForCalendar">
+                      <Label resid="paneComposeButtonLabel6"/>
+                      <Supertip>
+                        <Title resid="paneComposeButtonLabel6" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-                    <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="16" resid="icon16" />
 
-                  </Icon>
-      <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="ReplyAllForCalendarTaskPaneUrl" />
-      </Action>
-    </Item>
-    <Item id="ValidateReplyForCalendarWithInline">
-      <Label resid="paneComposeButtonLabel7"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel7" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-        <Icon>
+                        <bt:Image size="32" resid="icon32" />
 
-                    <bt:Image size="16" resid="icon16" />
+                        <bt:Image size="80" resid="icon80" />
 
-                    <bt:Image size="32" resid="icon32" />
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="ReplyAllForCalendarTaskPaneUrl" />
+                      </Action>
+                    </Item>
+                    <Item id="ValidateReplyForCalendarWithInline">
+                      <Label resid="paneComposeButtonLabel7"/>
+                      <Supertip>
+                        <Title resid="paneComposeButtonLabel7" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-                    <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="16" resid="icon16" />
 
-                  </Icon>
-      <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="ReplyForCalendarILTaskPaneUrl" />
-      </Action>
-    </Item>
-    <Item id="ValidateReplyAllForCalendarWithInline">
-      <Label resid="paneComposeButtonLabel8"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel8" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-        <Icon>
+                        <bt:Image size="32" resid="icon32" />
 
-                    <bt:Image size="16" resid="icon16" />
+                        <bt:Image size="80" resid="icon80" />
 
-                    <bt:Image size="32" resid="icon32" />
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="ReplyForCalendarILTaskPaneUrl" />
+                      </Action>
+                    </Item>
+                    <Item id="ValidateReplyAllForCalendarWithInline">
+                      <Label resid="paneComposeButtonLabel8"/>
+                      <Supertip>
+                        <Title resid="paneComposeButtonLabel8" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-                    <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="16" resid="icon16" />
 
-                  </Icon>
-      <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="ReplyAllForCalendarILTaskPaneUrl" />
-      </Action>
-    </Item>
-   
-  </Items>
-</Control>
-                
+                        <bt:Image size="32" resid="icon32" />
 
-                
-                
+                        <bt:Image size="80" resid="icon80" />
+
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <SourceLocation resid="ReplyAllForCalendarILTaskPaneUrl" />
+                      </Action>
+                    </Item>
+
+                  </Items>
+                </Control>
+
+
+
+
                 <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
 
               </Group>
@@ -443,15 +443,15 @@
                   </Action>
 
                 </Control>
-                
-                
+
+
                 <Control xsi:type="Menu" id="MessageReadDisplayDialogs">
-  <Label resid="paneComposeButtonLabel" />
-  <Supertip>
-    <Title resid="paneComposeButtonLabel" />
-    <Description resid="paneReadSuperTipDescription" />
-  </Supertip>
-    <Icon>
+                  <Label resid="paneComposeButtonLabel" />
+                  <Supertip>
+                    <Title resid="paneComposeButtonLabel" />
+                    <Description resid="paneReadSuperTipDescription" />
+                  </Supertip>
+                  <Icon>
 
                     <bt:Image size="16" resid="icon16" />
 
@@ -460,125 +460,125 @@
                     <bt:Image size="80" resid="icon80" />
 
                   </Icon>
-  <Items>
-    <Item id="ReplyForMessage">
-      <Label resid="paneComposeButtonLabel1"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel1" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-        <Icon>
+                  <Items>
+                    <Item id="ReplyForMessage">
+                      <Label resid="paneComposeButtonLabel1"/>
+                      <Supertip>
+                        <Title resid="paneComposeButtonLabel1" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-                    <bt:Image size="16" resid="icon16" />
+                        <bt:Image size="16" resid="icon16" />
 
-                    <bt:Image size="32" resid="icon32" />
+                        <bt:Image size="32" resid="icon32" />
 
-                    <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="80" resid="icon80" />
 
-                  </Icon>
-     <Action xsi:type="ExecuteFunction">
-  <FunctionName>displayReplyForm</FunctionName>
-</Action>
-    </Item>
-    <Item id="ReplyAllforMessages">
-      <Label resid="paneComposeButtonLabel2"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel2" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-        <Icon>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>displayReplyForm</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="ReplyAllforMessages">
+                      <Label resid="paneComposeButtonLabel2"/>
+                      <Supertip>
+                        <Title resid="paneComposeButtonLabel2" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-                    <bt:Image size="16" resid="icon16" />
+                        <bt:Image size="16" resid="icon16" />
 
-                    <bt:Image size="32" resid="icon32" />
+                        <bt:Image size="32" resid="icon32" />
 
-                    <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="80" resid="icon80" />
 
-                  </Icon>
-      <Action xsi:type="ExecuteFunction">
-  <FunctionName>displayReplyAllForm</FunctionName>
-</Action>
-    </Item>
-    <Item id="ReplyforMessagesWithInline">
-      <Label resid="paneComposeButtonLabel3"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel3" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-        <Icon>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>displayReplyAllForm</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="ReplyforMessagesWithInline">
+                      <Label resid="paneComposeButtonLabel3"/>
+                      <Supertip>
+                        <Title resid="paneComposeButtonLabel3" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-                    <bt:Image size="16" resid="icon16" />
+                        <bt:Image size="16" resid="icon16" />
 
-                    <bt:Image size="32" resid="icon32" />
+                        <bt:Image size="32" resid="icon32" />
 
-                    <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="80" resid="icon80" />
 
-                  </Icon>
-        <Action xsi:type="ExecuteFunction">
-  <FunctionName>displayReplyFormWithInline</FunctionName>
-</Action>
-    </Item>
-    <Item id="ReplyAllforMessagesWithInline">
-      <Label resid="paneComposeButtonLabel4"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel4" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-        <Icon>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>displayReplyFormWithInline</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="ReplyAllforMessagesWithInline">
+                      <Label resid="paneComposeButtonLabel4"/>
+                      <Supertip>
+                        <Title resid="paneComposeButtonLabel4" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-                    <bt:Image size="16" resid="icon16" />
+                        <bt:Image size="16" resid="icon16" />
 
-                    <bt:Image size="32" resid="icon32" />
+                        <bt:Image size="32" resid="icon32" />
 
-                    <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="80" resid="icon80" />
 
-                  </Icon>
-        <Action xsi:type="ExecuteFunction">
-  <FunctionName>displayReplyAllFormWithInline</FunctionName>
-</Action>
-    </Item>
-    <Item id="displayMessageFormForMessage">
-      <Label resid="paneComposeButtonLabel4"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel4" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-      <Icon>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>displayReplyAllFormWithInline</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="displayMessageFormForMessage">
+                      <Label resid="paneReadButtonLabel2"/>
+                      <Supertip>
+                        <Title resid="paneReadButtonLabel2" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-        <bt:Image size="16" resid="icon16" />
+                        <bt:Image size="16" resid="icon16" />
 
-        <bt:Image size="32" resid="icon32" />
+                        <bt:Image size="32" resid="icon32" />
 
-        <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="80" resid="icon80" />
 
-      </Icon>
-      <Action xsi:type="ExecuteFunction">
-        <FunctionName>displayMessageForm</FunctionName>
-      </Action>
-    </Item>
-    <Item id="displayAppointmentFormForMessage">
-      <Label resid="paneComposeButtonLabel4"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel4" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-      <Icon>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>displayMessageForm</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="displayAppointmentFormForMessage">
+                      <Label resid="paneReadButtonLabel3"/>
+                      <Supertip>
+                        <Title resid="paneReadButtonLabel3" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-        <bt:Image size="16" resid="icon16" />
+                        <bt:Image size="16" resid="icon16" />
 
-        <bt:Image size="32" resid="icon32" />
+                        <bt:Image size="32" resid="icon32" />
 
-        <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="80" resid="icon80" />
 
-      </Icon>
-      <Action xsi:type="ExecuteFunction">
-        <FunctionName>displayAppointmentForm</FunctionName>
-      </Action>
-    </Item>
-    
-   
-  </Items>
-</Control>
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>displayAppointmentForm</FunctionName>
+                      </Action>
+                    </Item>
+
+
+                  </Items>
+                </Control>
 
                 <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
 
@@ -590,48 +590,48 @@
 
           <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
 
-              <!-- Use the default tab of the ExtensionPoint or create your own with <CustomTab id="myTab"> -->
+            <!-- Use the default tab of the ExtensionPoint or create your own with <CustomTab id="myTab"> -->
 
-              <OfficeTab id="TabDefault">
+            <OfficeTab id="TabDefault">
 
-                <!-- Up to 6 Groups added per Tab -->
+              <!-- Up to 6 Groups added per Tab -->
 
-                <Group id="appointmentOrganizeGroup">
+              <Group id="appointmentOrganizeGroup">
 
-                  <Label resid="groupLabel" />
+                <Label resid="groupLabel" />
 
-                  <!-- Launch the add-in : task pane button -->
+                <!-- Launch the add-in : task pane button -->
 
-                  <Control xsi:type="Button" id="appointmentOrganizeOpenPaneButton">
+                <Control xsi:type="Button" id="appointmentOrganizeOpenPaneButton">
 
-                    <Label resid="paneReadButtonLabel" />
+                  <Label resid="paneReadButtonLabel" />
 
-                    <Supertip>
+                  <Supertip>
 
-                      <Title resid="paneReadSuperTipTitle" />
+                    <Title resid="paneReadSuperTipTitle" />
 
-                      <Description resid="paneReadSuperTipDescription" />
+                    <Description resid="paneReadSuperTipDescription" />
 
-                    </Supertip>
+                  </Supertip>
 
-                    <Icon>
+                  <Icon>
 
-                      <bt:Image size="16" resid="icon16" />
+                    <bt:Image size="16" resid="icon16" />
 
-                      <bt:Image size="32" resid="icon32" />
+                    <bt:Image size="32" resid="icon32" />
 
-                      <bt:Image size="80" resid="icon80" />
+                    <bt:Image size="80" resid="icon80" />
 
-                    </Icon>
+                  </Icon>
 
-                    <Action xsi:type="ShowTaskpane">
+                  <Action xsi:type="ShowTaskpane">
 
-                      <SourceLocation resid="apponitmentOrganizeTaskPaneUrl" />
+                    <SourceLocation resid="apponitmentOrganizeTaskPaneUrl" />
 
-                    </Action>
+                  </Action>
 
-                  </Control>
-                  <Control xsi:type="Button" id="validateNewAppointmentForm">
+                </Control>
+                <Control xsi:type="Button" id="validateNewAppointmentForm">
 
                   <Label resid="paneOrganizeButtonLabel" />
 
@@ -661,13 +661,13 @@
 
                 </Control>
 
-                  <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
+                <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
 
-                </Group>
+              </Group>
 
-              </OfficeTab>
+            </OfficeTab>
 
-            </ExtensionPoint>
+          </ExtensionPoint>
 
           <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
 
@@ -712,7 +712,7 @@
                   </Action>
 
                 </Control>
-                
+
                 <Control xsi:type="Button" id="appointmentAttendeeOpenPaneButton1">
 
                   <Label resid="paneReadButtonLabel1" />
@@ -742,14 +742,14 @@
                   </Action>
 
                 </Control>
-                
+
                 <Control xsi:type="Menu" id="AppointmentAttendeeDisplayDialogs">
-  <Label resid="paneComposeButtonLabel" />
-  <Supertip>
-    <Title resid="paneComposeButtonLabel" />
-    <Description resid="paneReadSuperTipDescription" />
-  </Supertip>
-    <Icon>
+                  <Label resid="paneComposeButtonLabel" />
+                  <Supertip>
+                    <Title resid="paneComposeButtonLabel" />
+                    <Description resid="paneReadSuperTipDescription" />
+                  </Supertip>
+                  <Icon>
 
                     <bt:Image size="16" resid="icon16" />
 
@@ -758,125 +758,125 @@
                     <bt:Image size="80" resid="icon80" />
 
                   </Icon>
-  <Items>
-   
-    <Item id="ReplyForCalendar">
-      <Label resid="paneComposeButtonLabel5"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel5" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-        <Icon>
+                  <Items>
 
-                    <bt:Image size="16" resid="icon16" />
+                    <Item id="ReplyForCalendar">
+                      <Label resid="paneComposeButtonLabel5"/>
+                      <Supertip>
+                        <Title resid="paneComposeButtonLabel5" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-                    <bt:Image size="32" resid="icon32" />
+                        <bt:Image size="16" resid="icon16" />
 
-                    <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="32" resid="icon32" />
 
-                  </Icon>
-      <Action xsi:type="ExecuteFunction">
-  <FunctionName>displayReplyForm</FunctionName>
-</Action>
-    </Item>
-    <Item id="ReplyAllForCalendar">
-      <Label resid="paneComposeButtonLabel6"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel6" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-        <Icon>
+                        <bt:Image size="80" resid="icon80" />
 
-                    <bt:Image size="16" resid="icon16" />
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>displayReplyForm</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="ReplyAllForCalendar">
+                      <Label resid="paneComposeButtonLabel6"/>
+                      <Supertip>
+                        <Title resid="paneComposeButtonLabel6" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-                    <bt:Image size="32" resid="icon32" />
+                        <bt:Image size="16" resid="icon16" />
 
-                    <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="32" resid="icon32" />
 
-                  </Icon>
-        <Action xsi:type="ExecuteFunction">
-  <FunctionName>displayReplyAllForm</FunctionName>
-</Action>
-    </Item>
-    <Item id="ReplyForCalendarWithInline">
-      <Label resid="paneComposeButtonLabel7"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel7" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-        <Icon>
+                        <bt:Image size="80" resid="icon80" />
 
-                    <bt:Image size="16" resid="icon16" />
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>displayReplyAllForm</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="ReplyForCalendarWithInline">
+                      <Label resid="paneComposeButtonLabel7"/>
+                      <Supertip>
+                        <Title resid="paneComposeButtonLabel7" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-                    <bt:Image size="32" resid="icon32" />
+                        <bt:Image size="16" resid="icon16" />
 
-                    <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="32" resid="icon32" />
 
-                  </Icon>
-        <Action xsi:type="ExecuteFunction">
-  <FunctionName>displayReplyFormWithInline</FunctionName>
-</Action>
-    </Item>
-    <Item id="ReplyAllForCalendarWithInline">
-      <Label resid="paneComposeButtonLabel8"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel8" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-        <Icon>
+                        <bt:Image size="80" resid="icon80" />
 
-                    <bt:Image size="16" resid="icon16" />
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>displayReplyFormWithInline</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="ReplyAllForCalendarWithInline">
+                      <Label resid="paneComposeButtonLabel8"/>
+                      <Supertip>
+                        <Title resid="paneComposeButtonLabel8" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-                    <bt:Image size="32" resid="icon32" />
+                        <bt:Image size="16" resid="icon16" />
 
-                    <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="32" resid="icon32" />
 
-                  </Icon>
-       <Action xsi:type="ExecuteFunction">
-  <FunctionName>displayReplyAllFormWithInline</FunctionName>
-</Action>
-    </Item>
-    <Item id="displayMessageFormForCalendar">
-      <Label resid="paneComposeButtonLabel4"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel4" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-      <Icon>
+                        <bt:Image size="80" resid="icon80" />
 
-        <bt:Image size="16" resid="icon16" />
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>displayReplyAllFormWithInline</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="displayMessageFormForCalendar">
+                      <Label resid="paneReadButtonLabel2"/>
+                      <Supertip>
+                        <Title resid="paneReadButtonLabel2" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-        <bt:Image size="32" resid="icon32" />
+                        <bt:Image size="16" resid="icon16" />
 
-        <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="32" resid="icon32" />
 
-      </Icon>
-      <Action xsi:type="ExecuteFunction">
-        <FunctionName>displayMessageForm</FunctionName>
-      </Action>
-    </Item>
-    <Item id="displayAppointmentFormForCalendar">
-      <Label resid="paneComposeButtonLabel4"/>
-      <Supertip>
-        <Title resid="paneComposeButtonLabel4" />
-        <Description resid="paneReadButtonLabel" />
-      </Supertip>
-      <Icon>
+                        <bt:Image size="80" resid="icon80" />
 
-        <bt:Image size="16" resid="icon16" />
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>displayMessageForm</FunctionName>
+                      </Action>
+                    </Item>
+                    <Item id="displayAppointmentFormForCalendar">
+                      <Label resid="paneReadButtonLabel3"/>
+                      <Supertip>
+                        <Title resid="paneReadButtonLabel3" />
+                        <Description resid="paneReadButtonLabel" />
+                      </Supertip>
+                      <Icon>
 
-        <bt:Image size="32" resid="icon32" />
+                        <bt:Image size="16" resid="icon16" />
 
-        <bt:Image size="80" resid="icon80" />
+                        <bt:Image size="32" resid="icon32" />
 
-      </Icon>
-      <Action xsi:type="ExecuteFunction">
-        <FunctionName>displayAppointmentForm</FunctionName>
-      </Action>
-    </Item>
-   
-  </Items>
-</Control>
+                        <bt:Image size="80" resid="icon80" />
+
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>displayAppointmentForm</FunctionName>
+                      </Action>
+                    </Item>
+
+                  </Items>
+                </Control>
 
                 <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
 
@@ -923,7 +923,7 @@
 
 
         <bt:Url id="messageComposeTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerMessageCompose.html"/>
-        
+
         <bt:Url id="ReplyForMessageTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyForMessage.html"/>
         <bt:Url id="ReplyAllForMessageTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyAllForMessage.html"/>
         <bt:Url id="ReplyForMessageILTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyForMessageWithInline.html"/>
@@ -948,21 +948,27 @@
 
         <bt:String id="paneReadButtonLabel" DefaultValue="Automated API Test"/>
         <bt:String id="paneReadButtonLabel1" DefaultValue="Semi Automated API Test"/>
+        <bt:String id="paneReadButtonLabel2" DefaultValue="Display Message Form"/>
+        <bt:String id="paneReadButtonLabel3" DefaultValue="Display Appointment Form"/>
 
         <bt:String id="paneReadSuperTipTitle" DefaultValue="outlook API Test for automatic validation"/>
         <bt:String id="paneReadSuperTipTitle1" DefaultValue="outlook API Test for manual validation"/>
 
+
         <bt:String id="paneComposeButtonLabel" DefaultValue="Validate Display Dialogs"/>
         <bt:String id="paneComposeButtonLabel1" DefaultValue="Reply for message"/>
-        <bt:String id="paneComposeButtonLabel2" DefaultValue="Reply Allfor message"/>
+        <bt:String id="paneComposeButtonLabel2" DefaultValue="Reply All for message"/>
         <bt:String id="paneComposeButtonLabel3" DefaultValue="Reply with Inline image for message"/>
         <bt:String id="paneComposeButtonLabel4" DefaultValue="Reply All with Inline image for message"/>
-     
+
         <bt:String id="paneComposeButtonLabel5" DefaultValue="Reply for meeting"/>
         <bt:String id="paneComposeButtonLabel6" DefaultValue="Reply All for meeting"/>
         <bt:String id="paneComposeButtonLabel7" DefaultValue="Reply with Inline image for meeting"/>
         <bt:String id="paneComposeButtonLabel8" DefaultValue="Reply All with Inline image for meeting"/>
+
         <bt:String id="paneOrganizeButtonLabel" DefaultValue="Validate new appointment form"/>
+
+
 
       </bt:ShortStrings>
 
@@ -977,7 +983,7 @@
         <bt:String id="paneComposeButtonLabel2" DefaultValue="Reply Allfor message"/>
         <bt:String id="paneComposeButtonLabel3" DefaultValue="Reply with Inline image for message"/>
         <bt:String id="paneComposeButtonLabel4" DefaultValue="Reply All with Inline image for message"/>
-     
+
         <bt:String id="paneComposeButtonLabel5" DefaultValue="Reply for meeting"/>
         <bt:String id="paneComposeButtonLabel6" DefaultValue="Reply All for meeting"/>
         <bt:String id="paneComposeButtonLabel7" DefaultValue="Reply with Inline image for meeting"/>
@@ -1415,9 +1421,9 @@
                         </Action>
                       </Item>
                       <Item id="displayMessageFormForMessage">
-                        <Label resid="paneComposeButtonLabel4"/>
+                        <Label resid="paneReadButtonLabel2"/>
                         <Supertip>
-                          <Title resid="paneComposeButtonLabel4" />
+                          <Title resid="paneReadButtonLabel2" />
                           <Description resid="paneReadButtonLabel" />
                         </Supertip>
                         <Icon>
@@ -1434,9 +1440,9 @@
                         </Action>
                       </Item>
                       <Item id="displayAppointmentFormForMessage">
-                        <Label resid="paneComposeButtonLabel4"/>
+                        <Label resid="paneReadButtonLabel3"/>
                         <Supertip>
-                          <Title resid="paneComposeButtonLabel4" />
+                          <Title resid="paneReadButtonLabel3" />
                           <Description resid="paneReadButtonLabel" />
                         </Supertip>
                         <Icon>
@@ -1714,9 +1720,9 @@
                         </Action>
                       </Item>
                       <Item id="displayMessageFormForCalendar">
-                        <Label resid="paneComposeButtonLabel4"/>
+                        <Label resid="paneReadButtonLabel2"/>
                         <Supertip>
-                          <Title resid="paneComposeButtonLabel4" />
+                          <Title resid="paneReadButtonLabel2" />
                           <Description resid="paneReadButtonLabel" />
                         </Supertip>
                         <Icon>
@@ -1733,9 +1739,9 @@
                         </Action>
                       </Item>
                       <Item id="displayAppointmentFormForCalendar">
-                        <Label resid="paneComposeButtonLabel4"/>
+                        <Label resid="paneReadButtonLabel3"/>
                         <Supertip>
-                          <Title resid="paneComposeButtonLabel4" />
+                          <Title resid="paneReadButtonLabel3" />
                           <Description resid="paneReadButtonLabel" />
                         </Supertip>
                         <Icon>
@@ -1849,13 +1855,16 @@
 
         <bt:String id="paneReadButtonLabel" DefaultValue="Automated API Test"/>
         <bt:String id="paneReadButtonLabel1" DefaultValue="Semi Automated API Test"/>
+        <bt:String id="paneReadButtonLabel2" DefaultValue="Display Message Form"/>
+        <bt:String id="paneReadButtonLabel3" DefaultValue="Display Appointment Form"/>
 
         <bt:String id="paneReadSuperTipTitle" DefaultValue="outlook API Test for automatic validation"/>
         <bt:String id="paneReadSuperTipTitle1" DefaultValue="outlook API Test for manual validation"/>
+        
 
         <bt:String id="paneComposeButtonLabel" DefaultValue="Validate Display Dialogs"/>
         <bt:String id="paneComposeButtonLabel1" DefaultValue="Reply for message"/>
-        <bt:String id="paneComposeButtonLabel2" DefaultValue="Reply Allfor message"/>
+        <bt:String id="paneComposeButtonLabel2" DefaultValue="Reply All for message"/>
         <bt:String id="paneComposeButtonLabel3" DefaultValue="Reply with Inline image for message"/>
         <bt:String id="paneComposeButtonLabel4" DefaultValue="Reply All with Inline image for message"/>
      
@@ -1863,7 +1872,10 @@
         <bt:String id="paneComposeButtonLabel6" DefaultValue="Reply All for meeting"/>
         <bt:String id="paneComposeButtonLabel7" DefaultValue="Reply with Inline image for meeting"/>
         <bt:String id="paneComposeButtonLabel8" DefaultValue="Reply All with Inline image for meeting"/>
+        
         <bt:String id="paneOrganizeButtonLabel" DefaultValue="Validate new appointment form"/>
+
+        
 
       </bt:ShortStrings>
 
