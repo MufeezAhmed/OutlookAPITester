@@ -214,7 +214,7 @@
                   </Icon>
       <Action xsi:type="ShowTaskpane">
        
-        <SourceLocation resid="messageComposeTaskPaneUrl" />
+        <SourceLocation resid="ReplyForMessageTaskPaneUrl" />
       
       </Action>
     </Item>
@@ -234,7 +234,7 @@
 
                   </Icon>
       <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="messageComposeTaskPaneUrl" />
+          <SourceLocation resid="ReplyAllForMessageTaskPaneUrl" />
       </Action>
     </Item>
     <Item id="ValidateReplyforMessagesWithInline">
@@ -253,7 +253,7 @@
 
                   </Icon>
       <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="messageComposeTaskPaneUrl" />
+          <SourceLocation resid="ReplyForMessageILTaskPaneUrl" />
       </Action>
     </Item>
     <Item id="ValidateReplyAllforMessagesWithInline">
@@ -272,7 +272,7 @@
 
                   </Icon>
       <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="messageComposeTaskPaneUrl" />
+          <SourceLocation resid="ReplyAllForMessageILTaskPaneUrl" />
       </Action>
     </Item>
     <Item id="ValidateReplyForCalendar">
@@ -291,7 +291,7 @@
 
                   </Icon>
       <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="messageComposeTaskPaneUrl" />
+          <SourceLocation resid="ReplyForCalendarTaskPaneUrl" />
       </Action>
     </Item>
     <Item id="ValidateReplyAllForCalendar">
@@ -310,7 +310,7 @@
 
                   </Icon>
       <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="messageComposeTaskPaneUrl" />
+          <SourceLocation resid="ReplyAllForCalendarTaskPaneUrl" />
       </Action>
     </Item>
     <Item id="ValidateReplyForCalendarWithInline">
@@ -329,7 +329,7 @@
 
                   </Icon>
       <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="messageComposeTaskPaneUrl" />
+          <SourceLocation resid="ReplyForCalendarILTaskPaneUrl" />
       </Action>
     </Item>
     <Item id="ValidateReplyAllForCalendarWithInline">
@@ -348,7 +348,7 @@
 
                   </Icon>
       <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="messageComposeTaskPaneUrl" />
+          <SourceLocation resid="ReplyAllForCalendarILTaskPaneUrl" />
       </Action>
     </Item>
    
@@ -443,6 +443,106 @@
                   </Action>
 
                 </Control>
+                
+                
+                <Control xsi:type="Menu" id="MessageReadDisplayDialogs">
+  <Label resid="paneComposeButtonLabel" />
+  <Supertip>
+    <Title resid="paneComposeButtonLabel" />
+    <Description resid="paneReadSuperTipDescription" />
+  </Supertip>
+    <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+  <Items>
+    <Item id="ReplyForMessage">
+      <Label resid="paneComposeButtonLabel1"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel1" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+       
+        <SourceLocation resid="messageComposeTaskPaneUrl" />
+      
+      </Action>
+    </Item>
+    <Item id="ReplyAllforMessages">
+      <Label resid="paneComposeButtonLabel2"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel2" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+          <SourceLocation resid="messageComposeTaskPaneUrl" />
+      </Action>
+    </Item>
+    <Item id="ReplyforMessagesWithInline">
+      <Label resid="paneComposeButtonLabel3"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel3" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+          <SourceLocation resid="messageComposeTaskPaneUrl" />
+      </Action>
+    </Item>
+    <Item id="ReplyAllforMessagesWithInline">
+      <Label resid="paneComposeButtonLabel4"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel4" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+          <SourceLocation resid="messageComposeTaskPaneUrl" />
+      </Action>
+    </Item>
+    
+   
+  </Items>
+</Control>
 
                 <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
 
@@ -606,6 +706,103 @@
                   </Action>
 
                 </Control>
+                
+                <Control xsi:type="Menu" id="AppointmentAttendeeDisplayDialogs">
+  <Label resid="paneComposeButtonLabel" />
+  <Supertip>
+    <Title resid="paneComposeButtonLabel" />
+    <Description resid="paneReadSuperTipDescription" />
+  </Supertip>
+    <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+  <Items>
+   
+    <Item id="ReplyForCalendar">
+      <Label resid="paneComposeButtonLabel5"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel5" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+          <SourceLocation resid="messageComposeTaskPaneUrl" />
+      </Action>
+    </Item>
+    <Item id="ReplyAllForCalendar">
+      <Label resid="paneComposeButtonLabel6"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel6" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+          <SourceLocation resid="messageComposeTaskPaneUrl" />
+      </Action>
+    </Item>
+    <Item id="ReplyForCalendarWithInline">
+      <Label resid="paneComposeButtonLabel7"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel7" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+          <SourceLocation resid="messageComposeTaskPaneUrl" />
+      </Action>
+    </Item>
+    <Item id="ReplyAllForCalendarWithInline">
+      <Label resid="paneComposeButtonLabel8"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel8" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+          <SourceLocation resid="messageComposeTaskPaneUrl" />
+      </Action>
+    </Item>
+   
+  </Items>
+</Control>
 
                 <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
 
@@ -652,6 +849,15 @@
 
 
         <bt:Url id="messageComposeTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerMessageCompose.html"/>
+        
+        <bt:Url id="ReplyForMessageTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyForMessage.html"/>
+        <bt:Url id="ReplyAllForMessageTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyAllForMessage.html"/>
+        <bt:Url id="ReplyForMessageILTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyForMessageWithInline.html"/>
+        <bt:Url id="ReplyAllForMessageILTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyAllForMessageWithInline.html"/>
+        <bt:Url id="ReplyForCalendarTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyForCalendar.html"/>
+        <bt:Url id="ReplyAllForCalendarTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyAllForCalendar.html"/>
+        <bt:Url id="ReplyForCalendarILTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyForCalendarWithInline.html"/>
+        <bt:Url id="ReplyAllForCalendarILTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyAllForCalendarWithInline.html"/>
 
         <bt:Url id="apponitmentOrganizeTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerAppointmentOrganizer.html"/>
 
@@ -726,15 +932,15 @@
 
           <DesktopFormFactor>
 
-            <!-- Location of the Functions that UI-less buttons can trigger (ExecuteFunction Actions). -->
+          <!-- Location of the Functions that UI-less buttons can trigger (ExecuteFunction Actions). -->
 
-            <FunctionFile resid="functionFile" />
+          <FunctionFile resid="functionFile" />
 
 
 
-            <!-- Message Read -->
+          <!-- Message Read -->
 
-            <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+          <ExtensionPoint xsi:type="MessageComposeCommandSurface">
 
             <!-- Use the default tab of the ExtensionPoint or create your own with <CustomTab id="myTab"> -->
 
@@ -811,7 +1017,7 @@
                   </Icon>
       <Action xsi:type="ShowTaskpane">
        
-        <SourceLocation resid="messageComposeTaskPaneUrl" />
+        <SourceLocation resid="ReplyForMessageTaskPaneUrl" />
       
       </Action>
     </Item>
@@ -831,7 +1037,7 @@
 
                   </Icon>
       <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="messageComposeTaskPaneUrl" />
+          <SourceLocation resid="ReplyAllForMessageTaskPaneUrl" />
       </Action>
     </Item>
     <Item id="ValidateReplyforMessagesWithInline">
@@ -850,7 +1056,7 @@
 
                   </Icon>
       <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="messageComposeTaskPaneUrl" />
+          <SourceLocation resid="ReplyForMessageILTaskPaneUrl" />
       </Action>
     </Item>
     <Item id="ValidateReplyAllforMessagesWithInline">
@@ -869,7 +1075,7 @@
 
                   </Icon>
       <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="messageComposeTaskPaneUrl" />
+          <SourceLocation resid="ReplyAllForMessageILTaskPaneUrl" />
       </Action>
     </Item>
     <Item id="ValidateReplyForCalendar">
@@ -888,7 +1094,7 @@
 
                   </Icon>
       <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="messageComposeTaskPaneUrl" />
+          <SourceLocation resid="ReplyForCalendarTaskPaneUrl" />
       </Action>
     </Item>
     <Item id="ValidateReplyAllForCalendar">
@@ -907,7 +1113,7 @@
 
                   </Icon>
       <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="messageComposeTaskPaneUrl" />
+          <SourceLocation resid="ReplyAllForCalendarTaskPaneUrl" />
       </Action>
     </Item>
     <Item id="ValidateReplyForCalendarWithInline">
@@ -926,7 +1132,7 @@
 
                   </Icon>
       <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="messageComposeTaskPaneUrl" />
+          <SourceLocation resid="ReplyForCalendarILTaskPaneUrl" />
       </Action>
     </Item>
     <Item id="ValidateReplyAllForCalendarWithInline">
@@ -945,7 +1151,7 @@
 
                   </Icon>
       <Action xsi:type="ShowTaskpane">
-          <SourceLocation resid="messageComposeTaskPaneUrl" />
+          <SourceLocation resid="ReplyAllForCalendarILTaskPaneUrl" />
       </Action>
     </Item>
    
@@ -965,91 +1171,191 @@
 
 
 
-            <ExtensionPoint xsi:type="MessageReadCommandSurface">
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
 
-              <!-- Use the default tab of the ExtensionPoint or create your own with <CustomTab id="myTab"> -->
+            <!-- Use the default tab of the ExtensionPoint or create your own with <CustomTab id="myTab"> -->
 
-              <OfficeTab id="TabDefault">
+            <OfficeTab id="TabDefault">
 
-                <!-- Up to 6 Groups added per Tab -->
+              <!-- Up to 6 Groups added per Tab -->
 
-                <Group id="msgReadGroup">
+              <Group id="msgReadGroup">
 
-                  <Label resid="groupLabel" />
+                <Label resid="groupLabel" />
 
-                  <!-- Launch the add-in : task pane button for automatic validation -->
+                <!-- Launch the add-in : task pane button for automatic validation -->
 
-                  <Control xsi:type="Button" id="msgReadOpenPaneButton">
+                <Control xsi:type="Button" id="msgReadOpenPaneButton">
 
-                    <Label resid="paneReadButtonLabel" />
+                  <Label resid="paneReadButtonLabel" />
 
-                    <Supertip>
+                  <Supertip>
 
-                      <Title resid="paneReadSuperTipTitle" />
+                    <Title resid="paneReadSuperTipTitle" />
 
-                      <Description resid="paneReadSuperTipDescription" />
+                    <Description resid="paneReadSuperTipDescription" />
 
-                    </Supertip>
+                  </Supertip>
 
-                    <Icon>
+                  <Icon>
 
-                      <bt:Image size="16" resid="icon16" />
+                    <bt:Image size="16" resid="icon16" />
 
-                      <bt:Image size="32" resid="icon32" />
+                    <bt:Image size="32" resid="icon32" />
 
-                      <bt:Image size="80" resid="icon80" />
+                    <bt:Image size="80" resid="icon80" />
 
-                    </Icon>
+                  </Icon>
 
-                    <Action xsi:type="ShowTaskpane">
+                  <Action xsi:type="ShowTaskpane">
 
-                      <SourceLocation resid="messageReadTaskPaneUrl" />
+                    <SourceLocation resid="messageReadTaskPaneUrl" />
 
-                    </Action>
+                  </Action>
 
-                  </Control>
+                </Control>
 
-                  <!-- Launch the add-in : task pane button for manual validation-->
+                <!-- Launch the add-in : task pane button for manual validation-->
 
-                  <Control xsi:type="Button" id="msgReadOpenPaneButton1">
+                <Control xsi:type="Button" id="msgReadOpenPaneButton1">
 
-                    <Label resid="paneReadButtonLabel1" />
+                  <Label resid="paneReadButtonLabel1" />
 
-                    <Supertip>
+                  <Supertip>
 
-                      <Title resid="paneReadSuperTipTitle1" />
+                    <Title resid="paneReadSuperTipTitle1" />
 
-                      <Description resid="paneReadSuperTipDescription" />
+                    <Description resid="paneReadSuperTipDescription" />
 
-                    </Supertip>
+                  </Supertip>
 
-                    <Icon>
+                  <Icon>
 
-                      <bt:Image size="16" resid="icon16" />
+                    <bt:Image size="16" resid="icon16" />
 
-                      <bt:Image size="32" resid="icon32" />
+                    <bt:Image size="32" resid="icon32" />
 
-                      <bt:Image size="80" resid="icon80" />
+                    <bt:Image size="80" resid="icon80" />
 
-                    </Icon>
+                  </Icon>
 
-                    <Action xsi:type="ShowTaskpane">
+                  <Action xsi:type="ShowTaskpane">
 
-                      <SourceLocation resid="messageReadTaskPaneUrl1" />
+                    <SourceLocation resid="messageReadTaskPaneUrl1" />
 
-                    </Action>
+                  </Action>
 
-                  </Control>
+                </Control>
+                
+                
+                <Control xsi:type="Menu" id="MessageReadDisplayDialogs">
+  <Label resid="paneComposeButtonLabel" />
+  <Supertip>
+    <Title resid="paneComposeButtonLabel" />
+    <Description resid="paneReadSuperTipDescription" />
+  </Supertip>
+    <Icon>
 
-                  <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
+                    <bt:Image size="16" resid="icon16" />
 
-                </Group>
+                    <bt:Image size="32" resid="icon32" />
 
-              </OfficeTab>
+                    <bt:Image size="80" resid="icon80" />
 
-            </ExtensionPoint>
+                  </Icon>
+  <Items>
+    <Item id="ReplyForMessage">
+      <Label resid="paneComposeButtonLabel1"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel1" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
 
-            <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+       
+        <SourceLocation resid="messageComposeTaskPaneUrl" />
+      
+      </Action>
+    </Item>
+    <Item id="ReplyAllforMessages">
+      <Label resid="paneComposeButtonLabel2"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel2" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+          <SourceLocation resid="messageComposeTaskPaneUrl" />
+      </Action>
+    </Item>
+    <Item id="ReplyforMessagesWithInline">
+      <Label resid="paneComposeButtonLabel3"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel3" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+          <SourceLocation resid="messageComposeTaskPaneUrl" />
+      </Action>
+    </Item>
+    <Item id="ReplyAllforMessagesWithInline">
+      <Label resid="paneComposeButtonLabel4"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel4" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+          <SourceLocation resid="messageComposeTaskPaneUrl" />
+      </Action>
+    </Item>
+    
+   
+  </Items>
+</Control>
+
+                <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
+
+              </Group>
+
+            </OfficeTab>
+
+          </ExtensionPoint>
+
+          <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
 
               <!-- Use the default tab of the ExtensionPoint or create your own with <CustomTab id="myTab"> -->
 
@@ -1129,8 +1435,8 @@
               </OfficeTab>
 
             </ExtensionPoint>
-            
-            <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
+
+          <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
 
             <!-- Use the default tab of the ExtensionPoint or create your own with <CustomTab id="myTab"> -->
 
@@ -1203,6 +1509,103 @@
                   </Action>
 
                 </Control>
+                
+                <Control xsi:type="Menu" id="AppointmentAttendeeDisplayDialogs">
+  <Label resid="paneComposeButtonLabel" />
+  <Supertip>
+    <Title resid="paneComposeButtonLabel" />
+    <Description resid="paneReadSuperTipDescription" />
+  </Supertip>
+    <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+  <Items>
+   
+    <Item id="ReplyForCalendar">
+      <Label resid="paneComposeButtonLabel5"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel5" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+          <SourceLocation resid="messageComposeTaskPaneUrl" />
+      </Action>
+    </Item>
+    <Item id="ReplyAllForCalendar">
+      <Label resid="paneComposeButtonLabel6"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel6" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+          <SourceLocation resid="messageComposeTaskPaneUrl" />
+      </Action>
+    </Item>
+    <Item id="ReplyForCalendarWithInline">
+      <Label resid="paneComposeButtonLabel7"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel7" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+          <SourceLocation resid="messageComposeTaskPaneUrl" />
+      </Action>
+    </Item>
+    <Item id="ReplyAllForCalendarWithInline">
+      <Label resid="paneComposeButtonLabel8"/>
+      <Supertip>
+        <Title resid="paneComposeButtonLabel8" />
+        <Description resid="paneReadButtonLabel" />
+      </Supertip>
+        <Icon>
+
+                    <bt:Image size="16" resid="icon16" />
+
+                    <bt:Image size="32" resid="icon32" />
+
+                    <bt:Image size="80" resid="icon80" />
+
+                  </Icon>
+      <Action xsi:type="ShowTaskpane">
+          <SourceLocation resid="messageComposeTaskPaneUrl" />
+      </Action>
+    </Item>
+   
+  </Items>
+</Control>
 
                 <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
 
@@ -1214,10 +1617,9 @@
 
 
 
+          <!-- Go to http://aka.ms/ExtensionPointsCommands to learn how to add more Extension Points: MessageRead, AppointmentOrganizer, AppointmentAttendee -->
 
-            <!-- Go to http://aka.ms/ExtensionPointsCommands to learn how to add more Extension Points: MessageRead, AppointmentOrganizer, AppointmentAttendee -->
-
-          </DesktopFormFactor>
+        </DesktopFormFactor>
           <MobileFormFactor>
             <FunctionFile resid="functionFile"/>
             <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
@@ -1274,6 +1676,15 @@
 
 
         <bt:Url id="messageComposeTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerMessageCompose.html"/>
+        
+        <bt:Url id="ReplyForMessageTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyForMessage.html"/>
+        <bt:Url id="ReplyAllForMessageTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyAllForMessage.html"/>
+        <bt:Url id="ReplyForMessageILTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyForMessageWithInline.html"/>
+        <bt:Url id="ReplyAllForMessageILTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyAllForMessageWithInline.html"/>
+        <bt:Url id="ReplyForCalendarTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyForCalendar.html"/>
+        <bt:Url id="ReplyAllForCalendarTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyAllForCalendar.html"/>
+        <bt:Url id="ReplyForCalendarILTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyForCalendarWithInline.html"/>
+        <bt:Url id="ReplyAllForCalendarILTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerReplyAllForCalendarWithInline.html"/>
 
         <bt:Url id="apponitmentOrganizeTaskPaneUrl" DefaultValue="https://trelloaddin.azurewebsites.net/OutlookAPITestAddin/Test/SpecRunnerAppointmentOrganizer.html"/>
 

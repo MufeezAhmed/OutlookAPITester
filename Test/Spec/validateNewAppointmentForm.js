@@ -2,7 +2,6 @@
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 15000;
 
-
 function sendTestReport() {
 
     var testResults = $("#testResults").html();
@@ -40,7 +39,7 @@ function sendTestReport() {
 
         var emailData = {
             "Message": {
-                "Subject": "Compose API Test Result for " + Office.context.mailbox.diagnostics.hostName + ":" + Office.context.mailbox.diagnostics.hostVersion,
+                "Subject": "Organize API Test Result for " + Office.context.mailbox.diagnostics.hostName + ":" + Office.context.mailbox.diagnostics.hostVersion,
                 "Body": {
                     "ContentType": "Html",
                     "Content": completeHtml
@@ -65,7 +64,7 @@ function sendTestReport() {
             type: 'post',
             headers: { 'Authorization': 'Bearer ' + token }
         }).done(function (item) {
-           
+
         }).fail(function (error) {
             $(".jasmine_html-reporter").after("<p>" + error + "</p>");
             console.log(error);
@@ -79,6 +78,7 @@ function sendTestReport() {
 
 }
 
+
 describe("",
     function () {
         beforeAll(function (done) { setTimeout(function () { done(); }, 2000) });
@@ -91,933 +91,7 @@ describe("",
 
 
         })
-     
-         describe("Office.context.mailbox.item", function () {
 
-           
-            var attachmentIdOfAddedItem;
-
-                it(" Set subject Async",
-                    function (done) {
-
-
-                        /* ReadItem??? or ReadWriteItem or ReadWriteMailbox */
-                        /* Set subject */
-                        Office.context.mailbox.item.subject.setAsync("New subject!",
-                            function (asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Action failed with error: " + asyncResult.error.message);
-                                    document.getElementById("setSubjectAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
-                                } else {
-                                    console.log("Subject set successfully");
-                                    document.getElementById("setSubjectAsync").innerHTML = "Subject set successfully";
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                done();
-                            }
-                        );
-
-
-
-
-                    });
-                it("Set body content Async",
-                    function (done) {
-
-                        /* ReadWriteItem or ReadWriteMailbox */
-                        /* Set body content */
-                        Office.context.mailbox.item.body.setAsync(
-                            '<a id="LPNoLP" href="http://www.contoso.com">Click here!</a>',
-                            { coercionType: "html" },
-                            function (asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Action failed with error: " + asyncResult.error.message);
-                                    document.getElementById("setBodyAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
-                                } else {
-                                    console.log("Successfully set body text");
-                                    document.getElementById("setBodyAsync").innerHTML = "Body set successfully"
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                done();
-                            }
-                        );
-
-
-
-
-
-                    });
-
-
-
-                it("Get body type Async",
-                    function (done) {
-
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Get body type */
-                        Office.context.mailbox.item.body.getTypeAsync(
-                            function (asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Action failed with error: " + asyncResult.error.message);
-                                    document.getElementById("getBodyTypeAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
-                                } else {
-                                    console.log(asyncResult.value);
-                                    document.getElementById("getBodyTypeAsync").innerHTML = asyncResult.value
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                 expect(asyncResult.value).toBe("html");
-                                done();
-                            }
-                        );
-
-
-
-
-                    });
-
-                it("Prepend body content Async",
-                    function (done) {
-
-                        /* ReadWriteItem or ReadWriteMailbox */
-                        /* Prepend body content */
-                        Office.context.mailbox.item.body.prependAsync(
-                            '<a id="LPNoLP" href="http://www.contoso.com">click here! </a> <h1> Tester@xyz.com <h1>',
-                            { coercionType: "html" },
-                            function (asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Action failed with error: " + asyncResult.error.message);
-                                    document.getElementById("prependBodyAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
-                                } else {
-                                    console.log("Successfully prepended body text");
-                                    document.getElementById("prependBodyAsync").innerHTML = "Successfully prepended body text"
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                  
-
-                                done();
-                            }
-                        );
-
-
-
-
-
-                    });
-
-                it("Add file attachment Async",
-                    function (done) {
-
-                        /* ReadWriteItem or ReadWriteMailbox */
-                        /* Add file attachment */
-                        var attachmentURL = "http://i.imgur.com/sRgTlGR.jpg";
-                        Office.context.mailbox.item.addFileAttachmentAsync(attachmentURL, "squirrel.png",
-                            function callback(asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Action failed with error: " + asyncResult.error.message);
-                                    document.getElementById("addFileAttchmentAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
-                                } else {
-                                    console.log("Attachment added with identifier:" + asyncResult.value);
-                                    document.getElementById("addFileAttchmentAsync").innerHTML = "Attachment added with identifier:" + asyncResult.value
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                done();
-                            }
-                        );
-
-
-
-
-
-                    });
-
-                it("Add item attachment Async",
-                    function (done) {
-
-
-                        /* ReadWriteItem or ReadWriteMailbox */
-                        /* Add item attachment */
-                        // Item ID of a mail item
-                        var itemId = "AAMkAGZiZjc1Y2RkLTczNjktNGU1YS1hYTkzLTYzZTU3OTE5OWQ3NABGAAAAAAC3Bc26XexrR4XknrAwz6j9BwBDfaKHIE1iQJlAjLUe7EC6AACETLAsAABDfaKHIE1iQJlAjLUe7EC6AACETMpYAAA=";
-                        Office.context.mailbox.item.addItemAttachmentAsync(itemId, "myitemattachment",
-                            function callback(asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Action failed with error: " + asyncResult.error.message);
-                                    document.getElementById("addItemAttachmentAsync").innerHTML = "Subject set successfully"
-
-                                } else {
-                                    console.log("Attachment added with identifier:" + asyncResult.value);
-                                    document.getElementById("addItemAttachmentAsync").innerHTML = "Attachment added with identifier:" + asyncResult.value;
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                done();
-                            }
-                        );
-
-                        Office.context.mailbox.item.addItemAttachmentAsync(itemId, "myitemattachment",
-                            function callback(asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Action failed with error: " + asyncResult.error.message);
-                                    document.getElementById("addItemAttachmentAsync").innerHTML = "Subject set successfully"
-
-                                } else {
-                                    console.log("Attachment added with identifier:" + asyncResult.value);
-
-                                    attachmentIdOfAddedItem = asyncResult.value;
-                                    document.getElementById("addItemAttachmentAsync").innerHTML = "Attachment added with identifier:" + asyncResult.value;
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                done();
-                            }
-                        );
-
-
-                    });
-
-                it("Save Form Async",
-                    function (done) {
-
-
-                        /* ReadWriteItem or ReadWriteMailbox */
-                        // Save Form
-                        Office.context.mailbox.item.saveAsync(
-                            function callback(asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Action failed with error: " + asyncResult.error.message);
-                                    document.getElementById("saveAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
-                                } else {
-                                    console.log("Saved item with identifier:" + asyncResult.value);
-                                    document.getElementById("saveAsync").innerHTML = "Saved item with identifier:" + asyncResult.value;
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                done();
-                            }
-                        );
-
-
-
-
-                    });
-                it("Remove attachment Async",
-                    function (done) {
-
-
-                        /* ReadWriteItem or ReadWriteMailbox */
-                        /* Remove attachment */
-                        // identifier of an attachment
-                        var attachmentId = attachmentIdOfAddedItem.toString();
-                        Office.context.mailbox.item.removeAttachmentAsync(attachmentId,
-                            function callback(asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Action failed with error: " + asyncResult.error.message);
-                                    document.getElementById("removeItemAttachmentAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
-                                } else {
-                                    console.log("Removed attachment with identifier:" + attachmentId);
-                                    document.getElementById("removeItemAttachmentAsync").innerHTML = "Removed attachment with identifier:" + attachmentId;
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                done();
-                            }
-                        );
-
-
-
-
-                    });
-                it("Get Subject Async",
-                    function (done) {
-
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Get subject */
-                        Office.context.mailbox.item.subject.getAsync(
-                            function (asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Action failed with error: " + asyncResult.error.message);
-                                    document.getElementById("getSubjectAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
-                                } else {
-                                    console.log(asyncResult.value);
-                                    document.getElementById("getSubjectAsync").innerHTML = asyncResult.value;
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                expect(asyncResult.value).toBe("New subject!"); 
-                                done();
-                            }
-                        );
-
-
-
-
-                    });
-
-                it("Add file attachment Async",
-                    function (done) {
-
-                        /* ReadWriteItem or ReadWriteMailbox */
-                        /* Add file attachment */
-                        var attachmentURL = "http://i.imgur.com/sRgTlGR.jpg";
-                        Office.context.mailbox.item.addFileAttachmentAsync(attachmentURL, "squirrel.png",
-                            function callback(asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Action failed with error: " + asyncResult.error.message);
-                                    document.getElementById("addFileAttchmentAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
-                                } else {
-                                    console.log("Attachment added with identifier:" + asyncResult.value);
-                                    document.getElementById("addFileAttchmentAsync").innerHTML = "Attachment added with identifier:" + asyncResult.value
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                done();
-                            }
-                        );
-
-
-
-
-
-                    });
-
-
-
-
-                    it("Set To recipients ",
-                        function (done) {
-
-
-                            /* ReadWriteItem or ReadWriteMailbox */
-                            /* Set To recipients (Applicable only on message) */
-                            var newRecipients = [
-                                {
-                                    "displayName": "Allie Bellew",
-                                    "emailAddress": "allieb@contoso.com"
-                                },
-                                {
-                                    "displayName": "Alex Darrow",
-                                    "emailAddress": "alexd@contoso.com"
-                                }
-                            ];
-                            Office.context.mailbox.item.to.setAsync(newRecipients,
-                                function callback(asyncResult) {
-                                    if (asyncResult.status == "failed") {
-                                        console.log("Action failed with error: " + asyncResult.error.message);
-                                        document.getElementById('setToRecipients').innerHTML = ("Action failed with error: " + asyncResult.error.message);
-                                    } else {
-                                        console.log("To set successfully");
-                                        document.getElementById('setToRecipients').innerHTML = ("To set successfully");
-                                    }
-                                    expect(asyncResult.status).toBe("succeeded");
-                                    done();
-                                }
-                            );
-
-
-
-
-                        });
-
-                    it("Set Cc recipients  ",
-                        function (done) {
-
-
-                            /* ReadWriteItem or ReadWriteMailbox */
-                            /* Set Cc recipients (Applicable only on message) */
-                            var newRecipients = [
-                                {
-                                    "displayName": "Allie Bellew",
-                                    "emailAddress": "allieb@contoso.com"
-                                },
-                                {
-                                    "displayName": "Alex Darrow",
-                                    "emailAddress": "alexd@contoso.com"
-                                }
-                            ];
-                            Office.context.mailbox.item.cc.setAsync(newRecipients,
-                                function callback(asyncResult) {
-                                    if (asyncResult.status == "failed") {
-                                        console.log("Action failed with error: " + asyncResult.error.message);
-                                        document.getElementById('setccRecipients').innerHTML = ("Action failed with error: " + asyncResult.error.message);
-                                    } else {
-                                        console.log("Cc set successfully");
-                                        document.getElementById('setCcRecipients').innerHTML = ("Cc set successfully");
-                                    }
-                                    expect(asyncResult.status).toBe("succeeded");
-                                    done();
-                                }
-                            );
-
-
-
-
-                        });
-
-                    it("Add To recipients ",
-                        function (done) {
-
-                            /* ReadWriteItem or ReadWriteMailbox */
-                            /* Add To recipients (Applicable only on message) */
-                            var newRecipients = [
-                                {
-                                    "displayName": "Paul Walker",
-                                    "emailAddress": "paulw@contoso.com"
-                                }
-                            ];
-                            Office.context.mailbox.item.to.addAsync(newRecipients,
-                                function callback(asyncResult) {
-                                    if (asyncResult.status == "failed") {
-                                        console.log("Action failed with error: " + asyncResult.error.message);
-                                        document.getElementById('addToRecipients').innerHTML = ("Action failed with error: " + asyncResult.error.message);
-                                    } else {
-                                        console.log("To add successfully");
-                                        document.getElementById('addToRecipients').innerHTML = ("To added successfully");
-                                    }
-                                    expect(asyncResult.status).toBe("succeeded");
-                                    done();
-                                }
-                            );
-
-
-
-
-
-                        });
-                    it(" Add Cc recipients ",
-                        function (done) {
-
-                            /* ReadWriteItem or ReadWriteMailbox */
-                            /* Add Cc recipients (Applicable only on message) */
-                            var newRecipients = [
-                                {
-                                    "displayName": "Paul Walker",
-                                    "emailAddress": "paulw@contoso.com"
-                                }
-                            ];
-                            Office.context.mailbox.item.cc.addAsync(newRecipients,
-                                function callback(asyncResult) {
-                                    if (asyncResult.status == "failed") {
-                                        console.log("Action failed with error: " + asyncResult.error.message);
-                                        document.getElementById('addCcRecipients').innerHTML = ("Action failed with error: " + asyncResult.error.message);
-                                    } else {
-                                        console.log("Cc add successfully");
-                                        document.getElementById('addCcRecipients').innerHTML = ("Cc added successfully");
-                                    }
-                                    expect(asyncResult.status).toBe("succeeded");
-                                    done();
-                                }
-                            );
-
-
-
-
-
-                        });
-
-                    it("Set Bcc recipients ",
-                        function (done) {
-
-                            /* ReadWriteItem or ReadWriteMailbox */
-                            /* Set Bcc recipients (Applicable only on message) */
-                            var newRecipients = [
-                                {
-                                    "displayName": "Allie Bellew",
-                                    "emailAddress": "allieb@contoso.com"
-                                },
-                                {
-                                    "displayName": "Alex Darrow",
-                                    "emailAddress": "alexd@contoso.com"
-                                }
-                            ];
-                            Office.context.mailbox.item.bcc.setAsync(newRecipients,
-                                function callback(asyncResult) {
-                                    if (asyncResult.status == "failed") {
-                                        console.log("Action failed with error: " + asyncResult.error.message);
-                                        document.getElementById('setBccRecipients').innerHTML = ("Action failed with error: " + asyncResult.error.message);
-                                    } else {
-                                        console.log("Bcc set successfully");
-                                        document.getElementById('setBccRecipients').innerHTML = ("Bcc set successfully");
-                                    }
-                                    expect(asyncResult.status).toBe("succeeded");
-                                    done();
-                                }
-                            );
-
-
-
-
-
-                        });
-
-
-                    it("Add Bcc recipients ",
-                        function (done) {
-
-
-                            /* ReadWriteItem or ReadWriteMailbox */
-                            /* Add Bcc recipients (Applicable only on message) */
-                            var newRecipients = [
-                                {
-                                    "displayName": "Paul Walker",
-                                    "emailAddress": "paulw@contoso.com"
-                                }
-                            ];
-                            Office.context.mailbox.item.bcc.addAsync(newRecipients,
-                                function callback(asyncResult) {
-                                    if (asyncResult.status == "failed") {
-                                        console.log("Action failed with error: " + asyncResult.error.message);
-                                        document.getElementById('addBccRecipients').innerHTML = ("Action failed with error: " + asyncResult.error.message);
-                                    } else {
-                                        console.log("Bcc add successfully");
-                                        document.getElementById('addBccRecipients').innerHTML = ("Bcc Added successfully");
-
-                                    }
-                                    expect(asyncResult.status).toBe("succeeded");
-                                    done();
-                                }
-                            );
-
-
-
-
-                        });
-
-                    it("Get To recipients ",
-                        function (done) {
-
-
-                            /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                            /* Get To recipients (Applicable only on message) */
-                            Office.context.mailbox.item.to.getAsync(
-                                function callback(asyncResult) {
-                                    if (asyncResult.status == "failed") {
-                                        console.log("Action failed with error: " + asyncResult.error.message);
-                                        document.getElementById('getToRecipients').innerHTML = ("Action failed with error: " + asyncResult.error.message);
-                                    } else {
-                                        var recipients = "";
-                                        asyncResult.value.forEach(function (recipient, index) {
-                                            recipients = recipients + recipient.displayName + " (" + recipient.emailAddress + ");";
-                                        });
-                                        console.log(recipients);
-                                        document.getElementById('getToRecipients').innerHTML = (recipients);
-                                      
-                                    }
-                                    expect(asyncResult.status).toBe("succeeded");
-                                      expect(recipients).toBe("Allie Bellew (allieb@contoso.com);Alex Darrow (alexd@contoso.com);Paul Walker (paulw@contoso.com);")
-                                    done();
-                                }
-                            );
-
-
-
-
-                        });
-
-                    it("Get Cc recipients ",
-                        function (done) {
-
-
-                            /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                            /* Get Cc recipients (Applicable only on message) */
-                            Office.context.mailbox.item.cc.getAsync(
-                                function callback(asyncResult) {
-                                    if (asyncResult.status == "failed") {
-                                        console.log("Action failed with error: " + asyncResult.error.message);
-                                        document.getElementById('getCcRecipients').innerHTML = ("Action failed with error: " + asyncResult.error.message);
-                                    } else {
-                                        var recipients = "";
-                                        asyncResult.value.forEach(function (recipient, index) {
-                                            recipients = recipients + recipient.displayName + " (" + recipient.emailAddress + ");";
-                                        });
-                                        console.log(recipients);
-                                        document.getElementById('getCcRecipients').innerHTML = (recipients);
-                                    }
-                                    expect(asyncResult.status).toBe("succeeded");
-                                    expect(recipients).toBe("Allie Bellew (allieb@contoso.com);Alex Darrow (alexd@contoso.com);Paul Walker (paulw@contoso.com);")
-                                    done();
-                                }
-                            );
-
-
-
-
-                        });
-
-
-                    it("Get Bcc recipients ",
-                        function (done) {
-
-
-
-                            /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                            /* Get Bcc recipients (Applicable only on message) */
-                            Office.context.mailbox.item.bcc.getAsync(
-                                function callback(asyncResult) {
-                                    if (asyncResult.status == "failed") {
-                                        console.log("Action failed with error: " + asyncResult.error.message);
-                                        document.getElementById('getBccRecipients').innerHTML = ("Action failed with error: " + asyncResult.error.message);
-                                    } else {
-                                        var recipients = "";
-                                        asyncResult.value.forEach(function (recipient, index) {
-                                            recipients = recipients + recipient.displayName + " (" + recipient.emailAddress + ");";
-                                        });
-                                        console.log(recipients);
-                                        document.getElementById('getBccRecipients').innerHTML = (recipients);
-                                    }
-                                    expect(asyncResult.status).toBe("succeeded");
-                                    expect(recipients).toBe("Allie Bellew (allieb@contoso.com);Alex Darrow (alexd@contoso.com);Paul Walker (paulw@contoso.com);")
-                                    done();
-                                }
-                            );
-
-
-
-                        });
-
-
-
-
-
-                it("Get body content async",
-                    function (done) {
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Get body content */
-                        Office.context.mailbox.item.body.getAsync("text",
-                            function (asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Action failed with error: " + asyncResult.error.message);
-                                } else {
-                                    console.log(asyncResult.value);
-                                    document.getElementById("messageBody").innerHTML = asyncResult.value;
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                done();
-                            }
-                        );
-
-
-
-
-
-                    });
-
-
-
-
-
-                it("Get item type",
-                    function (done) {
-
-
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Get item type */
-                        console.log(Office.context.mailbox.item.itemType);
-                        document.getElementById("itemType").innerHTML = Office.context.mailbox.item.itemType;
-                        expect(Office.context.mailbox.item.itemType).toBeDefined();
-                        expect(Office.context.mailbox.item.itemType).toBe("message");
-
-                        done();
-                    });
-         
-
-                it("Add notification message async",
-                    function (done) {
-
-                        var resultStatus = "";
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Add notification message async */
-                        Office.context.mailbox.item.notificationMessages.addAsync("foo",
-                            {
-                                type: "progressIndicator",
-                                message: "this operation is in progress",
-                            },
-                            function (asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Action failed with error: " + asyncResult.error.message);
-                                    document.getElementById("addNotificationMessageAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
-                                    resultStatus = "failed";
-
-                                } else {
-                                    console.log("Added a new progress notification message for this item");
-                                    document.getElementById("addNotificationMessageAsync").innerHTML = "Added a new progress notification message for this item";
-                                    resultStatus = "passed";
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                done();
-
-
-                            }
-                        );
-
-
-
-                    });
-
-                it("Replace notification message async",
-                    function (done) {
-
-                        var resultStatus = "";
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Replace notification message async */
-                        Office.context.mailbox.item.notificationMessages.replaceAsync("foo",
-                            {
-                                type: "informationalMessage",
-                                icon: "icon_24",
-                                message: "this operation is complete",
-                                persistent: false
-                            },
-                            function (asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Action failed with error: " + asyncResult.error.message);
-                                    document.getElementById("replaceNotificationMessageAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
-                                    resultStatus = "failed";
-
-                                } else {
-                                    console.log("Replaced existing notification with new notification message");
-                                    document.getElementById("replaceNotificationMessageAsync").innerHTML = "Replaced existing notification with new notification message";
-                                    resultStatus = "passed";
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                done();
-
-
-                            }
-
-
-                        );
-
-
-
-
-                    });
-                it("Get all notification messages async",
-                    function (done) {
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Get all notification messages async */
-                        Office.context.mailbox.item.notificationMessages.getAllAsync(
-                            function (asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Action failed with error: " + asyncResult.error.message);
-                                    document.getElementById("getAllNotificationMessageAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
-                                } else {
-                                    var outputString = "";
-                                    asyncResult.value.forEach(
-                                        function (noti, index) {
-                                            outputString += "<BR>" + index + ". Key: ";
-                                            outputString += noti.key;
-                                            outputString += "<BR>type: " + noti.type;
-                                            outputString += "<BR>icon: " + noti.icon;
-                                            outputString += "<BR>message: " + noti.message;
-                                            outputString += "<BR>persistent: " + noti.persistent;
-
-                                            console.log(outputString);
-                                            document.getElementById("getAllNotificationMessageAsync").innerHTML = outputString;
-                                        }
-
-                                    );
-
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                done();
-                            }
-                        );
-
-
-
-
-                    });
-
-                it(" Remove notification messages async ",
-                    function (done) {
-
-
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Remove notification messages async */
-                        Office.context.mailbox.item.notificationMessages.removeAsync("foo",
-                            function (asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Action failed with error: " + asyncResult.error.message);
-                                    document.getElementById("removeNotificationMessageAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
-                                } else {
-                                    console.log("Notification successfully removed");
-                                    document.getElementById("removeNotificationMessageAsync").innerHTML = "Notification successfully removed";
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                done();
-                            }
-                        );
-
-
-
-                    });
-
-
-
-                it("Set and save custom property 1",
-                    function (done) {
-
-
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Set and save custom property */
-                        Office.context.mailbox.item.loadCustomPropertiesAsync(
-                            function customPropsCallback(asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Failed to load custom property");
-                                    done();
-
-                                }
-                                else {
-                                    var customProps = asyncResult.value;
-                                    customProps.set("myProp1", "value1");
-                                    customProps.saveAsync(
-                                        function (asyncResult) {
-                                            if (asyncResult.status == "failed") {
-                                                console.log("Failed to save custom property");
-                                         
-                                            }
-                                            else {
-                                                console.log("Saved custom property");
-
-                                      
-                                            }
-                                            expect(asyncResult.status).toBe("succeeded");
-                                            done();
-                                        }
-                                    );
-                                }
-
-
-                            }
-                        );
-
-
-
-
-                    });
-
-                it("Set and save custom property ",
-                    function (done) {
-
-
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Set and save custom property */
-                        Office.context.mailbox.item.loadCustomPropertiesAsync(
-                            function customPropsCallback(asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Failed to load custom property");
-                                    document.getElementById("setAndSaveCustomProperty").innerHTML = "Failed to load custom property";
-
-                                }
-                                else {
-                                    var customProps = asyncResult.value;
-                                    customProps.set("myProp", "value");
-                                    customProps.saveAsync(
-                                        function (asyncResult) {
-                                            if (asyncResult.status == "failed") {
-                                                console.log("Failed to save custom property");
-                                                document.getElementById("setAndSaveCustomProperty").innerHTML = "Failed to save custom property";
-
-                                            }
-                                            else {
-                                                console.log("Saved custom property");
-                                                document.getElementById("setAndSaveCustomProperty").innerHTML = "Saved custom property";
-                                                //expect(true).toBe(true);
-
-                                            }
-
-                                        }
-                                    );
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                done();
-                            }
-                        );
-
-
-
-
-                    });
-
-                it("Get custom property",
-                    function (done) {
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Get custom property */
-                        Office.context.mailbox.item.loadCustomPropertiesAsync(
-                            function customPropsCallback(asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Failed to load custom property");
-                                  
-                                }
-                                else {
-                                    var customProps = asyncResult.value;
-                                    var myProp1 = customProps.get("myProp1");
-                                    document.getElementById("getCustomProperty").innerHTML = myProp1;
-                                    console.log(myProp1);
-                                    expect(myProp1).toBe("value1");
-                                   
-
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                done();
-                            }
-                        );
-
-
-
-
-                    });
-                it("Remove and save custom property",
-                    function (done) {
-
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Remove and save custom property */
-                        Office.context.mailbox.item.loadCustomPropertiesAsync(
-                            function customPropsCallback(asyncResult) {
-                                if (asyncResult.status == "failed") {
-                                    console.log("Failed to load custom property");
-                                    document.getElementById("removeAndSaveCustomProperty").innerHTML = "Failed to load custom property";
-
-                                }
-                                else {
-                                    var customProps = asyncResult.value;
-                                    customProps.remove("myProp");
-                                    customProps.saveAsync(
-                                        function (asyncResult) {
-                                            if (asyncResult.status == "failed") {
-                                                console.log("Failed to save custom property");
-                                                document.getElementById("removeAndSaveCustomProperty").innerHTML = "Failed to Save custom property";
-
-                                            }
-                                            else {
-                                                console.log("Saved custom property");
-                                                document.getElementById("removeAndSaveCustomProperty").innerHTML = "Saved custom property";
-                                                expect(true).toBe(true);
-
-                                            }
-
-                                        }
-                                    );
-                                }
-                                expect(asyncResult.status).toBe("succeeded");
-                                done();
-                            }
-                        );
-
-
-
-
-                    });
-
-
-
-
-        });
-       
         describe("Office.context.", function () {
 
 
@@ -1206,7 +280,7 @@ describe("",
                         ")";
 
                     expect(localTime).toBeDefined();
-                   
+
 
                 });
 
@@ -1361,7 +435,7 @@ describe("",
                     console.log(Office.context.mailbox.diagnostics.hostVersion);
                     document.getElementById("hostVersion").innerHTML = Office.context.mailbox.diagnostics.hostVersion;
                     expect(Office.context.mailbox.diagnostics.hostVersion).toBeDefined();
-                    
+
                 });
 
 
@@ -1411,7 +485,7 @@ describe("",
                     console.log(Office.context.mailbox.userProfile.emailAddress);
                     document.getElementById("emailAddress").innerHTML = emailAddressOfUser;
                     expect(emailAddressOfUser).toBeDefined();
-                     expect(emailAddressOfUser).toBe("mactest3@mod321281.onmicrosoft.com");
+                    expect(emailAddressOfUser).toBe("mactest3@mod321281.onmicrosoft.com");
                 });
 
 
@@ -1433,103 +507,103 @@ describe("",
 
         });
 
-      
+
         describe("1.5 API Office.context.", function () {
 
 
-                xit(" close Container :Commented to validate rest of the test cases",
-                    function () {
+            xit(" close Container :Commented to validate rest of the test cases",
+                function () {
 
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* close Container */
-                        // Office.context.ui.closeContainer()//;
-                        document.getElementById("closeContainer").innerHTML = "Use Read Test Addin ";
-                      
-                        // document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Use Read Test Addin ";
-                        //document.getElementById("inlineImageDisplayReplyAllForm").innerHTML = "Use Read Test Addin ";
-                    });
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* close Container */
+                    // Office.context.ui.closeContainer()//;
+                    document.getElementById("closeContainer").innerHTML = "Use Read Test Addin ";
 
-                it(" get rest URL",
-                    function () {
+                    // document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Use Read Test Addin ";
+                    //document.getElementById("inlineImageDisplayReplyAllForm").innerHTML = "Use Read Test Addin ";
+                });
 
-
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* get rest URL */
+            it(" get rest URL",
+                function () {
 
 
-                        console.log(Office.context.mailbox.restUrl);
-                        document.getElementById("getRestUrl").innerHTML = Office.context.mailbox.restUrl;
-                        expect(Office.context.mailbox.restUrl).toBeDefined();
-                        expect(Office.context.mailbox.restUrl).toBe("https://outlook.office.com/api");
-
-                    });
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* get rest URL */
 
 
-               
+                    console.log(Office.context.mailbox.restUrl);
+                    document.getElementById("getRestUrl").innerHTML = Office.context.mailbox.restUrl;
+                    expect(Office.context.mailbox.restUrl).toBeDefined();
+                    expect(Office.context.mailbox.restUrl).toBe("https://outlook.office.com/api");
+
+                });
 
 
-                it("get callback token isrest",
-                    function (done) {
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* get callback token isrest*/
-                        var options = {
-                            isRest: true,
-                            asyncContext: { message: 'Hello World!' }
+
+
+
+            it("get callback token isrest",
+                function (done) {
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* get callback token isrest*/
+                    var options = {
+                        isRest: true,
+                        asyncContext: { message: 'Hello World!' }
+                    };
+
+                    Office.context.mailbox.getCallbackTokenAsync(options, cb);
+
+
+                    function cb(asyncResult) {
+                        var token = asyncResult.value;
+                        console.log(token);
+                        expect(token).toBeDefined();
+                        document.getElementById("getCallbackTokenIsRest").innerHTML = token;
+                        expect(asyncResult.status).toBe("succeeded");
+                        done();
+                    }
+
+
+
+
+                });
+
+            it("Verify get callback token isrest",
+                function (done) {
+                    var itemid = encodeURIComponent(Office.context.mailbox.item.itemId);
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Verify  get callback token isrest*/
+                    var options = {
+                        isRest: true,
+                        asyncContext: { message: 'Hello World!' }
+                    };
+
+                    Office.context.mailbox.getCallbackTokenAsync(options, cb);
+
+
+                    function cb(asyncResult) {
+                        var cred = encodeURIComponent(asyncResult.value);
+                        var data = "itemid=" + itemid + "&cred=" + cred;
+
+                        var myurl = "https://testservicejavarestapi.azurewebsites.net/rest/UserService/getsubject";
+                        var xhr = new XMLHttpRequest();
+                        xhr.open('POST', myurl, true);
+                        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        xhr.onload = function () {
+                            console.log(this.responseText);
                         };
+                        xhr.send(data);
+                        done();
+                        expect(asyncResult.status).toBe("succeeded");
+                    }
 
-                        Office.context.mailbox.getCallbackTokenAsync(options, cb);
-
-
-                        function cb(asyncResult) {
-                            var token = asyncResult.value;
-                            console.log(token);
-                            expect(token).toBeDefined();
-                            document.getElementById("getCallbackTokenIsRest").innerHTML = token;
-                            expect(asyncResult.status).toBe("succeeded");
-                            done();
-                        }
+                });
 
 
 
 
-                    });
+        });
 
-                it("Verify get callback token isrest",
-                    function (done) {
-                        var itemid = encodeURIComponent(Office.context.mailbox.item.itemId);
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* Verify  get callback token isrest*/
-                        var options = {
-                            isRest: true,
-                            asyncContext: { message: 'Hello World!' }
-                        };
-
-                        Office.context.mailbox.getCallbackTokenAsync(options, cb);
-
-
-                        function cb(asyncResult) {
-                            var cred = encodeURIComponent(asyncResult.value);
-                            var data = "itemid=" + itemid + "&cred=" + cred;
-
-                            var myurl = "https://testservicejavarestapi.azurewebsites.net/rest/UserService/getsubject";
-                            var xhr = new XMLHttpRequest();
-                            xhr.open('POST', myurl, true);
-                            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                            xhr.onload = function () {
-                                console.log(this.responseText);
-                            };
-                            xhr.send(data);
-                            done();
-                            expect(asyncResult.status).toBe("succeeded");
-                        }
-
-                    });
-
-
-
-
-            });
-       
         xdescribe("Office.context.UI.", function () {
 
 
@@ -1560,7 +634,1048 @@ describe("",
 
         });
 
-       
+
+        describe("Office.context.mailbox.Item", function () {
+
+            var startDate = new Date();
+            var endDate = new Date();
+
+            endDate.setHours(endDate.getHours() + 1);
+
+            it(" Set subject Async",
+                function (done) {
+
+
+                    /* ReadItem??? or ReadWriteItem or ReadWriteMailbox */
+                    /* Set subject */
+                    Office.context.mailbox.item.subject.setAsync("New subject!",
+                        function (asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                                document.getElementById("setSubjectAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
+                            } else {
+                                console.log("Subject set successfully");
+                                document.getElementById("setSubjectAsync").innerHTML = "Subject set successfully";
+                            }
+
+                            expect(asyncResult.status).toBe("succeeded");
+
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+            it("Set body content Async",
+                function (done) {
+
+                    /* ReadWriteItem or ReadWriteMailbox */
+                    /* Set body content */
+                    Office.context.mailbox.item.body.setAsync(
+                        '<a id="LPNoLP" href="http://www.contoso.com">Click here!</a>',
+                        { coercionType: "html" },
+                        function (asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                                document.getElementById("setBodyAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
+                            } else {
+                                console.log("Successfully set body text");
+                                document.getElementById("setBodyAsync").innerHTML = "Body set successfully"
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+
+                });
+
+
+
+
+            it("Get body type Async",
+                function (done) {
+
+
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Get body type */
+                    Office.context.mailbox.item.body.getTypeAsync(
+                        function (asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                                document.getElementById("getBodyTypeAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
+                            } else {
+                                console.log(asyncResult.value);
+                                document.getElementById("getBodyTypeAsync").innerHTML = asyncResult.value
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            expect(asyncResult.value).toBe("html");
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+
+            it("Prepend body content Async",
+                function (done) {
+
+                    /* ReadWriteItem or ReadWriteMailbox */
+                    /* Prepend body content */
+                    Office.context.mailbox.item.body.prependAsync(
+                        '<a id="LPNoLP" href="http://www.contoso.com">click here! </a> <h1> Tester@xyz.com <h1>',
+                        { coercionType: "html" },
+                        function (asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                                document.getElementById("prependBodyAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
+                            } else {
+                                console.log("Successfully prepended body text");
+                                document.getElementById("prependBodyAsync").innerHTML = "Successfully prepended body text"
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+
+                });
+
+            it("Add file attachment Async",
+                function (done) {
+
+                    /* ReadWriteItem or ReadWriteMailbox */
+                    /* Add file attachment */
+                    var attachmentURL = "http://i.imgur.com/sRgTlGR.jpg";
+                    Office.context.mailbox.item.addFileAttachmentAsync(attachmentURL, "squirrel.png",
+                        function callback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                                document.getElementById("addFileAttchmentAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
+                            } else {
+                                console.log("Attachment added with identifier:" + asyncResult.value);
+                                document.getElementById("addFileAttchmentAsync").innerHTML = "Attachment added with identifier:" + asyncResult.value
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+
+                });
+
+            it("Add item attachment Async",
+                function (done) {
+
+
+                    /* ReadWriteItem or ReadWriteMailbox */
+                    /* Add item attachment */
+                    // Item ID of a mail item
+                    var itemId = "AAMkADhlODgyMjQ3LTY0OTEtNDVhNy1hMjE4LTRiNWViODdjNzM1OQBGAAAAAADTm/rlU8XIRYZy3kXeC31hBwATCz0JAbtBSrpwxQVbcRSjAAADfWGhAAATCz0JAbtBSrpwxQVbcRSjAAAGtCG2AAA=";
+                    Office.context.mailbox.item.addItemAttachmentAsync(itemId, "myitemattachment",
+                        function callback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                                document.getElementById("addItemAttachmentAsync").innerHTML = "Subject set successfully"
+
+                            } else {
+                                console.log("Attachment added with identifier:" + asyncResult.value);
+                                document.getElementById("addItemAttachmentAsync").innerHTML = "Attachment added with identifier:" + asyncResult.value;
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+
+            it("Save Form Async",
+                function (done) {
+
+
+                    /* ReadWriteItem or ReadWriteMailbox */
+                    // Save Form
+                    Office.context.mailbox.item.saveAsync(
+                        function callback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                                document.getElementById("saveAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
+                            } else {
+                                console.log("Saved item with identifier:" + asyncResult.value);
+                                document.getElementById("saveAsync").innerHTML = "Saved item with identifier:" + asyncResult.value;
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+            it("Remove attachment Async",
+                function (done) {
+
+
+                    /* ReadWriteItem or ReadWriteMailbox */
+                    /* Remove attachment */
+                    // identifier of an attachment
+                    var attachmentId = "0";
+                    Office.context.mailbox.item.removeAttachmentAsync(attachmentId,
+                        function callback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                                document.getElementById("removeItemAttachmentAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
+                            } else {
+                                console.log("Removed attachment with identifier:" + attachmentId);
+                                document.getElementById("removeItemAttachmentAsync").innerHTML = "Removed attachment with identifier:" + attachmentId;
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+            it("Get Subject Async",
+                function (done) {
+
+
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Get subject */
+                    Office.context.mailbox.item.subject.getAsync(
+                        function (asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                                document.getElementById("getSubjectAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
+                            } else {
+                                console.log(asyncResult.value);
+                                document.getElementById("getSubjectAsync").innerHTML = asyncResult.value;
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            expect(asyncResult.value).toBe("New subject!");
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+
+            it("Add file attachment Async",
+                function (done) {
+
+                    /* ReadWriteItem or ReadWriteMailbox */
+                    /* Add file attachment */
+                    var attachmentURL = "http://i.imgur.com/sRgTlGR.jpg";
+                    Office.context.mailbox.item.addFileAttachmentAsync(attachmentURL, "squirrel.png",
+                        function callback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                                document.getElementById("addFileAttchmentAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
+                            } else {
+                                console.log("Attachment added with identifier:" + asyncResult.value);
+                                document.getElementById("addFileAttchmentAsync").innerHTML = "Attachment added with identifier:" + asyncResult.value
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+
+                });
+
+
+
+
+
+
+
+
+            it("Set location (Applicable only on calendar event)",
+                function (done) {
+
+
+                    /* ReadItem??? or ReadWriteItem or ReadWriteMailbox */
+                    /* Set location (Applicable only on calendar event) */
+                    Office.context.mailbox.item.location.setAsync("New Location!",
+                        function (asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                            } else {
+                                console.log("Location set successfully");
+                                document.getElementById('setLocation').innerHTML = ("Location set successfully");
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+            it("Set end time (Applicable only on calendar event)",
+                function (done) {
+
+
+                    /* ReadWriteItem or ReadWriteMailbox */
+                    /* Set end time (Applicable only on calendar event) */
+
+                    Office.context.mailbox.item.end.setAsync(endDate,
+                        function (asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                            } else {
+                                console.log("End time set successfully");
+                                document.getElementById('setEndTime').innerHTML = ("End Time set successfully");
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+
+
+            it("Set start time (Applicable only on calendar event)",
+                function (done) {
+
+
+                    /* ReadWriteItem or ReadWriteMailbox */
+                    /* Set start time (Applicable only on calendar event) */
+                    Office.context.mailbox.item.start.setAsync(startDate,
+                        function callback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                            } else {
+                                console.log("Start time set successfully");
+                                document.getElementById('setStartTime').innerHTML = ("Start Time set successfully");
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+
+            it("Set required attendees (Applicable only on calendar event)",
+                function (done) {
+
+
+                    /* ReadWriteItem or ReadWriteMailbox */
+                    /* Set required attendees (Applicable only on calendar event) */
+                    var newRecipients = [
+                        {
+                            "displayName": "Allie Bellew",
+                            "emailAddress": "allieb@contoso.com"
+                        },
+                        {
+                            "displayName": "Alex Darrow",
+                            "emailAddress": "alexd@contoso.com"
+                        }
+                    ];
+                    Office.context.mailbox.item.requiredAttendees.setAsync(newRecipients,
+                        function callback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                            } else {
+                                console.log("Required attendees set successfully");
+                                document.getElementById('setRequiredAttendees').innerHTML = ("Required attendees set successfully");
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+
+            it("Add required attendees (Applicable only on calendar event) ",
+                function (done) {
+
+
+                    /* ReadWriteItem or ReadWriteMailbox */
+                    /* Add required attendees (Applicable only on calendar event) */
+                    var newRecipients = [
+                        {
+                            "displayName": "Paul Walker",
+                            "emailAddress": "paulw@contoso.com"
+                        }
+                    ];
+                    Office.context.mailbox.item.requiredAttendees.addAsync(newRecipients,
+                        function callback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                            } else {
+                                console.log("Required attendees add successfully");
+                                document.getElementById('addRequiredAttendees').innerHTML = ("Required attendees added successfully");
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+
+
+            it("Set optional attendees (Applicable only on calendar event)",
+                function (done) {
+
+
+
+                    /* ReadWriteItem or ReadWriteMailbox */
+                    /* Set optional attendees (Applicable only on calendar event) */
+                    var newRecipients = [
+                        {
+                            "displayName": "Allie Bellew",
+                            "emailAddress": "allieb@contoso.com"
+                        },
+                        {
+                            "displayName": "Alex Darrow",
+                            "emailAddress": "alexd@contoso.com"
+                        }
+                    ];
+                    Office.context.mailbox.item.optionalAttendees.setAsync(newRecipients,
+                        function callback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                            } else {
+                                console.log("Optional attendees set successfully");
+                                document.getElementById('setOptionalAttendees').innerHTML = ("Optional attendees Added successfully");
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+
+
+                    );
+
+
+
+                });
+
+            it("Add optional attendees (Applicable only on calendar event) ",
+                function (done) {
+
+                    /* ReadWriteItem or ReadWriteMailbox */
+                    /* Add optional attendees (Applicable only on calendar event) */
+                    var newRecipients = [
+                        {
+                            "displayName": "Paul Walker",
+                            "emailAddress": "paulw@contoso.com"
+                        }
+                    ];
+                    Office.context.mailbox.item.optionalAttendees.addAsync(newRecipients,
+                        function callback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                            } else {
+                                console.log("Optional attendees add successfully");
+                                document.getElementById('addOptionalAttendees').innerHTML = ("Optional attendees added successfully");
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+
+                });
+
+
+
+
+
+
+
+
+
+            it("Get required attendees (Applicable only on calendar event)",
+                function (done) {
+
+
+
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Get required attendees (Applicable only on calendar event) */
+                    Office.context.mailbox.item.requiredAttendees.getAsync(
+                        function callback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                            } else {
+                                var recipients = "";
+                                asyncResult.value.forEach(function (recipient, index) {
+                                    recipients = recipients + recipient.displayName + " (" + recipient.emailAddress + ");";
+                                });
+                                console.log(recipients);
+                                document.getElementById('getRequiredAttendees').innerHTML = recipients;
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            expect(recipients).toBe("Allie Bellew (allieb@contoso.com);Alex Darrow (alexd@contoso.com);Paul Walker (paulw@contoso.com);")
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+
+
+
+
+
+
+            it("Get optional attendees (Applicable only on calendar event)",
+                function (done) {
+
+
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Get optional attendees (Applicable only on calendar event) */
+                    Office.context.mailbox.item.optionalAttendees.getAsync(
+                        function callback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                            } else {
+                                var recipients = "";
+                                asyncResult.value.forEach(function (recipient, index) {
+                                    recipients = recipients + recipient.displayName + " (" + recipient.emailAddress + ");";
+                                });
+                                console.log(recipients);
+                                document.getElementById('getOptionalAttendees').innerHTML = recipients;
+
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            expect(recipients).toBe("Allie Bellew (allieb@contoso.com);Alex Darrow (alexd@contoso.com);Paul Walker (paulw@contoso.com);")
+                            done();
+                        }
+                    );
+
+
+
+                });
+
+
+
+            it("Get start time (Applicable only on calendar event)",
+                function (done) {
+
+
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Get start time (Applicable only on calendar event) */
+                    Office.context.mailbox.item.start.getAsync(
+                        function callback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                            } else {
+                                console.log(asyncResult.value);
+                                document.getElementById('getStartTime').innerHTML = asyncResult.value;
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            expect(asyncResult.value).toBe(startDate);
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+
+
+
+            it("Get end time (Applicable only on calendar event)",
+                function (done) {
+
+
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Get end time (Applicable only on calendar event) */
+                    Office.context.mailbox.item.end.getAsync(
+                        function (asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                            } else {
+                                console.log(asyncResult.value);
+                                document.getElementById('getEndTime').innerHTML = asyncResult.value;
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            expect(asyncResult.value).toBe(endDate);
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+
+
+
+            it("Get location (Applicable only on calendar event)",
+                function (done) {
+
+
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Get location (Applicable only on calendar event) */
+                    Office.context.mailbox.item.location.getAsync(
+                        function (asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                            } else {
+                                console.log(asyncResult.value);
+                                document.getElementById('getLocation').innerHTML = asyncResult.value;
+                            }
+                            expect(asyncResult.status).toBe("succeeded");
+                            expect(asyncResult.value).toBe("New Location!");
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+
+
+
+
+
+
+
+
+
+
+
+
+
+            it("Get body content async",
+                function (done) {
+
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Get body content */
+                    Office.context.mailbox.item.body.getAsync("text",
+                        function (asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                            } else {
+                                console.log(asyncResult.value);
+                                document.getElementById("messageBody").innerHTML = asyncResult.value;
+                            }
+
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+
+                });
+
+
+
+
+
+            it("Get item type",
+                function () {
+
+
+
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Get item type */
+                    console.log(Office.context.mailbox.item.itemType);
+                    document.getElementById("itemType").innerHTML = Office.context.mailbox.item.itemType;
+                    expect(Office.context.mailbox.item.itemType).toBeDefined();
+                    expect(Office.context.mailbox.item.itemType).toBe("appointment");
+
+
+                });
+
+
+            it("Add notification message async",
+                function (done) {
+
+                    var resultStatus = "";
+
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Add notification message async */
+                    Office.context.mailbox.item.notificationMessages.addAsync("foo",
+                        {
+                            type: "progressIndicator",
+                            message: "this operation is in progress",
+                        },
+                        function (asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                                document.getElementById("addNotificationMessageAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
+                                resultStatus = "failed";
+
+                            } else {
+                                console.log("Added a new progress notification message for this item");
+                                document.getElementById("addNotificationMessageAsync").innerHTML = "Added a new progress notification message for this item";
+                                resultStatus = "passed";
+                            }
+
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+
+
+                        }
+                    );
+
+
+
+                });
+
+            it("Replace notification message async",
+                function (done) {
+
+                    var resultStatus = "";
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Replace notification message async */
+                    Office.context.mailbox.item.notificationMessages.replaceAsync("foo",
+                        {
+                            type: "informationalMessage",
+                            icon: "icon_24",
+                            message: "this operation is complete",
+                            persistent: false
+                        },
+                        function (asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                                document.getElementById("replaceNotificationMessageAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
+                                resultStatus = "failed";
+
+                            } else {
+                                console.log("Replaced existing notification with new notification message");
+                                document.getElementById("replaceNotificationMessageAsync").innerHTML = "Replaced existing notification with new notification message";
+                                resultStatus = "passed";
+                            }
+
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+
+
+                        }
+
+
+                    );
+
+
+
+
+                });
+            it("Get all notification messages async",
+                function (done) {
+
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Get all notification messages async */
+                    Office.context.mailbox.item.notificationMessages.getAllAsync(
+                        function (asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                                document.getElementById("getAllNotificationMessageAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
+                            } else {
+                                var outputString = "";
+                                asyncResult.value.forEach(
+                                    function (noti, index) {
+                                        outputString += "<BR>" + index + ". Key: ";
+                                        outputString += noti.key;
+                                        outputString += "<BR>type: " + noti.type;
+                                        outputString += "<BR>icon: " + noti.icon;
+                                        outputString += "<BR>message: " + noti.message;
+                                        outputString += "<BR>persistent: " + noti.persistent;
+
+                                        console.log(outputString);
+                                        document.getElementById("getAllNotificationMessageAsync").innerHTML = outputString;
+                                    }
+
+                                );
+
+                            }
+
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+
+            it(" Remove notification messages async ",
+                function (done) {
+
+
+
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Remove notification messages async */
+                    Office.context.mailbox.item.notificationMessages.removeAsync("foo",
+                        function (asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Action failed with error: " + asyncResult.error.message);
+                                document.getElementById("removeNotificationMessageAsync").innerHTML = "Action failed with error: " + asyncResult.error.message;
+                            } else {
+                                console.log("Notification successfully removed");
+                                document.getElementById("removeNotificationMessageAsync").innerHTML = "Notification successfully removed";
+                            }
+
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+                });
+
+
+
+
+
+
+
+
+            it("Set and save custom property 1",
+                function (done) {
+
+
+
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Set and save custom property */
+                    Office.context.mailbox.item.loadCustomPropertiesAsync(
+                        function customPropsCallback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Failed to load custom property");
+                                done();
+
+                            }
+                            else {
+                                var customProps = asyncResult.value;
+                                customProps.set("myProp1", "value1");
+                                customProps.saveAsync(
+                                    function (asyncResult) {
+                                        if (asyncResult.status == "failed") {
+                                            console.log("Failed to save custom property");
+
+
+                                        }
+                                        else {
+                                            console.log("Saved custom property");
+
+
+                                        }
+
+                                        expect(asyncResult.status).toBe("succeeded");
+                                        done();
+                                    }
+                                );
+                            }
+
+
+                        }
+                    );
+
+
+
+
+                });
+
+            it("Set and save custom property ",
+                function (done) {
+
+
+
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Set and save custom property */
+                    Office.context.mailbox.item.loadCustomPropertiesAsync(
+                        function customPropsCallback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Failed to load custom property");
+                                document.getElementById("setAndSaveCustomProperty").innerHTML = "Failed to load custom property";
+
+                            }
+                            else {
+                                var customProps = asyncResult.value;
+                                customProps.set("myProp", "value");
+                                customProps.saveAsync(
+                                    function (asyncResult) {
+                                        if (asyncResult.status == "failed") {
+                                            console.log("Failed to save custom property");
+                                            document.getElementById("setAndSaveCustomProperty").innerHTML = "Failed to save custom property";
+
+                                        }
+                                        else {
+                                            console.log("Saved custom property");
+                                            document.getElementById("setAndSaveCustomProperty").innerHTML = "Saved custom property";
+                                            //expect(true).toBe(true);
+
+                                        }
+
+                                    }
+                                );
+                            }
+
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+
+            it("Get custom property",
+                function (done) {
+
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Get custom property */
+                    Office.context.mailbox.item.loadCustomPropertiesAsync(
+                        function customPropsCallback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Failed to load custom property");
+
+                            }
+                            else {
+                                var customProps = asyncResult.value;
+                                var myProp1 = customProps.get("myProp1");
+                                document.getElementById("getCustomProperty").innerHTML = myProp1;
+                                console.log(myProp1);
+                                expect(myProp1).toBe("value1");
+
+
+                            }
+
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+            it("Remove and save custom property",
+                function (done) {
+
+
+                    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+                    /* Remove and save custom property */
+                    Office.context.mailbox.item.loadCustomPropertiesAsync(
+                        function customPropsCallback(asyncResult) {
+                            if (asyncResult.status == "failed") {
+                                console.log("Failed to load custom property");
+                                document.getElementById("removeAndSaveCustomProperty").innerHTML = "Failed to load custom property";
+
+                            }
+                            else {
+                                var customProps = asyncResult.value;
+                                customProps.remove("myProp");
+                                customProps.saveAsync(
+                                    function (asyncResult) {
+                                        if (asyncResult.status == "failed") {
+                                            console.log("Failed to save custom property");
+                                            document.getElementById("removeAndSaveCustomProperty").innerHTML = "Failed to Save custom property";
+
+                                        }
+                                        else {
+                                            console.log("Saved custom property");
+                                            document.getElementById("removeAndSaveCustomProperty").innerHTML = "Saved custom property";
+                                            expect(true).toBe(true);
+
+                                        }
+
+                                    }
+                                );
+                            }
+
+                            expect(asyncResult.status).toBe("succeeded");
+                            done();
+                        }
+                    );
+
+
+
+
+                });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        });
+
+
 
 
 
