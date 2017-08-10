@@ -253,51 +253,7 @@ describe("",
                     });
             
 
-
-                it("inline image - display reply form :Read and Attendee ",
-                    function (done) {
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* inline image - display reply form */
-                        Office.context.mailbox.item.displayReplyForm(
-                            {
-                                'htmlBody': '<img src = "cid:squirrel.png">',
-                                'attachments':
-                                [
-                                    {
-                                        'type': Office.MailboxEnums.AttachmentType.File,
-                                        'name': 'squirrel.png',
-                                        'url': 'http://i.imgur.com/sRgTlGR.jpg',
-                                        'isInline': 'true'
-                                    }
-                                ]
-
-                            });
-                        done();
-                        document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Validate Manually";
-                       
-                    });
-
-                it("inline image - display reply All form :Read and Attendee",
-                    function (done) {
-                        /* ReadItem or ReadWriteItem or ReadWriteMailbox */
-                        /* inline image - display reply All form */
-                        Office.context.mailbox.item.displayReplyAllForm(
-                            {
-                                'htmlBody': '<img src = "cid:squirrel.png">',
-                                'attachments':
-                                [
-                                    {
-                                        'type': Office.MailboxEnums.AttachmentType.File,
-                                        'name': 'squirrel.png',
-                                        'url': 'http://i.imgur.com/sRgTlGR.jpg',
-                                        'isInline': 'true'
-                                    }
-                                ]
-                            });
-                        done();
-                        document.getElementById("inlineImageDisplayReplyAllForm").innerHTML = "Validate Manually";
-                        
-                    });
+            
 
 
                
