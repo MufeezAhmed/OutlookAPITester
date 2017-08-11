@@ -415,7 +415,7 @@ describe("",
 
                         /* ReadItem or ReadWriteItem or ReadWriteMailbox */
                         /* close Container */
-                        // Office.context.ui.closeContainer()//;
+                         Office.context.ui.closeContainer()//;
                         document.getElementById("closeContainer").innerHTML = "Use Read Test Addin ";
                       
                         // document.getElementById("inlineImageDisplayReplyForm").innerHTML = "Use Read Test Addin ";
