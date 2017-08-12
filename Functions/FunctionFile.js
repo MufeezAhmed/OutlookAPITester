@@ -47,7 +47,7 @@ function displayReplyAllForm(event) {
     event.completed();
 }
 
-function displayReplyFormWithInline() {
+function displayReplyFormWithInline(event) {
     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
     /* inline image - display reply form */
     Office.context.mailbox.item.displayReplyForm(
@@ -66,7 +66,7 @@ function displayReplyFormWithInline() {
     event.completed();
 }
 
-function displayReplyAllFormWithInline() {
+function displayReplyAllFormWithInline(event) {
     /* ReadItem or ReadWriteItem or ReadWriteMailbox */
     /* inline image - display reply form */
     Office.context.mailbox.item.displayReplyAllForm(
@@ -126,5 +126,39 @@ function displayAppointmentForm(event)
     var appointmentId = "AAMkAGZiZjc1Y2RkLTczNjktNGU1YS1hYTkzLTYzZTU3OTE5OWQ3NABGAAAAAAC3Bc26XexrR4XknrAwz6j9BwBDfaKHIE1iQJlAjLUe7EC6AAAAAAENAABDfaKHIE1iQJlAjLUe7EC6AABzLImxAAA=";
     Office.context.mailbox.displayAppointmentForm(appointmentId);
     event.completed();
+
+}
+
+function closeTaskPane(event)
+{
+
+    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+    /* close Container */
+    Office.context.ui.closeContainer()//;
+
+    event.completed();
+
+}
+
+function displayWebDialog(event)
+{
+    /* ReadItem or ReadWriteItem or ReadWriteMailbox */
+    /* displayDialog */
+    var dialogOptions = { height: 80, width: 50, displayInIframe: false, requireHTTPS: false };
+
+    Office.context.ui.displayDialogAsync("https://trelloaddin.azurewebsites.net/trello/LoginPageIOS.html", dialogOptions, displayDialogCallback);
+
+
+
+    function displayDialogCallback(asyncResult) {
+
+        console.log(asyncResult.status);
+
+        expect(asyncResult.status).toBe("succeeded");
+        done();
+    }
+
+    event.completed();
+
 
 }
