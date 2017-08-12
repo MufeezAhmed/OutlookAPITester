@@ -321,7 +321,7 @@ describe("",
 
                
                
-                it("Get entities by type ",
+                xit("Get entities by type ",
                     function () {
 
 
@@ -341,7 +341,7 @@ describe("",
 
 
                     });
-                it("Get entities by name",
+                xit("Get entities by name",
                     function () {
 
 
@@ -364,7 +364,7 @@ describe("",
 
 
                     });
-                it("Get Regex matches",
+                xit("Get Regex matches",
                     function () {
 
 
@@ -381,7 +381,7 @@ describe("",
 
 
                     });
-                it("Get filtered Regex matches by name ",
+                xit("Get filtered Regex matches by name ",
                     function () {
 
 
